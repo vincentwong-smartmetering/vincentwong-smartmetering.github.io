@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vincentwong-smartmetering.github.io/sitemap.xml
