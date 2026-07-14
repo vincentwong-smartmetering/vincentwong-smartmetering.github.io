@@ -21,6 +21,17 @@ footer {
     font-size: 0.9em;
     color: #666;
 }
+
+/* Corporate Typography and Theme */
+    .publications-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; margin-top: 20px; }
+    .pub-card { border: 1px solid #e1e8ed; border-radius: 8px; padding: 20px; background-color: #fff; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease; }
+    .pub-card:hover { transform: translateY(-4px); box-shadow: 0 6px 15px rgba(0, 0, 102, 0.08); }
+    .pub-card img { width: 100%; height: 160px; object-fit: cover; border-radius: 6px; margin-bottom: 15px; }
+    .pub-card h3 { font-size: 1.15em; margin: 0 0 10px 0; }
+    .pub-card h3 a { color: #003366; text-decoration: none; }
+    .pub-card p { font-size: 0.9em; color: #555; margin: 0 0 15px 0; flex-grow: 1; }
+    .read-more { font-size: 0.9em; font-weight: bold; color: #0066cc; text-decoration: none; }
+    
 </style>
 </head>
 
@@ -35,16 +46,16 @@ AMI, Smart Water, and Utility Technology.
 
 <h2>Available Whitepapers</h2>
 
-<ul>
+<div class="publications-grid">
     
-<li>
-<a href="asean-smart-water-failure.html">
-Why Smart Water Metering Projects Fail in ASEAN — And How to Fix Them
-</a><br>
-A whitepaper examining eight common causes of Smart Water Metering project failure and practical recommendations for utility leaders, AMI project teams, and technology providers.
-</li>
-    
-</ul>
+    <div class="pub-card">
+        <img src="why-smart-water-metering-projects-fail-in-asean-whitepaper.jpg" alt="Why Smart Water Metering Projects Fail in ASEAN And How to Fix Them">
+        <h3><a href="asean-smart-water-failure.html">Why Smart Water Metering Projects Fail in ASEAN — And How to Fix Them</a></h3>
+        <p>A whitepaper examining eight common causes of Smart Water Metering project failure and practical recommendations for utility leaders, AMI project teams, and technology providers.</p>
+        <a href="asean-smart-water-failure.html" class="read-more">Read More →</a>
+    </div>
+	
+</div>
 
 <p>
 Additional whitepapers will be added over time.
