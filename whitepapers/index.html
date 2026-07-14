@@ -24,6 +24,15 @@ footer {
 
 /* Corporate Typography and Theme */
     .publications-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; margin-top: 20px; }
+	/* Custom grid layout for whitepapers - wider cards for fewer items */
+	.whitepapers-grid {
+	  display: grid;
+	  /* 1. Changed auto-fill to auto-fit so cards stretch to fill space */
+	  /* 2. Increased minimum width from 280px to 450px for a wider appearance */
+	  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+	  gap: 25px;
+	  margin-top: 20px;
+	}
     .pub-card { border: 1px solid #e1e8ed; border-radius: 8px; padding: 20px; background-color: #fff; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease; }
     .pub-card:hover { transform: translateY(-4px); box-shadow: 0 6px 15px rgba(0, 0, 102, 0.08); }
     .pub-card img { width: 100%; height: 160px; object-fit: cover; border-radius: 6px; margin-bottom: 15px; }
@@ -46,7 +55,7 @@ AMI, Smart Water, and Utility Technology.
 
 <h2>Available Whitepapers</h2>
 
-<div class="publications-grid">
+<div class="whitepapers-grid">
     
     <div class="pub-card">
         <img src="why-smart-water-metering-projects-fail-in-asean-whitepaper.jpg" alt="Why Smart Water Metering Projects Fail in ASEAN And How to Fix Them">
