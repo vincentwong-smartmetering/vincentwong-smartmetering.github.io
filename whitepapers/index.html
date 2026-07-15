@@ -24,36 +24,80 @@ footer {
 
 /* Corporate Typography and Theme */
     .publications-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; margin-top: 20px; }
+	
 	/* Custom grid layout for whitepapers - wider cards for fewer items */
-	/* Base Style: Mobile-first configuration matching your publication page sizes */
-.whitepapers-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 25px;
-  margin-top: 20px;
-}
-
-/* Fix for top truncation: Keep card image proportions locked */
-.whitepapers-grid .card-img, 
-.whitepapers-grid img {
+	/* Base Style: Mobile-first configuration matching publication page sizes */
+/* Container framework that controls layout centering */
+.whitepapers-wide-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 28px;
   width: 100%;
-  height: auto;          /* Allows height to scale naturally with width */
-  max-height: 220px;     /* Caps max height so it doesn't get massive */
-  object-fit: contain;   /* Scaled down to prevent cropping or truncation */
-  object-position: top;  /* Prioritizes keeping the top edge visible */
 }
 
-/* Desktop Adjustment: Only stretch cards when screens are wide enough */
+/* Base Card Style (Handles both Desktop and Mobile smoothly) */
+.whitepaper-text-card {
+  display: block;
+  text-decoration: none;
+  color: #333333; /* Use your primary body text color */
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 30px; /* Generous padding gives text plenty of breathing room */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Elegant hover animation for professional feedback */
+.whitepaper-text-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-color: #cbd5e1;
+}
+
+/* UI Details inside the text card */
+.whitepaper-text-card .card-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: #f1f5f9;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.whitepaper-text-card h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.4rem;
+  line-height: 1.3;
+}
+
+.whitepaper-text-card p {
+  margin: 0 0 16px 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4a5568;
+}
+
+.whitepaper-text-card .read-more-link {
+  font-weight: bold;
+  color: #2b6cb0; /* Adjust to match your website's main link color */
+}
+
+/* Desktop Restraint: Prevents text lines from getting too long on wide monitors */
 @media only screen and (min-width: 768px) {
-  .whitepapers-grid {
-    /* auto-fit makes few items stretch, minmax(400px) gives them a wider desktop profile */
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    /* Prevents a single card from stretching across a huge widescreen monitor */
-    max-width: 900px; 
+  .whitepapers-wide-grid {
+    max-width: 850px; /* Caps the total text layout line length for comfortable reading */
     margin-left: auto;
     margin-right: auto;
   }
 }
+
     .pub-card { border: 1px solid #e1e8ed; border-radius: 8px; padding: 20px; background-color: #fff; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease; }
     .pub-card:hover { transform: translateY(-4px); box-shadow: 0 6px 15px rgba(0, 0, 102, 0.08); }
     .pub-card img { width: 100%; height: 160px; object-fit: cover; border-radius: 6px; margin-bottom: 15px; }
@@ -76,15 +120,16 @@ AMI, Smart Water, and Utility Technology.
 
 <h2>Available Whitepapers</h2>
 
-<div class="whitepapers-grid">
-    
-    <div class="pub-card">
-        <img src="why-smart-water-metering-projects-fail-in-asean-whitepaper.jpg" alt="Why Smart Water Metering Projects Fail in ASEAN And How to Fix Them">
-        <h3><a href="asean-smart-water-failure.html">Why Smart Water Metering Projects Fail in ASEAN — And How to Fix Them</a></h3>
-        <p>A whitepaper examining eight common causes of Smart Water Metering project failure and practical recommendations for utility leaders, AMI project teams, and technology providers.</p>
-        <a href="asean-smart-water-failure.html" class="read-more">Read More →</a>
-    </div>
-	
+<div class="whitepapers-wide-grid">
+  
+  <!-- Single Whitepaper Card Card -->
+  <a href="asean-smart-water-failure.html" class="whitepaper-text-card">
+    <div class="card-badge">Industry Whitepaper</div>
+    <h3>Why ASEAN Smart Water Projects Fail &amp; How to Fix Them</h3>
+    <p>A strategic analysis identifying the 8 common operational, commercial, and technical failure modes in regional AMI deployments, with risk-mitigation frameworks for utility executives.</p>
+    <span class="read-more-link">Read Whitepaper &rarr;</span>
+  </a>
+
 </div>
 
 <p>
