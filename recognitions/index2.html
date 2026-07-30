@@ -83,12 +83,32 @@ nav a:hover {
 }
 
 .content-section { 
-    margin-top: 10px;        /* Drastically reduced to prevent stacked gap blowout */
-    margin-bottom: 35px;     /* Controlled bottom push for clear structural pacing */
-    padding: 24px;           /* Slightly expanded inner padding for content breathing room */
+    margin-top: 5px;        /* Drastically reduced to prevent stacked gap blowout */
+    margin-bottom: 25px;     /* Controlled bottom push for clear structural pacing */
+    padding: 20px;           /* Slightly expanded inner padding for content breathing room */
     background: #ffffff; 
     border-radius: 6px; 
     box-shadow: 0 1px 3px rgba(0,0,0,0.05); 
+}
+
+h2 {
+    margin-top: 20px;       /* Controlled top space before a section starts */
+    margin-bottom: 10px;    /* Minimizes gap between the title and the content box */
+    color: #003366;
+}
+
+p {
+    margin-top: 0;          /* Prevents paragraphs from pushing headers away */
+    margin-bottom: 15px;    /* Normal spacing between blocks of text */
+}
+
+.patent-card {
+    background-color: #f8fafc; 
+    border-left: 4px solid #1e3a8a; 
+    padding: 20px; 
+    border-radius: 0 6px 6px 0; 
+    margin-top: 10px;       /* Brings the gray card close to the H2 title */
+    margin-bottom: 15px;
 }
     
 </style>
@@ -121,7 +141,7 @@ The track components compiled below are derived directly from public conference 
     
 <!-- 1. INTELLECTUAL PROPERTY & PATENT RECOGNITION -->
 <h2>Intellectual Property & Innovation Authority</h2>
-
+<div class="patent-card">
 <div style="background-color: #f8fafc; border-left: 4px solid #1e3a8a; padding: 25px; border-radius: 0 6px 6px 0; margin: 25px 0;">
   <a href="../patents/" style="display: inline-block; text-decoration: none; margin-bottom: 15px;">
     <div style="background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; padding: 15px 25px; border-radius: 6px; font-family: sans-serif; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.08);">
@@ -139,7 +159,7 @@ The track components compiled below are derived directly from public conference 
     <a href="../patents/">View Verified Patent Details →</a>
   </p>
 </div>
-
+</div>
 </section>
     
 <section class="content-section">
