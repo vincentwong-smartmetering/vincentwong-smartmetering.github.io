@@ -23,10 +23,35 @@ footer {
     color: #666;
 }
 /* Corporate Typography and Theme */
-    .publications-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; margin-top: 20px; }
-    .pub-card { border: 1px solid #e1e8ed; border-radius: 8px; padding: 20px; background-color: #fff; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease; }
+    .publications-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+    gap: 25px; 
+    margin-top: 20px; 
+}
+
+.pub-card { 
+    border: 1px solid #e1e8ed; 
+    border-radius: 8px; 
+    padding: 20px; 
+    background-color: #fff; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-start; /* Stack content neatly from the top */
+    gap: 15px;                  /* Standardizes spacing between elements */
+    transition: transform 0.2s ease; 
+}
+
+/* FIXES THE CLIPPING ISSUE */
+.pub-card img {
+    width: 100%;                /* Scales width to the card container */
+    height: 180px;              /* Sets a fixed height bounding box */
+    object-fit: cover;          /* Crops the sides beautifully without squishing */
+    object-position: center;    /* Anchors the crop to the direct center */
+    border-radius: 4px;         /* Optional: softens the image edges */
+    display: block;
+}
     .pub-card:hover { transform: translateY(-4px); box-shadow: 0 6px 15px rgba(0, 0, 102, 0.08); }
-    .pub-card img { width: 100%; height: 160px; object-fit: cover; border-radius: 6px; margin-bottom: 15px; }
     .pub-card h3 { font-size: 1.15em; margin: 0 0 10px 0; }
     .pub-card h4 a { color: #003366; text-decoration: none; }
     .pub-card p { font-size: 0.9em; color: #555; margin: 0 0 15px 0; flex-grow: 1; }
