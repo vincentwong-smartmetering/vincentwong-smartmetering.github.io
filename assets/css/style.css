@@ -1,0 +1,81 @@
+/* ==========================================================================
+   GLOBAL UTILITY INFRASTRUCTURE STYLESHEET (style.css)
+   ========================================================================== */
+
+/* Universal Resets */
+body, p, a, li, nav, footer {
+    font-family: Arial, sans-serif;
+}
+
+body {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    color: #003366;
+}
+
+h2 {
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* Global Navigation Menu */
+nav a {
+    margin-right: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #1e3a8a;
+    transition: color 0.2s ease-in-out;
+}
+nav a:hover {
+    color: #3b82f6; 
+}
+
+/* Global Content Links (Paragraphs & Lists) */
+p a, li a {
+    text-decoration: none;
+    color: #1e3a8a;
+    transition: color 0.2s ease-in-out;
+}
+p a:hover, li a:hover {
+    color: #3b82f6;
+    text-decoration: underline;
+}
+
+/* Global Footer Layout */
+footer {
+    margin-top: 40px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+    font-size: 0.9em;
+    color: #666;
+}
+footer a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #1e3a8a;
+    transition: color 0.2s ease-in-out;
+}
+footer a:hover {
+    color: #3b82f6;
+}
+
+/* Global Portfolio Image Properties */
+.portfolio-image {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    border-radius: 6px;
+    margin-top: 5px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
