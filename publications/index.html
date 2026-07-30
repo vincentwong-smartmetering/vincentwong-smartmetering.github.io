@@ -42,7 +42,7 @@ footer {
     transition: transform 0.2s ease; 
 }
 
-/* FIXES THE CLIPPING ISSUE */
+/* MOBILE VIEW (Default) */ /* FIXES THE CLIPPING ISSUE */
 .pub-card img {
     width: 100%;                /* Scales width to the card container */
     height: 180px;              /* Sets a fixed height bounding box */
@@ -50,6 +50,13 @@ footer {
     object-position: center;    /* Anchors the crop to the direct center */
     border-radius: 4px;         /* Optional: softens the image edges */
     display: block;
+}
+/* DESKTOP VIEW (Restores original look for larger screens) */
+@media (min-width: 768px) {
+    .pub-card img {
+        height: auto;         /* Unlocks fixed height so sides don't clip */
+        object-fit: fill;     /* Allows image to scale naturally without cropping */
+    }
 }
     .pub-card:hover { transform: translateY(-4px); box-shadow: 0 6px 15px rgba(0, 0, 102, 0.08); }
     .pub-card h3 { font-size: 1.15em; margin: 0 0 10px 0; }
