@@ -42,7 +42,81 @@ nav a {
 nav a:hover {
     color: #3b82f6; 
 }
-    
+
+/* Speaker Meta Box Layout */
+.meta-panel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: #f8fafc;
+    border-left: 4px solid #1e3a8a;
+    padding: 20px;
+    border-radius: 0 6px 6px 0;
+    margin: 25px 0;
+}
+.meta-column {
+    flex: 1;
+    min-width: 200px;
+}
+.meta-label {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 2px;
+}
+.meta-value {
+    font-size: 1rem;
+    color: #1e293b;
+    margin: 0 0 12px 0;
+}
+
+/* Grid Layouts for Key Takeaways */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 15px;
+    margin: 25px 0;
+}
+.grid-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 18px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+.grid-card h3 {
+    margin-top: 0;
+    color: #003366;
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 6px;
+}
+.grid-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.5;
+}
+
+/* Topic Badge Layout */
+.badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0 25px 0;
+}
+.badge {
+    background-color: #f1f5f9;
+    color: #1e3a8a;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 100px;
+    border: 1px solid #e2e8f0;
+}
 </style>
 </head>
 
@@ -61,115 +135,94 @@ nav a:hover {
 </nav>
 
 <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 25px;">
-
     
 <p>
-Industry presentations, technical talks, and speaking engagements related to Smart Metering, AMI, Smart Water, Utility IoT, and digital transformation.
+Industry presentations, technical briefs, and international panels mapping Advanced Metering Infrastructure (AMI) lifecycles and digital water transformation strategy.
 </p>
 
-<h2>Smart Metering for Asia: Enabling Digital Water Management</h2>
+<h2>Featured Session: Smart Metering for Asia</h2>
 
-
-<!-- Wrapper container to limit total width and match your speaker card below -->
+<!-- Photo Gallery Row Block -->
 <div style="max-width: 900px; margin: 0 auto; padding: 10px 0;">
-    
-    <!-- Responsive image row layout -->
-    <div style="display: flex; gap: 10px; flex-wrap: wrap; width: 100%;">
-        
-        <!-- Left Image (On Stage) -->
+    <div style="display: flex; gap: 12px; flex-wrap: wrap; width: 100%;">
         <div style="flex: 1; min-width: 280px;">
-            <img src="vincent-wong-asiawater-2026-stage.jpeg" alt="Vincent Wong presenting on stage at AsiaWater 2026" style="width: 100%; height: auto; display: block; border-radius: 6px;">
+            <img src="vincent-wong-asiawater-2026-stage.jpeg" alt="Vincent Wong presenting on stage at AsiaWater 2026" style="width: 100%; height: auto; display: block; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
         </div>
-        
-        <!-- Right Image (Crowd Audience) -->
         <div style="flex: 1; min-width: 280px;">
-            <img src="vincent-wong-asiawater-2026-crowd.jpeg" alt="Industry audience at AsiaWater 2026 Technology Seminar" style="width: 100%; height: auto; display: block; border-radius: 6px;">
+            <img src="vincent-wong-asiawater-2026-crowd.jpeg" alt="Industry audience at AsiaWater 2026 Technology Seminar" style="width: 100%; height: auto; display: block; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
         </div>
-        
     </div>
-    
-    <!-- Unified professional caption underneath -->
     <p style="font-size: 0.85em; color: #666; margin-top: 8px; font-style: italic;">
         Technical presentation session and industry audience at the AsiaWater 2026 Technology Seminar.
     </p>
-    
 </div>
 
-    
-<img src="aw2026_vincent_tech_seminar.jpeg"
-     alt="Vincent Wong speaking on Smart Metering for Asia: Enabling Digital Water Management"
-     style="max-width:100%; border-radius:10px;">
-<p style="font-size: 0.85em; color: #666; margin-top: 8px; font-style: italic;">Speaker Card for "Smart Metering for Asia: Enabling Digital Water Management" at AsiaWater 2026.</p>
-    
-<img src="aw2026_programme_listing.png"
-     alt="AsiaWater 2026 Programme Listing"
-     style="max-width:100%; border-radius:10px; margin-top:20px;">    
-<p style="font-size: 0.85em; color: #666; margin-top: 8px; font-style: italic;">AsiaWater 2026 official programme listing.</p>
-    
-<p>
-<strong>Role:</strong> Speaker
-</p>
-<p>
-<strong>Event Reference:</strong>
-<a href="https://www.asiawater.org/technology-seminars/" target="_blank" rel="noopener noreferrer">
-AsiaWater 2026 Technology Seminars
-</a>
-</p>
-<p>
-<strong>Date:</strong> Day 2, AsiaWater 2026
-</p>
+<!-- Session Timetable Reference Panel -->
+<div class="meta-panel">
+    <div class="meta-column">
+        <div class="meta-label">Conference Presentation</div>
+        <p class="meta-value" style="font-weight: bold; color: #1e3a8a;">Smart Metering for Asia: Enabling Digital Water Management</p>
+        
+        <div class="meta-label">Official Event Reference</div>
+        <p class="meta-value"><a href="https://www.asiawater.org/technology-seminars/" target="_blank" rel="noopener noreferrer">AsiaWater 2026 Technology Seminars</a></p>
+    </div>
+    <div class="meta-column">
+        <div class="meta-label">Schedule & Track</div>
+        <p class="meta-value">Day 2 | Technology Seminar 7 (11:00 AM)</p>
+        
+        <div class="meta-label">Venue Infrastructure</div>
+        <p class="meta-value">Kiosk 2, Hall 2, Kuala Lumpur Convention Centre</p>
+    </div>
+</div>
 
-<p>
-<strong>Venue:</strong> Kiosk 2, Hall 2, Kuala Lumpur Convention Centre
-</p>
+<div style="margin: 25px 0;">
+    <img src="aw2026_vincent_tech_seminar.jpeg" alt="Vincent Wong speaking on Smart Metering for Asia: Enabling Digital Water Management" style="width: 100%; max-width: 440px; display: inline-block; vertical-align: top; border-radius: 6px; margin-right: 15px; margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+    <img src="aw2026_programme_listing.png" alt="AsiaWater 2026 Programme Listing" style="width: 100%; max-width: 420px; display: inline-block; vertical-align: top; border-radius: 6px; margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+</div>
 
-<p>
-<strong>Session:</strong> Smart Metering for Asia: Enabling Digital Water Management
-</p>    
+<h2>Strategic Insights & Takeaways</h2>
+<p>Core pillars presented during the technical track session addressing municipal infrastructure scaling challenges:</p>
 
-<h2>Key Takeaways</h2>
-
-<ul>
-<li>Many utility challenges stem from limited operational visibility rather than infrastructure alone.</li>
-
-<li>Smart metering enables near real-time visibility compared with traditional monthly meter reading approaches.</li>
-
-<li>Smart metering should be viewed as an end-to-end system involving meters, communications, HES, MDMS, and analytics.</li>
-
-<li>Utility digitalization is a progressive journey from mechanical metering to AMR, AMI, and digitally enabled operations.</li>
-
-<li>Total cost of ownership extends beyond hardware to include communications, operations, maintenance, and lifecycle management.</li>
-
-<li>Successful deployments depend on technology, integration, stakeholder alignment, and field execution.</li>
-</ul>
+<div class="grid-container">
+    <div class="grid-card">
+        <h3>Operational Visibility</h3>
+        <p>Many regional distribution challenges stem from limited data availability rather than physical assets alone. Real-time telemetry exposes hidden pressure spikes and system anomalies.</p>
+    </div>
+    <div class="grid-card">
+        <h3>End-to-End Systems</h3>
+        <p>Advanced infrastructure must be designed as unified pipelines integrating physical flow sensors, low-power networks, Head-End Systems (HES), and Meter Data Management (MDMS) structures.</p>
+    </div>
+    <div class="grid-card">
+        <h3>Progressive Maturity</h3>
+        <p>Utility digitalization behaves as an incremental evolutionary path—transitioning carefully from basic manual checking into AMR, AMI networks, and automated predictive operations.</p>
+    </div>
+    <div class="grid-card">
+        <h3>Total Cost Architecture</h3>
+        <p>Long-term lifecycle capital costs extend far beyond the upfront hardware purchase bills. True budgets must account for spectrum access fees, field installation steps, and battery drop management.</p>
+    </div>
+</div>
 
 <h2>Speaker Profile</h2>
+<p>Vincent Wong is an engineering professional and cellular LPWAN pioneer specializing in Advanced Metering Infrastructure (AMI) architecture. He directed the complete product development lifecycle and localized Malaysian manufacturing setup for custom cellular smart water meters. His delivery insights stem from navigating real-world, large-scale utility technology deployments across the ASEAN landscape.</p>
 
-<p>Vincent Wong is an industry pioneer and engineering professional specializing in Smart Metering, Advanced Metering Infrastructure (AMI), and Utility digital transformation. He led the R&D and implementation of Malaysia's first 100% homegrown, localized NB-IoT smart water metering solutions. His insights are heavily drawn from the end-to-end design, manufacturing, and field execution of large-scale, real-world utility rollouts across the ASEAN region.</p>
-
-<h2>Topics Covered</h2>
-
-<ul>
-<li>Smart Metering</li>
-<li>Advanced Metering Infrastructure (AMI)</li>
-<li>Smart Water Solutions</li>
-<li>NB-IoT and LPWAN Connectivity</li>
-<li>Head-End Systems (HES)</li>    
-<li>Meter Data Management System (MDMS)</li>        
-<li>Utility IoT</li>
-<li>Utility Digital Transformation</li>
-<li>Smart Infrastructure</li>
-
-</ul>
+<h2>Subject Vector Domains</h2>
+<p>Technical disciplines and strategic advisory tracks available for conference and seminar bookings:</p>
+<div class="badge-container">
+    <span class="badge">Smart Metering Architecture</span>
+    <span class="badge">Advanced Infrastructure (AMI)</span>
+    <span class="badge">Cellular LPWAN / NB-IoT</span>
+    <span class="badge">Head-End Systems (HES)</span>
+    <span class="badge">Meter Data Management (MDMS)</span>
+    <span class="badge">Utility Analytics Frameworks</span>
+    <span class="badge">Cybersecurity for Smart Grids</span>
+    <span class="badge">Digital Transformation Strategy</span>
+</div>
     
 <footer>
-
 <p>© 2026 Vincent Wong. All rights reserved.</p>
-
 <p>
 Smart Metering | AMI | Smart Water | Utility IoT | NB-IoT
 </p>
-
 <p>
 <a href="../index.html">Home</a> |
 <a href="../about/">About</a> |
@@ -179,7 +232,6 @@ Smart Metering | AMI | Smart Water | Utility IoT | NB-IoT
 Speaking |
 <a href="../recognitions/">Recognition</a>
 </p>
-
 </footer>
 
 </body>
