@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="An educational directory mapping real-world utility field challenges—like early smart meter battery drain, telemetry dropouts, and procurement traps—to technical research assets.">
+<title>Field Insights & Operational Problem Solving | Vincent Wong</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<style>
+/* Reusing your exact structural styles for seamless platform styling */
+.whitepapers-wide-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 25px;
+    width: 100%;
+}
+
+.whitepaper-text-card {
+    display: block;
+    text-decoration: none;
+    color: #333333;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+.whitepaper-text-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-color: #cbd5e1;
+}
+
+.whitepaper-text-card .card-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: #475569; /* Swapped to standard charcoal grey for a research index feel */
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.whitepaper-text-card h3 {
+    margin: 0 0 12px 0;
+    font-size: 1.4rem;
+    line-height: 1.3;
+    color: #003366;
+}
+
+.whitepaper-text-card p {
+    margin: 0 0 16px 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #334155;
+}
+
+.chapter-matrix {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+    padding-top: 15px;
+    border-top: 1px solid #f1f5f9;
+}
+.chapter-item {
+    font-size: 0.85rem;
+    color: #475569;
+    background-color: #f8fafc;
+    padding: 10px 12px;
+    border-radius: 4px;
+    border-left: 3px solid #0066cc;
+}
+
+.whitepaper-text-card .read-more-link {
+    font-weight: bold;
+    color: #0066cc;
+    display: inline-block;
+    margin-top: 5px;
+}
+.whitepaper-text-card .read-more-link:hover {
+    color: #3b82f6;
+}
+
+@media only screen and (min-width: 768px) {
+    .whitepapers-wide-grid {
+        max-width: 850px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h1>Field Insights</h1>
+	
+<nav>
+    <a href="../">Home</a>
+    <a href="../about/">About</a>
+    <a href="../whitepapers/">Whitepapers</a>
+    <a href="../publications/">Publications</a>
+    <a href="../patents/">Patents</a>
+    <a href="../speaking/">Speaking</a>
+    <a href="../recognitions/">Recognition</a>
+</nav>
+
+<hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 25px;">
+	
+<p>
+An educational research directory mapping real-world utility field challenges to the technical engineering publications and architectural frameworks cataloged on this platform.
+</p>
+
+<h2>Operational Challenge Index</h2>
+
+<div class="whitepapers-wide-grid">
+  
+  <!-- Card 1: Technical Procurement & Lock-in Risks -->
+  <div class="whitepaper-text-card">
+    <div class="card-badge">Procurement & TCO</div>
+    <h3>Evaluating Long-Term Risks in Smart Water Meter Procurement</h3>
+    
+    <p>Large-scale utility digitalization projects face significant financial risks during commercial planning. Navigating these requires a comprehensive smart water meter procurement checklist to unmask the hidden costs of large scale AMI rollouts and establish balanced Service Level Agreements (SLAs).</p>
+	
+    <p>By mapping out structural life expectancies and hardware interoperability standards ahead of time, utility steering committees can successfully safeguard capital expenditures and eliminate multi-year smart meter vendor lock-in risks before awarding contracts.</p>  
+    
+    <div class="chapter-matrix">
+        <div class="chapter-item"><strong>Procurement Traps:</strong> Avoiding restrictive technology ecosystems during tender specs.</div>
+        <div class="chapter-item"><strong>Financial Safeguards:</strong> Mitigating unseen balance sheet leaks across a 10-year asset lifecycle.</div>
+    </div>
+
+    <a href="../whitepapers/" class="read-more-link">View Related Strategic Whitepapers &rarr;</a>
+  </div>
+
+  <!-- Card 2: Environment & Hardware Failures -->
+  <div class="whitepaper-text-card">
+    <div class="card-badge">Field Infrastructure</div>
+    <h3>Mitigating Asset Vulnerabilities in Harsh Sub-Surface Environments</h3>
+    
+    <p>Smart utility hardware deployed across the ASEAN region faces severe physical stressors. Utility maintenance crews often struggle when a smart water meter battery runs dead too fast, or when telemetry networks suffer from severe smart meter signal problems in pits and boundary boxes.</p>
+	
+    <p>Managing these environmental roadblocks involves optimizing physical casing designs to stop moisture condensation while deploying low-power, robust edge architectures capable of maintaining transmission integrity under extreme tropical conditions.</p>  
+    
+    <div class="chapter-matrix">
+        <div class="chapter-item"><strong>Battery Engineering:</strong> Firmware parameters needed to reliably hit 10-year lifecycle runtimes.</div>
+        <div class="chapter-item"><strong>RF Path Optimization:</strong> Overcoming physical concrete and underground sub-surface barriers.</div>
+    </div>
+
+    <a href="../publications/#phase-2" class="read-more-link">View Phase 2 Technical Publications &rarr;</a>
+  </div>
+
+  <!-- Card 3: NRW & Fluid Telemetry -->
+  <div class="whitepaper-text-card">
+    <div class="card-badge">Network Operations</div>
+    <h3>Targeting Apparent Losses and Non-Revenue Water (NRW)</h3>
+    
+    <p>Maximizing revenue recovery requires a data-driven approach to water distribution networks. Operational teams must look for ways to systematically reduce non revenue water using smart meters, pinpoint precise low-flow consumption patterns, and completely eliminate systemic water meter backflow tracking problems.</p>
+	
+    <p>Leveraging high-resolution physical pulse architectures allows engineering frameworks to isolate real physical leaks from apparent anomalies, tracking delivery profiles down to individual node endpoints securely.</p>  
+    
+    <div class="chapter-matrix">
+        <div class="chapter-item"><strong>Fluid Intelligence:</strong> Bi-directional pulse telemetry tracking to isolate backflow.</div>
+        <div class="chapter-item"><strong>Tampering Security:</strong> Preventing physical and magnetic meter data manipulation.</div>
+    </div>
+
+    <a href="../patents/" class="read-more-link">View Patented Hardware Configurations &rarr;</a>
+  </div>
+
+</div>
+
+<p style="font-style: italic; color: #64748b; font-size: 0.9rem; margin-top: 30px;">
+    *This index page functions exclusively as a professional reference linking operational problems to public academic and engineering research data.
+</p>
+
+<footer>
+<p>© 2026 Vincent Wong. Redistribution permitted with attribution to the original author.</p>
+<p>
+Smart Metering | AMI | Smart Water | Utility IoT | NB-IoT
+</p>
+<p>
+<a href="../index.html">Home</a> |
+<a href="../about/">About</a> |
+<a href="../whitepapers/">Whitepapers</a> |
+<a href="../publications/">Publications</a> |
+<a href="../patents/">Patents</a> |
+<a href="../speaking/">Speaking</a> |
+<a href="../recognitions/">Recognition</a>
+</p>
+</footer>
+
+</body>
+</html>
