@@ -34,7 +34,27 @@
       <image:title>What Is AMI? Advanced Metering Infrastructure Architecture Components and How It Works</image:title>
       <image:caption>Provides a comprehensive overview of AMI architecture, including smart meters, communications networks, head-end systems, MDMS platforms, enterprise integration, and operational workflows.</image:caption>
     </image:image>
-    
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/amr-vs-ami.jpg</image:loc>
+      <image:title>AMR vs AMI Key Differences, Benefits, and When to Use Each</image:title>
+      <image:caption>Compares Automated Meter Reading (AMR) and Advanced Metering Infrastructure (AMI), highlighting their technical differences, business value, limitations, and appropriate deployment scenarios.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/what-is-nb-iot.jpg</image:loc>
+      <image:title>What Is NB-IoT A Practical Guide for IoT and Smart Metering Deployments</image:title>
+      <image:caption>A detailed introduction to Narrowband IoT (NB-IoT), explaining network architecture, coverage characteristics, battery efficiency, deployment considerations, and utility use cases.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/lorawan-explained.jpg</image:loc>
+      <image:title>LoRaWAN Explained: Architecture, Use Cases, and Limitations in Real Deployments</image:title>
+      <image:caption>Examines how LoRaWAN networks operate, where they perform well, and the practical limitations encountered during utility, industrial, and smart city deployments.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/smart-metering-architecture.jpg</image:loc>
+      <image:title>Smart Metering System Architecture End-to-End Design for Utilities</image:title>
+      <image:caption>A system-level view of smart metering architecture, covering devices, communications, head-end systems, MDMS platforms, cybersecurity, integration, and operational management.</image:caption>
+    </image:image>
+          
   </url>
 </urlset>
 
