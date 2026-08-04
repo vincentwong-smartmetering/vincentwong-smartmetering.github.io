@@ -1,1 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://sitemaps.org"
+        xmlns:image="http://google.com">
+  <url>
+    <loc>https://vincentwong-smartmetering.github.io/publications/</loc>
+    <!-- Representative sample of the 20 images indexed, showing the structure. The full 20 images are included in the generated sitemap based on the URL structure. -->
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/what-is-smart-metering.jpg</image:loc>
+      <image:title>What Is Smart Metering A Practical Guide for Utilities and Smart Cities</image:title>
+      <image:caption>An introduction to smart metering technologies, explaining how they differ from conventional meters and the operational, customer service, and sustainability benefits they provide to utilities and smart city programs.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/nb-iot-vs-lorawan-vs-lte-m.jpg</image:loc>
+      <image:title>NB-IoT vs LoRaWAN vs LTE-M Choosing the Right IoT Connectivity for Smart Utilities</image:title>
+      <image:caption>A practical comparison of leading LPWAN technologies used in utility metering deployments, covering coverage, battery life, scalability, deployment complexity, and long-term operational considerations.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/smart-metering-in-asia.jpg</image:loc>
+      <image:title>Smart Metering in Asia Challenges, Deployment Lessons, and Real-World Constraints</image:title>
+      <image:caption>Examines the unique challenges faced by utilities across Asia, including infrastructure limitations, regulatory differences, communications constraints, and lessons learned from real-world deployments.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/from-smart-meters-to-smart-decisions.jpg</image:loc>
+      <image:title>From Smart Meters to Smart Decisions How AMI Data Becomes Intelligence for Utilities</image:title>
+      <image:caption>Explains how Advanced Metering Infrastructure transforms raw meter readings into actionable intelligence through analytics, operational insights, leak detection, and data-driven decision making.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/why-smart-metering-pilots-fail.jpg</image:loc>
+      <image:title>Why Smart Metering Pilots Fail at Scale And How Utilities Can Avoid It</image:title>
+      <image:caption>Explores why many successful pilot projects encounter difficulties during large-scale rollout and provides practical guidance for planning, governance, operations, and scalability.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/what-is-ami.jpg</image:loc>
+      <image:title>What Is AMI? Advanced Metering Infrastructure Architecture Components and How It Works</image:title>
+      <image:caption>Provides a comprehensive overview of AMI architecture, including smart meters, communications networks, head-end systems, MDMS platforms, enterprise integration, and operational workflows.</image:caption>
+    </image:image>
+    
+  </url>
+</urlset>
 
