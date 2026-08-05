@@ -54,6 +54,59 @@
       <image:title>Smart Metering System Architecture End-to-End Design for Utilities</image:title>
       <image:caption>A system-level view of smart metering architecture, covering devices, communications, head-end systems, MDMS platforms, cybersecurity, integration, and operational management.</image:caption>
     </image:image>
+
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/smart-meter-battery-life.jpg</image:loc>
+      <image:title>Smart Meter Battery Life Explained Why 10 Years Is Not Just a Specification</image:title>
+      <image:caption>Explains the factors affecting battery performance in smart meters, including reporting frequency, communications technology, environmental conditions, and deployment practices.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/nb-iot-vs-lorawan-in-real-deployments.jpg</image:loc>
+      <image:title>NB-IoT vs LoRaWAN in Real Deployments: What Actually Happens in the Field</image:title>
+      <image:caption>Moves beyond theoretical comparisons to examine the practical realities, trade-offs, and operational experiences of deploying NB-IoT and LoRaWAN in actual field environments.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/cybersecurity-in-smart-metering.jpg</image:loc>
+      <image:title>Cybersecurity in Smart Metering Real Risks System Weaknesses and Practical Defenses</image:title>
+      <image:caption>Reviews common cybersecurity threats affecting smart metering systems and outlines practical approaches to protecting devices, communications networks, backend systems, and utility operations.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/firmware-management-in-ami.jpg</image:loc>
+      <image:title>Firmware Management in AMI The Hidden Operational Challenge</image:title>
+      <image:caption>Discusses the complexities of managing firmware across large AMI deployments, including testing, version control, remote updates, risk mitigation, and operational governance.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/why-ami-systems-fail.jpg</image:loc>
+      <image:title>Why AMI Systems Fail A System-Level Breakdown Technology Data and Organization</image:title>
+      <image:caption>A practical analysis of why AMI initiatives fail to deliver expected business outcomes despite successful meter deployments. The article identifies critical gaps in system integration, data utilization, operational readiness, and organizational alignment that frequently undermine utility digital transformation programs.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/smart-meter-rollout-strategy.jpg</image:loc>
+      <image:title>Smart Meter Rollout Strategy Phased vs Full Deployment</image:title>
+      <image:caption>A comparison of phased versus full-scale AMI rollouts, analyzing the financial risks, deployment challenges, and key strategies for execution success.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/utility-procurement-for-ami.jpg</image:loc>
+      <image:title>Utility Procurement for AMI How to Avoid Costly Mistakes</image:title>
+      <image:caption>A practical framework for drafting technical specifications, aligning vendor SLAs, and structuring multi-vendor evaluation criteria to prevent multi-year vendor lock-in traps and budget overruns during large-scale AMI procurement.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/data-to-roi.jpg</image:loc>
+      <image:title>From Data to ROI Measuring the Business Value of AMI</image:title>
+      <image:caption>Translating billions of raw meter telemetry data packets into direct utility balance sheet value, operational expenditure reductions, optimized capital deployment, and measurable non-revenue water (NRW) loss mitigation.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/how-utilities-actually-use-smart-meter-data-beyond-billing.jpg</image:loc>
+      <image:title>How Utilities Actually Use Smart Meter Data Beyond Billing</image:title>
+      <image:caption>Go beyond simple billing. Discover how modern utilities harness advanced AMI data analytics to optimize grid operations, detect leaks, and improve asset health.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/smart-metering-cost-roi-breakdown-understanding-the-true-cost-of-ami.jpg</image:loc>
+      <image:title>Smart Meter Metering Cost & ROI Breakdown Understanding the True Cost of AMI</image:title>
+      <image:caption>Demystify the true cost of AMI. Discover financial frameworks to analyze capital investments, hidden operational expenses, and total ROI for smart grids.</image:caption>
+    </image:image>
           
   </url>
 </urlset>
