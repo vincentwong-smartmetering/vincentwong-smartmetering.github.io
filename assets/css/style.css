@@ -86,3 +86,29 @@ footer a:hover {
     padding: 0 20px;
     box-sizing: border-box; /* Ensures padding doesn't break max-width calculation */
 }
+
+/* ==========================================================================
+   Long-Form Article Component Lists (Medium-Style)
+   ========================================================================== */
+
+/* The outer list container wrapper */
+.article-dl {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* The Bold Numbered Heading Line */
+.article-dl dt {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #003366;      /* Matches your exact global header blue */
+    margin-top: 25px;
+    margin-bottom: 6px;  /* Tight spacing keeps title anchored to description */
+}
+
+/* The Explanation Paragraph directly beneath it */
+.article-dl dd {
+    margin-left: 0;      /* Removes default browser indentation */
+    margin-bottom: 20px; /* Space before the next numbered item begins */
+    color: #2d3748;      /* Clean charcoal reading color */
+}
