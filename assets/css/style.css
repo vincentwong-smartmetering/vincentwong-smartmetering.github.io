@@ -87,28 +87,23 @@ footer a:hover {
     box-sizing: border-box; /* Ensures padding doesn't break max-width calculation */
 }
 
-/* ==========================================================================
-   Long-Form Article Component Lists (Medium-Style)
-   ========================================================================== */
-
-/* The outer list container wrapper */
+/* Custom Description List for Long-Form Articles */
 .article-dl {
     margin-top: 20px;
     margin-bottom: 30px;
 }
 
-/* The Bold Numbered Heading Line */
+/* Bold Numeric Header Alignment */
 .article-dl dt {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: bold;
-    color: #003366;      /* Matches your exact global header blue */
+    color: #003366;
     margin-top: 25px;
-    margin-bottom: 6px;  /* Tight spacing keeps title anchored to description */
+    margin-bottom: 4px;
 }
 
-/* The Explanation Paragraph directly beneath it */
+/* CRITICAL FIX: Forces description text to align with the left edge */
 .article-dl dd {
-    margin-left: 0;      /* Removes default browser indentation */
-    margin-bottom: 20px; /* Space before the next numbered item begins */
-    color: #2d3748;      /* Clean charcoal reading color */
+    margin-left: 0;       /* Overrides the default 40px browser indent */
+    margin-bottom: 20px;  /* Spacing before the next item begins */
 }
