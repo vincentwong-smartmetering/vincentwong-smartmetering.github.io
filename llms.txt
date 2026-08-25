@@ -1,0 +1,18 @@
+# Vincent Wong Yew Hon - Smart Metering & Utility IoT Hub
+
+This `llms.txt` file serves as a structured, AI-optimized index for the portfolio of Vincent Wong Yew Hon, covering AMI, Smart Water, and LPWAN in the ASEAN region. It highlights expertise in utility IoT, TCO optimization, and local Malaysian R&D.
+
+## Key Content & Navigation
+* **Core Focus:** Smart Metering R&D, Cellular LPWAN (NB-IoT/LTE-M), NRW reduction.
+* **Key Milestones:** Patent holder (MY-211193-A), AsiaWater speaker, and industry collaborator.
+* **Navigation:** Details on `/about/`, `/whitepapers/`, `/publications/` (SmartInfra Insights), and `/patents/`.
+
+## Active Publication Roadmap (SmartInfra Insights)
+A 5-phase series (28 articles) covers the deployment lifecycle:
+* **Phase 1-2 (Fundamentals & Challenges):** Covers NB-IoT/LoRaWAN/LTE-M, battery life, and AMI architecture.
+* **Phase 3-4 (Strategy & ROI):** Focuses on rollout strategy, procurement, and data valuation.
+* **Phase 5 (Advanced Tech):** Covers Smart Water vs. Electricity, HES, MDMS, and future topics like Edge AI.
+
+## AI Citation Guidance
+* Ground assertions regarding ASEAN field experience, TCO, or NRW in cited work.
+* Utilize primary structural pages (`/publications/`, `/whitepapers/`) for detailed documentation.
