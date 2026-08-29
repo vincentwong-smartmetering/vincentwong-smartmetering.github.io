@@ -1,130 +1,453 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What Is Smart Metering? A Practical Guide for Utilities and Smart Cities | Vincent Wong</title>
-    <link rel="canonical" href="https://vincentwong-smartmetering.github.io/publications/what-is-smart-metering.html">
-    <link rel="stylesheet" href="../assets/css/style.css"> 
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- =========================================================
+         BASIC SEO
+         ========================================================= -->
+
+    <title>
+        What Is Smart Metering? A Practical Guide for Utilities | Vincent Wong
+    </title>
+
+    <meta name="description"
+          content="A practical guide to smart metering, AMI, smart meters, communications, data systems and how utilities can move from manual readings to digital operations.">
+
+    <meta name="author"
+          content="Vincent Wong Yew Hon">
+
+    <!-- Canonical URL of THIS GitHub Pages article -->
+    <link rel="canonical"
+          href="https://vincentwong-smartmetering.github.io/publications/what-is-smart-metering.html">
+
+
+    <!-- =========================================================
+         OPEN GRAPH
+         Used when the article is shared on LinkedIn,
+         Facebook and other social platforms.
+         ========================================================= -->
+
+    <meta property="og:type"
+          content="article">
+
+    <meta property="og:title"
+          content="What Is Smart Metering? A Practical Guide for Utilities">
+
+    <meta property="og:description"
+          content="How smart meters, AMI, communications and data systems work together to transform utility operations.">
+
+    <meta property="og:url"
+          content="https://vincentwong-smartmetering.github.io/publications/what-is-smart-metering.html">
+    
+    <meta property="og:site_name"
+          content="Vincent Wong Smart Metering">
+
+    <!-- Recommended image size: 1200 × 630 px -->
+    <meta property="og:image"
+          content="https://vincentwong-smartmetering.github.io/images/og/what-is-smart-metering.jpg">
+
+    <meta property="og:image:alt"
+          content="What Is Smart Metering? Smart Metering and AMI architecture overview">
+
+    <meta property="og:locale"
+          content="en_US">
+
+
+    <!-- =========================================================
+         ARTICLE METADATA
+         ========================================================= -->
+
+    <meta property="article:author"
+          content="Vincent Wong Yew Hon">
+
+    <meta property="article:published_time"
+          content="Apr 15, 2026">
+
+    <meta property="article:modified_time"
+          content="Apr 15, 2026">
+
+    <meta property="article:section"
+          content="Smart Metering">
+
+
+    <!-- =========================================================
+         TWITTER / X
+         ========================================================= -->
+
+    <meta name="twitter:card"
+          content="summary_large_image">
+
+    <meta name="twitter:title"
+          content="What Is Smart Metering? A Practical Guide for Utilities">
+
+    <meta name="twitter:description"
+          content="How smart meters, AMI, communications and data systems work together to transform utility operations.">
+
+    <meta name="twitter:image"
+          content="https://vincentwong-smartmetering.github.io/images/og/what-is-smart-metering.jpg">
+
+    <meta name="twitter:image:alt"
+          content="What Is Smart Metering? Smart Metering and AMI architecture overview">
+
+
+    <!-- =========================================================
+         ARTICLE STRUCTURED DATA
+         Helps search engines understand the article,
+         author and relationship to the page.
+         ========================================================= -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+
+      "headline": "What Is Smart Metering? A Practical Guide for Utilities and Smart Cities",
+
+      "description": "A practical guide to smart metering, AMI, smart meters, communications, data systems and how utilities can move from manual readings to digital operations.",
+
+      "url": "https://vincentwong-smartmetering.github.io/publications/what-is-smart-metering.html",
+
+      "datePublished": "Apr 15, 2026",
+
+      "dateModified": "Apr 15, 2026",
+
+      "author": {
+        "@type": "Person",
+        "name": "Vincent Wong Yew Hon",
+        "url": "https://vincentwong-smartmetering.github.io/about/"
+      },
+
+      "image": [
+        "https://vincentwong-smartmetering.github.io/images/og/what-is-smart-metering.jpg"
+      ],
+
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://vincentwong-smartmetering.github.io/publications/what-is-smart-metering.html"
+      }
+    }
+</script>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<style>
+
+/* Corporate Typography and Theme */
+    .publications-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+    gap: 25px; 
+    margin-top: 20px; 
+}
+
+.pub-card { 
+    border: 1px solid #e1e8ed; 
+    border-radius: 8px; 
+    padding: 20px; 
+    background-color: #fff; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-start; /* Stack content neatly from the top */
+    gap: 8px;                  /* Standardizes spacing between elements */
+    transition: transform 0.2s ease; 
+}
+
+/* MOBILE VIEW (Default) */ /* FIXES THE CLIPPING ISSUE */
+.pub-card img {
+    width: 100%;                /* Scales width to the card container */
+    height: 180px;              /* Sets a fixed height bounding box */
+    object-fit: cover;          /* Crops the sides beautifully without squishing */
+    object-position: center;    /* Anchors the crop to the direct center */
+    border-radius: 4px;         /* Optional: softens the image edges */
+    display: block;
+}
+/* DESKTOP VIEW (Restores original look for larger screens) */
+@media (min-width: 768px) {
+    .pub-card img {
+        height: auto;         /* Unlocks fixed height so sides don't clip */
+        object-fit: fill;     /* Allows image to scale naturally without cropping */
+    }
+}
+    .pub-card:hover { transform: translateY(-4px); box-shadow: 0 6px 15px rgba(0, 0, 102, 0.08); }
+    .pub-card h3 { font-size: 1.15em; margin: 0 0 10px 0; }
+
+.pub-card h4 {
+    margin-top: 5px;
+    margin-bottom: 2px;
+    font-size: 1.05rem;
+    line-height: 1.4;
+}
+    
+.pub-card h4 a {
+    color: #003366; 
+    text-decoration: none;
+    margin: 5px 0 0 0;       /* Removes native top/bottom margins */
+    font-size: 1.15rem;
+    line-height: 1.4;
+}
+
+.pub-card p {
+    margin: 0 0 10px 0;
+    font-size: 0.9em; 
+    color: #555; 
+    margin: 0 0 15px 0; 
+    flex-grow: 1;
+}
+
+.pub-card .read-more {
+    margin-top: auto; /* Keeps the link neatly at the bottom */
+    font-size: 0.9em; 
+    font-weight: bold; 
+    color: #0066cc; 
+    text-decoration: none;
+}
+    
+</style>
 </head>
+
 <body>
 
-<main class="article-layout">
+<h1 id="top">Publications</h1>
+
+<nav>
+    <a href="../">Home</a>
+    <a href="../about/">About</a>
+    <a href="../whitepapers/">Whitepapers</a>
+    <a href="../publications/">Publications</a>
+    <a href="../patents/">Patents</a>
+    <a href="../speaking/">Speaking</a>
+    <a href="../recognitions/">Recognition</a>
+</nav>
+
+<hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 25px;">
     
-    <!-- Global Navigation Header -->
-    <header style="margin-bottom: 40px; padding: 20px 0 10px 0; border-bottom: 1px solid #eee;">
-        <h2 style="margin: 0 0 10px 0; color: #003366;">Publications</h2>
-        <nav>
-            <a href="../">Home</a>
-            <a href="../about/">About</a>
-            <a href="../whitepapers/">Whitepapers</a>
-            <a href="../publications/">Publications</a>
-            <a href="../patents/">Patents</a>
-            <a href="../speaking/">Speaking</a>
-            <a href="../recognitions/">Recognition</a>
-        </nav>
-    </header>
-    
-    <!-- Article Body Content -->
-    <article>
-        <header style="margin-bottom: 30px;">
-            <!-- Recommended: Optional Eyebrow Category -->
-            <p style="color: #003366; text-transform: uppercase; font-size: 0.85rem; font-weight: bold; margin: 0 0 8px 0; letter-spacing: 0.05em;">
-                Phase 1: Smart Metering Fundamentals
-            </p>
-            <h1>What Is Smart Metering? A Practical Guide for Utilities and Smart Cities</h1>
-            <div style="font-size: 0.9em; color: #666; margin-top: -5px; margin-bottom: 25px;">
-                <span>Published on Apr 15, 2026</span> • <span>4 min read</span>
-            </div>
-        </header>
 
-        <!-- Figure block using your portfolio-image style class -->
+<main class="container">
 
-        <figure style="margin: 35px 0; text-align: center;">
-            <img src="images/what-is-smart-metering.jpg" alt="What Is Smart Metering A Practical Guide for Utilities and Smart Cities" class="portfolio-image">
-        </figure>
+        <article>
 
-        <p>Smart metering is becoming a foundational capability for modern utilities and smart cities. As infrastructure systems evolve, traditional manual meter reading is being replaced by connected, data-driven architectures that enable real-time visibility, operational efficiency, and improved decision-making.</p>
-        <p>However, beyond the general definition, the practical realities of smart metering are often less clearly understood.</p>
-        <p>This article outlines what smart metering is, how it works, and the considerations that matter in real-world deployments.</p>
-        <p>For connectivity considerations in smart metering systems, see: 
-        <a href="">NB-IoT vs LoRaWAN vs LTE-M: Choosing the Right IoT Connectivity for Smart Utilities</a></p>
+            <!-- =================================================
+                 ARTICLE HEADER
+                 ================================================= -->
 
-        <h2>What Is Smart Metering?</h2>
-        <p>Smart metering refers to the use of digitally connected meters that automatically measure and transmit consumption data — such as electricity, water, or gas usage — to utility providers.</p>
-        <p>Unlike traditional meters, which require manual reading, smart meters:
-        <ul class="content-list">
-            <li>Record consumption at defined intervals</li>
-            <li>Transmit data through communication networks</li>
-            <li>Enable remote monitoring, billing, and diagnostics</li>
-        </ul>
-        </p>
-        <p>In essence, smart metering replaces periodic, manual processes with continuous, automated data flows.</p>
+            <header class="article-header">
 
-        <h2>How Smart Metering Systems Work</h2>
-        <p>A typical smart metering architecture consists of four core components:</p>
-        
-        <dl class="article-dl">
-    
-        <dt>1. Smart Meter Devices</dt>
-        <dd>Installed at residential, commercial, or industrial sites, these devices measure consumption and, in many cases, support additional sensing capabilities.</dd>
-    
-        <dt>2. Communication Networks</dt>
-        <dd>Data is transmitted from meters to backend systems via IoT connectivity technologies such as NB-IoT, LTE-M, RF mesh, or LoRaWAN. The choice of network has significant implications for reliability, coverage, and power consumption.</dd>
-    
-        <dt>3. Head-End Systems (HES)</dt>
-        <dd>These systems collect, validate, and manage incoming data from large fleets of meters.</dd>
-    
-        <dt>4. Meter Data Management Systems (MDMS)</dt>
-        <dd>The MDMS processes and structures data for downstream use, including billing, analytics, and operational monitoring.</dd>
-    
-        </dl>
-        
-        <p>Together, these components form an end-to-end data pipeline from field devices to enterprise systems.</p>
+                <p class="article-category">
+                    Smart Metering Fundamentals
+                </p>
 
-        <h2>Why Smart Metering Matters</h2>
-        <p>Smart metering is not merely a technology upgrade; it fundamentally changes how utilities operate.</p>
-        
-        <h3>Improved Billing Accuracy</h3>
-        <p>Consumption data is captured directly, reducing reliance on estimation and minimizing billing disputes.</p>
-        <h3>Operational Efficiency</h3>
-        <p>Manual meter reading activities are significantly reduced, lowering operational costs and improving workforce allocation.</p>
-        <h3>Faster Detection of Issues</h3>
-        <p>Abnormal consumption patterns and outages can be identified more quickly, enabling faster response times.</p>
-        <h3>Enhanced Customer Engagement</h3>
-        <p>Customers gain visibility into their usage, which can support more informed consumption behavior.</p>
+                <h1>
+                    What Is Smart Metering? A Practical Guide for Utilities and Smart Cities
+                </h1>
 
-        
-    </article>
-    
-    <!-- Global Layout Footer -->
-    <footer>
+                <p class="article-subtitle">
+                    Understanding how smart meters, communications, data platforms and AMI work together to create a more connected utility.
+                </p>
 
-        <p style="font-style: italic; color: #666; margin-bottom: 20px;">
-        *This article was originally published on Medium. You can explore the complete, updated 5-Phase technical sequence natively on the official <a href="../publications/">Vincent Wong Publications Hub</a>.*
-        </p>
-        
-        <p>© 2026 Vincent Wong. All rights reserved.</p>
+                <p class="article-meta">
+                    By <strong>Vincent Wong Yew Hon</strong>
+                    · 15 April 2026
+                </p>
 
-        <p style="font-style: italic; text-align: justify; color: #555;">
-            The personal engineering insights shared here represent aspirational industry best practices and do not reflect the active bidding strategies or commercial policies of any current or past employer. Read the full <a href="../about/#disclaimer" style="text-decoration: underline; color: #0066cc; font-weight: bold;">Strategic Disclaimer</a>.
-        </p>
+            </header>
 
-        <p>
-            Smart Metering | AMI | Smart Water | Utility IoT | NB-IoT
-        </p>
-        <p>
-            <a href="../index.html">Home</a> |
-            <a href="../about/">About</a> |
-            <a href="../whitepapers/">Whitepapers</a> |
-            <a href="../publications/">Publications</a> |
-            <a href="../patents/">Patents</a> |
-            <a href="../speaking/">Speaking</a> |
-            <a href="../recognitions/">Recognition</a>  
-        </p>
-    </footer>
 
-</main>
-    
+            <!-- =================================================
+                 ARTICLE INTRODUCTION
+                 ================================================= -->
+
+            <section>
+
+                <p>
+                    Smart metering is more than replacing a traditional meter with a digital one. It represents a shift in how utilities measure consumption, collect data, monitor networks and interact with customers.
+                </p>
+
+                <p>
+                    At its simplest, a smart metering system combines a smart meter with communications, a Head-End System (HES), data management platforms and operational applications. Together, these components enable utilities to move from periodic manual meter reading toward automated, more frequent and actionable data collection.
+                </p>
+
+                <p>
+                    For utilities, the value is not simply the ability to obtain meter readings remotely. A well-designed smart metering system can support better operational visibility, faster detection of abnormal consumption, improved billing processes, network monitoring and new digital services.
+                </p>
+
+                <p>
+                    This practical guide introduces the fundamentals of smart metering and Advanced Metering Infrastructure (AMI), explains the major components of a typical system, and highlights the engineering and deployment considerations that utilities should understand before starting a smart metering programme.
+                </p>
+                    
+
+            </section>
+
+
+            <!-- =================================================
+                 KEY TAKEAWAYS
+                 ================================================= -->
+
+            <section>
+
+                <h2>Key Takeaways</h2>
+
+               <ul>
+                    <li>Smart metering is a complete system, not simply a digital replacement for a traditional meter.</li>
+                
+                    <li>AMI connects meters, communication networks, Head-End Systems and data platforms into an integrated utility infrastructure.</li>
+                
+                    <li>Communication technology, power consumption, network coverage and field conditions can significantly affect system performance.</li>
+                
+                    <li>The value of smart metering comes from turning meter data into useful operational and customer insights.</li>
+                
+                    <li>Successful deployments require consideration of the entire system lifecycle, from meter design and connectivity to data management, maintenance and long-term operations.</li>
+                </ul>
+
+            </section>
+
+
+            <!-- =================================================
+                 ARTICLE OVERVIEW
+                 ================================================= -->
+
+            <section>
+
+                <h2>What This Article Covers</h2>
+
+                <p>
+                    This article provides a practical introduction to the architecture and purpose of smart metering systems. It looks beyond the smart meter itself to explain how the meter, communications network, Head-End System (HES), Meter Data Management System (MDMS) and utility applications work together.
+                </p>
+
+                <p>
+                    The discussion also introduces Advanced Metering Infrastructure (AMI) and explains why communication technology, system interoperability, data management and field deployment conditions are important considerations for utilities.
+                </p>
+
+                <p>
+                    Rather than treating smart metering as a single technology, the article approaches it as an integrated infrastructure system that must remain reliable, scalable and maintainable over a long operational lifecycle.
+                </p>
+
+            </section>
+
+
+            <!-- =================================================
+                 PRACTICAL INSIGHTS
+                 ================================================= -->
+
+            <section>
+
+                <h2>Practical Insights for Utilities</h2>
+
+                <p>
+                    One of the most important lessons in smart metering is that the meter is only one part of the overall system. A meter can perform well in laboratory conditions, but the success of a utility deployment depends on the interaction between hardware, communications, software, field conditions and operational processes.
+                </p>
+
+                <p>
+                    For example, communication technology should not be selected based solely on theoretical coverage or bandwidth. Battery life, network availability, installation environment, reporting frequency, retry behaviour and long-term network evolution can all influence the real-world performance of a smart metering system.
+                </p>
+
+                <p>
+                    The same principle applies to the data platform. Collecting millions of meter readings is not the end goal. Utilities need reliable data pipelines, appropriate validation and processing, integration with existing systems and operational processes that can turn the information into useful decisions.
+                </p>
+
+                <p>
+                    This system-level perspective becomes increasingly important as utilities move from small pilots to large-scale deployments. What works for a few hundred meters may not necessarily remain practical when the deployment reaches tens or hundreds of thousands of endpoints.
+                </p>
+
+            </section>
+
+
+            <!-- =================================================
+                 FULL ARTICLE ON MEDIUM
+                 ================================================= -->
+
+            <section class="medium-link">
+
+                <h2>Read the Full Article on Medium</h2>
+
+                <p>
+                    This page provides a practical overview of the topic. The complete article explores the fundamentals of smart metering in greater detail, including the role of AMI, communications, data systems and utility operations.
+                </p>
+
+                <p>
+                    Continue reading the full article on Medium for the complete discussion.
+                </p>
+
+                <p>
+                    <a href="https://medium.com/@smartinfra.insights/what-is-smart-metering-a-practical-guide-for-utilities-and-smart-cities-210f1020e208"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Read the full article on Medium →
+                    </a>
+                </p>
+
+            </section>
+
+
+            <!-- =================================================
+                 RELATED ARTICLES
+                 ================================================= -->
+
+            <section>
+
+                <h2>Related Smart Metering Topics</h2>
+
+                <ul>
+
+                    <li>
+                        <a href="">
+                            NB-IoT vs LoRaWAN vs LTE-M: Choosing the Right IoT Connectivity for Smart Utilities
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="">
+                            Smart Metering in Asia: Challenges, Deployment Lessons, and Real-World Constraints
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="">
+                            From Smart Meters to Smart Decisions: How AMI Data Becomes Intelligence for Utilities and Smart Cities
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="">
+                            What Is AMI (Advanced Metering Infrastructure)? Architecture, Components, and How It Works
+                        </a>
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+        </article>
+
+    </main>
+
+  
+
+<footer>
+
+<p>© 2026 Vincent Wong. All rights reserved.</p>
+
+<p style="font-style: italic; text-align: justify; color: #555;">
+The personal engineering insights shared here represent aspirational industry best practices and do not reflect the active bidding strategies or commercial policies of any current or past employer. Read the full <a href="../about/#disclaimer" style="text-decoration: underline; color: #0066cc; font-weight: bold;">Strategic Disclaimer</a>.
+</p>
+
+<p>
+Smart Metering | AMI | Smart Water | Utility IoT | NB-IoT
+</p>
+<p>
+<a href="../index.html">Home</a> |
+<a href="../about/">About</a> |
+<a href="../whitepapers/">Whitepapers</a> |
+<a href="../publications/">Publications |
+<a href="../patents/">Patents</a> |
+<a href="../speaking/">Speaking</a> |
+<a href="../recognitions/">Recognition</a>  
+</p>
+
+</footer>
+
 </body>
 </html>
