@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- =========================================================
+         BASIC SEO
+         ========================================================= -->
+
+    <title>
+        Why Smart Metering Pilots Fail at Scale: How Utilities Can Avoid It | Vincent Wong
+    </title>
+
+    <meta name="description"
+          content="Why smart metering pilots fail at scale, covering connectivity, operational complexity, integration, battery life, cost, data utilization and deployment readiness.">
+
+    <meta name="author"
+          content="Vincent Wong Yew Hon">
+
+    <!-- Canonical URL of THIS GitHub Pages article -->
+    <link rel="canonical"
+          href="https://vincentwong-smartmetering.github.io/publications/why-smart-metering-pilots-fail.html">
+
+
+    <!-- =========================================================
+         OPEN GRAPH
+         Used when the article is shared on LinkedIn,
+         Facebook and other social platforms.
+         ========================================================= -->
+
+    <meta property="og:type"
+    content="article">
+    
+    <meta property="og:title"
+    content="Why Smart Metering Pilots Fail at Scale — And How Utilities Can Avoid It">
+    
+    <meta property="og:description"
+    content="Why smart metering pilots succeed technically but struggle at scale—and what utilities should validate before moving into full deployment.">
+    
+    <meta property="og:url"
+    content="https://vincentwong-smartmetering.github.io/publications/why-smart-metering-pilots-fail.html">
+    
+    <meta property="og:site_name"
+    content="Vincent Wong Smart Metering">
+    
+    <!-- Recommended image size: 1200 × 630 px -->
+    
+    <meta property="og:image"
+    content="https://vincentwong-smartmetering.github.io/publications/images/why-smart-metering-pilots-fail.jpg">
+    
+    <meta property="og:image:alt"
+    content="Why Smart Metering Pilots Fail at Scale — And How Utilities Can Avoid It">
+    
+    <meta property="og:locale"
+    content="en_US">
+
+
+    <!-- =========================================================
+         ARTICLE METADATA
+         ========================================================= -->
+
+    <meta property="article:author"
+    content="Vincent Wong Yew Hon">
+    
+    <meta property="article:published_time"
+    content="2026-04-19">
+    
+    <meta property="article:modified_time"
+    content="2026-04-19">
+    
+    <meta property="article:section"
+    content="Smart Metering Fundamentals">
+
+
+    <!-- =========================================================
+         TWITTER / X
+         ========================================================= -->
+
+    <meta name="twitter:card"
+    content="summary_large_image">
+    
+    <meta name="twitter:title"
+    content="Why Smart Metering Pilots Fail at Scale — And How Utilities Can Avoid It">
+    
+    <meta name="twitter:description"
+    content="Why smart metering pilots succeed technically but struggle at scale—and what utilities should validate before full deployment.">
+    
+    <meta name="twitter:image"
+    content="https://vincentwong-smartmetering.github.io/publications/images/why-smart-metering-pilots-fail.jpg">
+    
+    <meta name="twitter:image:alt"
+    content="Why Smart Metering Pilots Fail at Scale — And How Utilities Can Avoid It">
+
+
+    <!-- =========================================================
+         ARTICLE STRUCTURED DATA
+         Helps search engines understand the article,
+         author and relationship to the page.
+         ========================================================= -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+    
+      "headline": "Why Smart Metering Pilots Fail at Scale — And How Utilities Can Avoid It",
+    
+      "description": "Why smart metering pilots fail to translate into successful large-scale deployments, covering connectivity, operational complexity, integration, battery performance, cost and data utilization.",
+    
+      "url": "https://vincentwong-smartmetering.github.io/publications/why-smart-metering-pilots-fail.html",
+    
+      "datePublished": "2026-04-19",
+    
+      "dateModified": "2026-04-19",
+    
+      "author": {
+        "@type": "Person",
+        "name": "Vincent Wong Yew Hon",
+        "url": "https://vincentwong-smartmetering.github.io/about/"
+      },
+    
+      "image": [
+        "https://vincentwong-smartmetering.github.io/publications/images/why-smart-metering-pilots-fail.jpg"
+      ],
+    
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://vincentwong-smartmetering.github.io/publications/why-smart-metering-pilots-fail.html"
+      }
+    }
+    </script>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<style>
+
+/* Fixes the main hero image scaling on mobile devices */
+.article-hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.article-category {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #0066cc; 
+    margin-bottom: 8px;
+}
+
+.article-meta {
+    font-size: 0.95rem;         /* Slightly smaller than body text */
+    color: #64748b;             /* Subdued gray to sit quietly in the background */
+    margin-top: 0;
+    margin-bottom: 28px;        /* Creates clean space before the hero image starts */
+}
+
+.article-subtitle {
+    font-size: 1.25rem;         /* Visually larger than body text */
+    font-weight: 400;           /* Lighter weight to contrast with the bold H1 */
+    color: #4a5568;             /* Soft charcoal slate color (easier on eyes) */
+    line-height: 1.5;           /* Relaxed spacing for high readability */
+    margin-top: 0;              
+    margin-bottom: 24px;        /* Pushes metadata neatly down */
+}
+
+.article-header h1 {
+    font-size: 2.2rem;          /* Pronounced, high-contrast size */
+    font-weight: 800;           /* Clean, bold appearance */
+    color: #002244;             /* Premium, deep corporate blue */
+    line-height: 1.25;          /* Gives text breathing room when it wraps */
+    margin-top: 8px;            /* Tight gap beneath the category kicker */
+    margin-bottom: 12px;        /* Controlled space above the subtitle */
+    letter-spacing: -0.02em;    /* Slightly tighter tracking for a modern feel */
+}
+
+</style>
+</head>
+
+<body>
+
+<h1 id="top">Publications</h1>
+
+<nav>
+    <a href="../">Home</a>
+    <a href="../about/">About</a>
+    <a href="../whitepapers/">Whitepapers</a>
+    <a href="../publications/">Publications</a>
+    <a href="../patents/">Patents</a>
+    <a href="../speaking/">Speaking</a>
+    <a href="../recognitions/">Recognition</a>
+</nav>
+
+<hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 25px;">
+    
+
+<main class="container">
+
+        <article>
+
+            <!-- =================================================
+                 ARTICLE HEADER
+                 ================================================= -->
+
+            <header class="article-header">
+
+            <p class="article-category">
+            
+            Smart Metering Fundamentals
+            
+            </p>
+            
+            <h1>
+            
+            Why Smart Metering Pilots Fail at Scale — And How Utilities Can Avoid It
+            
+            </h1>
+            
+            <p class="article-subtitle">
+            
+            Why a technically successful smart metering pilot does not automatically translate into reliable, scalable and operationally sustainable deployment.
+            
+            </p>
+            
+            <div class="article-hero">
+            
+            <img src="images/why-smart-metering-pilots-fail.jpg"
+            
+            alt="Why Smart Metering Pilots Fail at Scale — And How Utilities Can Avoid It"
+            
+            loading="eager">
+            
+            </div>
+            
+            <p class="article-meta">
+            
+            By <strong>Vincent Wong Yew Hon</strong>
+            
+            · 19 April 2026
+            
+            </p>
+            
+            </header>
+
+
+            <!-- =================================================
+                 ARTICLE INTRODUCTION
+                 ================================================= -->
+
+            <section>
+
+            <p>
+            
+            Smart metering pilots are often successful.
+            
+            </p>
+            
+            <p>
+            
+            They demonstrate that meters can communicate, devices can collect data, and the overall system can function under controlled deployment conditions.
+            
+            </p>
+            
+            <p>
+            
+            However, pilot success does not automatically guarantee successful large-scale deployment.
+            
+            </p>
+            
+            <p>
+            
+            The difference is the operating environment. A pilot typically involves a limited number of meters, carefully selected locations, dedicated project resources and close technical support. Once deployment expands, the utility must deal with a much wider range of installation conditions, communication environments, operational processes and system dependencies.
+            
+            </p>
+            
+            <p>
+            
+            Connectivity performance, installation logistics, backend integration, battery performance, cost assumptions and data utilization can all behave differently at scale.
+            
+            </p>
+            
+            <p>
+            
+            This article examines why smart metering pilots can fail to translate into successful large-scale programmes and highlights practical considerations utilities should address before moving from pilot to full deployment.
+            
+            </p>
+            
+            </section>
+
+
+            <!-- =================================================
+                 KEY TAKEAWAYS
+                 ================================================= -->
+
+            <section>
+
+            <h2>Key Takeaways</h2>
+            
+            <ul>
+            
+            <li>
+            A successful pilot proves technical feasibility, but it does not automatically prove large-scale operational readiness.
+            </li>
+            
+            <li>
+            Pilot sites often underrepresent difficult environments such as underground installations, dense urban areas and locations with weaker connectivity.
+            </li>
+            
+            <li>
+            Communication performance, operational workload and system dependencies can change significantly as the number of endpoints increases.
+            </li>
+            
+            <li>
+            Battery performance observed during pilots may differ from field reality because signal conditions, communication retries and device behaviour vary across deployment environments.
+            </li>
+            
+            <li>
+            Backend integration, installation logistics, maintenance and total cost of ownership must be considered before committing to full-scale rollout.
+            </li>
+            
+            <li>
+            The most effective pilots are designed as early deployment models rather than isolated proof-of-concept exercises.
+            </li>
+            
+            </ul>
+            
+            </section>
+
+
+            <!-- =================================================
+                 ARTICLE OVERVIEW
+                 ================================================= -->
+
+            <section>
+
+            <h2>What This Article Covers</h2>
+            
+            <p>
+            
+            This article examines the gap between smart metering pilot success and large-scale deployment success.
+            
+            </p>
+            
+            <p>
+            
+            It looks at seven areas where assumptions made during a pilot can break down at scale: representation of real-world conditions, connectivity performance, operational complexity, backend integration, battery performance, cost assumptions and data utilization.
+            
+            </p>
+            
+            <p>
+            
+            The discussion then considers how utilities can redesign the role of pilots so that they provide evidence not only of technical feasibility, but also of operational readiness and scalability.
+            
+            </p>
+            
+            <p>
+            
+            The objective is not to eliminate pilots, but to make them more representative of the conditions and challenges that will exist during full deployment.
+            
+            </p>
+            
+            </section>
+
+
+            <!-- =================================================
+                 PRACTICAL INSIGHTS
+                 ================================================= -->
+
+            <section>
+
+            <h2>Practical Insights for Utilities</h2>
+            
+            <p>
+            
+            The first question a pilot should answer is not simply whether the technology works. It should determine whether the technology can continue to work reliably when the deployment environment becomes significantly more diverse.
+            
+            </p>
+            
+            <p>
+            
+            Site selection therefore matters. A pilot dominated by easily accessible locations with strong communications coverage can produce an overly optimistic picture of field performance. Difficult locations—including underground meter chambers, dense urban buildings and infrastructure-constrained areas—should be deliberately represented where they are relevant to the eventual deployment.
+            
+            </p>
+            
+            <p>
+            
+            Connectivity should also be evaluated beyond coverage. A device that can connect successfully during a pilot may experience increased retries, latency or communication failures as endpoint density and environmental variability increase.
+            
+            </p>
+            
+            <p>
+            
+            Operational processes should be tested early as well. At a few hundred meters, manual intervention may be manageable. At tens or hundreds of thousands of endpoints, provisioning, installation, activation, exception handling, maintenance and customer coordination need standardized and scalable processes.
+            
+            </p>
+            
+            <p>
+            
+            Backend integration is another area that should not be postponed until after the pilot. Billing, customer information, operational and data-management systems can expose limitations that are invisible when a pilot uses simplified or manually supported workflows.
+            
+            </p>
+            
+            <p>
+            
+            Battery life deserves the same treatment. A battery specification validated under favourable conditions does not necessarily represent field life. Communication retries, signal conditions, reporting frequency and environmental conditions can materially change energy consumption.
+            
+            </p>
+            
+            <p>
+            
+            Finally, the pilot should demonstrate how the collected data will actually be used. If the eventual deployment is intended to support leak detection, abnormal consumption analysis, revenue protection or operational decision-making, those workflows should be considered during the pilot rather than after millions of meters have been installed.
+            
+            </p>
+            
+            <p>
+            
+            A useful pilot should therefore answer a larger question: not simply <em>“Can we deploy this?”</em>, but <em>“Can we operate this reliably and economically at the scale we ultimately require?”</em>
+            
+            </p>
+            
+            </section>
+
+
+            <!-- =================================================
+                 FULL ARTICLE ON MEDIUM
+                 ================================================= -->
+
+            <section class="medium-link">
+
+            <h2>Read the Full Article on Medium</h2>
+            
+            <p>
+            
+            This page provides a practical overview of why smart metering pilots can perform well under controlled conditions but encounter significant challenges when moving to large-scale deployment.
+            
+            </p>
+            
+            <p>
+            
+            The complete article examines connectivity, operational complexity, backend integration, battery performance, cost assumptions and data utilization, and explains how utilities can design pilots to better prepare for full-scale rollout.
+            
+            </p>
+            
+            <p>
+            
+            Continue reading the full article on Medium for the complete discussion.
+            
+            </p>
+            
+            <p>
+            
+            <a href="https://medium.com/@smartinfra.insights/why-smart-metering-pilots-fail-at-scale-and-how-utilities-can-avoid-it-153170fa2271"
+            
+            target="_blank"
+            
+            rel="noopener noreferrer">
+            
+            Read the full article on Medium →
+            
+            </a>
+            
+            </p>
+            
+            </section>
+
+
+            <!-- =================================================
+                 RELATED ARTICLES
+                 ================================================= -->
+
+            <section>
+
+            <h2>Related Smart Metering Topics</h2>
+            
+            <ul>
+            
+            <li>
+            <a href="what-is-smart-metering.html">
+            What Is Smart Metering? A Practical Guide for Utilities and Smart Cities
+            </a>
+            </li>
+            
+            <li>
+            <a href="nb-iot-vs-lorawan-vs-lte-m.html">
+            NB-IoT vs LoRaWAN vs LTE-M: Choosing the Right IoT Connectivity for Smart Utilities
+            </a>
+            </li>
+            
+            <li>
+            <a href="smart-metering-in-asia.html">
+            Smart Metering in Asia: Challenges, Deployment Lessons, and Real-World Constraints
+            </a>
+            </li>
+            
+            <li>
+            <a href="from-smart-meters-to-smart-decisions.html">
+            From Smart Meters to Smart Decisions: How AMI Data Becomes Intelligence for Utilities and Smart Cities
+            </a>
+            </li>
+            
+            <li>
+            What Is AMI (Advanced Metering Infrastructure)? Architecture, Components, and How It Works
+            </li>
+            
+            </ul>
+            
+            </section>
+
+
+        </article>
+
+    </main>
+
+  
+
+<footer>
+
+<p>© 2026 Vincent Wong. All rights reserved.</p>
+
+<p style="font-style: italic; text-align: justify; color: #555;">
+The personal engineering insights shared here represent aspirational industry best practices and do not reflect the active bidding strategies or commercial policies of any current or past employer. Read the full <a href="../about/#disclaimer" style="text-decoration: underline; color: #0066cc; font-weight: bold;">Strategic Disclaimer</a>.
+</p>
+
+<p>
+Smart Metering | AMI | Smart Water | Utility IoT | NB-IoT
+</p>
+<p>
+<a href="../index.html">Home</a> |
+<a href="../about/">About</a> |
+<a href="../whitepapers/">Whitepapers</a> |
+<a href="../publications/">Publications</a> |
+<a href="../patents/">Patents</a> |
+<a href="../speaking/">Speaking</a> |
+<a href="../recognitions/">Recognition</a>  
+</p>
+
+</footer>
+
+</body>
+</html>
