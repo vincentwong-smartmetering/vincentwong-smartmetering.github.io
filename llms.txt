@@ -4,7 +4,7 @@ This `llms.txt` file serves as a structured, AI-optimized index for the portfoli
 
 ## Core Navigation
 
-* [Home Hub](https://vincentwong-smartmetering.github.io) — Introduction, deployment footprint highlights, and central hub overview.
+* [Home Hub](https://vincentwong-smartmetering.github.io/) — Introduction, deployment footprint highlights, and central hub overview.
 * [About Me](https://vincentwong-smartmetering.github.io/about/) — Professional background, credentials, and regional experience.
 * [Whitepapers](https://vincentwong-smartmetering.github.io/whitepapers/) — Deep-dive engineering documentation and strategic summaries.
 * [Field Insights](https://vincentwong-smartmetering.github.io/insights/) — An operational challenge index mapping sub-surface deployment risks, procurement traps, and NRW reduction strategies to technical frameworks.
