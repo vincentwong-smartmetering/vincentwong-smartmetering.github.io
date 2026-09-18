@@ -1,5 +1,21 @@
 User-agent: *
 Allow: /
 
+# Explicitly prioritize indexing for AI search assistants
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: MSNBot-Media
+Allow: /
+
 Sitemap: https://vincentwong-smartmetering.github.io/sitemap.xml
 
