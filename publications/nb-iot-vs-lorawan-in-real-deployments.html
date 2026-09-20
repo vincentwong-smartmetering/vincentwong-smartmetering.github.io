@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NB-IoT vs LoRaWAN in Real Deployments: What Actually Happens in the Field | Vincent Wong</title>
+
+<meta name="description" content="What actually happens when NB-IoT and LoRaWAN move from pilot projects into real smart metering deployments, including coverage, battery life, scalability, ownership and maintenance.">
+<meta name="author" content="Vincent Wong Yew Hon">
+
+<link rel="canonical" href="https://vincentwong-smartmetering.github.io/publications/nb-iot-vs-lorawan-in-real-deployments.html">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="NB-IoT vs LoRaWAN in Real Deployments: What Actually Happens in the Field">
+<meta property="og:description" content="A practical look at how NB-IoT and LoRaWAN behave in real smart metering deployments, beyond theoretical specifications.">
+<meta property="og:url" content="https://vincentwong-smartmetering.github.io/publications/nb-iot-vs-lorawan-in-real-deployments.html">
+<meta property="og:site_name" content="Vincent Wong Smart Metering">
+<meta property="og:image" content="https://vincentwong-smartmetering.github.io/publications/images/nb-iot-vs-lorawan-in-real-deployments.jpg">
+<meta property="og:image:alt" content="NB-IoT vs LoRaWAN in Real Deployments: What Actually Happens in the Field">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Vincent Wong Yew Hon">
+<meta property="article:published_time" content="2026-06-04">
+<meta property="article:modified_time" content="2026-06-04">
+<meta property="article:section" content="Smart Metering Deployment">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NB-IoT vs LoRaWAN in Real Deployments: What Actually Happens in the Field">
+<meta name="twitter:description" content="What changes when NB-IoT and LoRaWAN move from pilot projects into real smart metering deployments.">
+<meta name="twitter:image" content="https://vincentwong-smartmetering.github.io/publications/images/nb-iot-vs-lorawan-in-real-deployments.jpg">
+<meta name="twitter:image:alt" content="NB-IoT vs LoRaWAN in Real Deployments: What Actually Happens in the Field">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "NB-IoT vs LoRaWAN in Real Deployments: What Actually Happens in the Field",
+  "description": "A practical look at how NB-IoT and LoRaWAN behave in real smart metering deployments, beyond theoretical specifications.",
+  "url": "https://vincentwong-smartmetering.github.io/publications/nb-iot-vs-lorawan-in-real-deployments.html",
+  "datePublished": "2026-06-04",
+  "dateModified": "2026-06-04",
+  "author": {
+    "@type": "Person",
+    "name": "Vincent Wong Yew Hon",
+    "url": "https://vincentwong-smartmetering.github.io/about/"
+  },
+  "image": "https://vincentwong-smartmetering.github.io/publications/images/nb-iot-vs-lorawan-in-real-deployments.jpg",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://vincentwong-smartmetering.github.io/publications/nb-iot-vs-lorawan-in-real-deployments.html"
+  }
+}
+</script>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<style>
+
+/* Fixes the main hero image scaling on mobile devices */
+.article-hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.article-category {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #0066cc; 
+    margin-bottom: 8px;
+}
+
+.article-meta {
+    font-size: 0.95rem;         /* Slightly smaller than body text */
+    color: #64748b;             /* Subdued gray to sit quietly in the background */
+    margin-top: 0;
+    margin-bottom: 28px;        /* Creates clean space before the hero image starts */
+}
+
+.article-subtitle {
+    font-size: 1.25rem;         /* Visually larger than body text */
+    font-weight: 400;           /* Lighter weight to contrast with the bold H1 */
+    color: #4a5568;             /* Soft charcoal slate color (easier on eyes) */
+    line-height: 1.5;           /* Relaxed spacing for high readability */
+    margin-top: 0;              
+    margin-bottom: 24px;        /* Pushes metadata neatly down */
+}
+
+.article-header h1 {
+    font-size: 2.2rem;          /* Pronounced, high-contrast size */
+    font-weight: 800;           /* Clean, bold appearance */
+    color: #002244;             /* Premium, deep corporate blue */
+    line-height: 1.25;          /* Gives text breathing room when it wraps */
+    margin-top: 8px;            /* Tight gap beneath the category kicker */
+    margin-bottom: 12px;        /* Controlled space above the subtitle */
+    letter-spacing: -0.02em;    /* Slightly tighter tracking for a modern feel */
+}
+
+</style>
+</head>
+
+<body>
+
+<h1 id="top">Publications</h1>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/whitepapers/">Whitepapers</a>
+    <a href="/publications/">Publications</a>
+    <a href="/patents/">Patents</a>
+    <a href="/speaking/">Speaking</a>
+    <a href="/recognition/">Recognition</a>
+</nav>
+
+<hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 25px;">
+    
+
+<main class="container">
+
+        <article>
+
+            <!-- =================================================
+                 ARTICLE HEADER
+                 ================================================= -->
+
+<header class="article-header">
+
+<p class="article-category">
+Smart Metering Deployment
+</p>
+
+<h1>
+NB-IoT vs LoRaWAN in Real Deployments: What Actually Happens in the Field
+</h1>
+
+<p class="article-subtitle">
+What changes when NB-IoT and LoRaWAN move from pilot projects and specifications into real-world smart metering deployments.
+</p>
+
+<div class="article-hero">
+
+<img src="/publications/images/nb-iot-vs-lorawan-in-real-deployments.jpg" width="1536" height="1024"
+alt="NB-IoT vs LoRaWAN in Real Deployments: What Actually Happens in the Field"
+loading="eager">
+
+</div>
+
+<p class="article-meta">
+By <strong>Vincent Wong Yew Hon</strong> · 4 June 2026
+</p>
+
+</header>
+
+            <!-- =================================================
+                 ARTICLE INTRODUCTION
+                 ================================================= -->
+
+<section>
+
+<p>
+When evaluating connectivity for smart metering, the conversation often starts with technical specifications: coverage range, battery life, throughput and network architecture.
+</p>
+
+<p>
+On paper, comparing technologies such as NB-IoT and LoRaWAN can seem straightforward. In real deployments, however, connectivity decisions become significantly more complex.
+</p>
+
+<p>
+What works well during pilot projects or under ideal test conditions may behave differently once systems scale across diverse operating environments.
+</p>
+
+<p>
+For utilities, choosing connectivity is rarely about identifying a universally better technology. It is about understanding trade-offs, operational realities and deployment context.
+</p>
+
+</section>
+
+
+<section>
+
+<h2>Key Takeaways</h2>
+
+<ul>
+
+<li>Real-world connectivity performance depends heavily on deployment conditions, not specifications alone.</li>
+
+<li>Coverage planning is particularly important in basements, underground chambers, dense urban areas and other challenging locations.</li>
+
+<li>Battery performance is influenced directly by connectivity behaviour, including retransmissions and communication time.</li>
+
+<li>NB-IoT and LoRaWAN create different operational models around network ownership, maintenance and scalability.</li>
+
+<li>Pilot success does not necessarily translate directly into large-scale operational success.</li>
+
+<li>Connectivity selection should consider the utility's long-term operating model, not only technical capability.</li>
+
+</ul>
+
+</section>
+
+
+<section>
+
+<h2>Why Connectivity Decisions Matter in Smart Metering</h2>
+
+<p>
+Connectivity is one of the most important design decisions in a smart metering system.
+</p>
+
+<p>
+It affects:
+</p>
+
+<ul>
+
+<li>Battery performance</li>
+<li>Deployment cost</li>
+<li>Network reliability</li>
+<li>Operational maintenance</li>
+<li>Scalability</li>
+<li>Long-term flexibility</li>
+
+</ul>
+
+<p>
+Smart meters are expected to operate reliably for years, often in difficult installation environments with minimal intervention.
+</p>
+
+<p>
+A connectivity decision made during procurement can therefore influence operational outcomes for a decade or more.
+</p>
+
+<p>
+This is why technology selection should not rely solely on datasheets or vendor claims. Deployment reality matters.
+</p>
+
+</section>
+
+
+<section>
+
+<h2>What Looks Different on Paper</h2>
+
+<p>
+At a high level, both NB-IoT and LoRaWAN are designed for low-power, wide-area communication. However, their operating models are fundamentally different.
+</p>
+
+<h3>NB-IoT</h3>
+
+<p>
+NB-IoT typically operates on licensed cellular infrastructure managed by telecommunications providers.
+</p>
+
+<ul>
+
+<li>Managed network infrastructure</li>
+<li>Wide-area operator coverage</li>
+<li>Integration with existing telecom ecosystems</li>
+
+</ul>
+
+<h3>LoRaWAN</h3>
+
+<p>
+LoRaWAN typically operates through privately managed or shared gateway networks.
+</p>
+
+<ul>
+
+<li>Deployment flexibility</li>
+<li>Local network ownership and control</li>
+<li>Potentially lower infrastructure costs in targeted areas</li>
+
+</ul>
+
+<p>
+On paper, both can appear suitable for smart metering. In practice, the differences become more visible after deployment.
+</p>
+
+</section>
+
+
+<section>
+
+<h2>What Actually Happens in the Field</h2>
+
+<h3>1. Coverage Reality Is Often More Complicated Than Expected</h3>
+
+<p>
+Coverage discussions often begin with theoretical range, but real deployments are influenced by much more practical considerations.
+</p>
+
+<p>
+Meters are frequently installed in:
+</p>
+
+<ul>
+
+<li>Basements</li>
+<li>Underground chambers</li>
+<li>Dense urban environments</li>
+<li>Concrete structures</li>
+<li>Remote infrastructure locations</li>
+
+</ul>
+
+<p>
+Under these conditions, signal behaviour matters more than marketing claims.
+</p>
+
+<p>
+NB-IoT generally benefits from cellular-grade infrastructure and deep-coverage optimizations, particularly in areas already supported by mobile operators. However, performance can still vary depending on operator network maturity and local signal conditions.
+</p>
+
+<p>
+LoRaWAN can perform well in targeted deployments, especially where gateway placement is carefully planned and optimized for the environment. However, coverage consistency depends heavily on gateway density, placement strategy and local interference conditions.
+</p>
+
+<p>
+Many deployment issues are therefore not caused by technology limitations alone, but by assumptions made during coverage planning.
+</p>
+
+
+<h3>2. Battery Life Depends on Conditions, Not Specifications</h3>
+
+<p>
+One of the common misconceptions in smart metering is assuming that battery life is fixed.
+</p>
+
+<p>
+In reality, connectivity behaviour directly affects power consumption.
+</p>
+
+<p>
+Poor signal quality can lead to:
+</p>
+
+<ul>
+
+<li>Retransmissions</li>
+<li>Longer connection times</li>
+<li>Increased radio activity</li>
+<li>Higher transmission power</li>
+
+</ul>
+
+<p>
+This affects both NB-IoT and LoRaWAN deployments.
+</p>
+
+<p>
+A meter operating under weak signal conditions may consume significantly more energy than an identical device installed under ideal coverage.
+</p>
+
+<p>
+Battery life therefore becomes a system outcome rather than simply a protocol specification.
+</p>
+
+
+<h3>3. Scalability Becomes an Operational Question</h3>
+
+<p>
+Small pilot projects often behave differently from large-scale rollouts.
+</p>
+
+<p>
+At limited scale, both NB-IoT and LoRaWAN can appear straightforward. Complexity increases once deployments grow.
+</p>
+
+<p>
+With NB-IoT, scalability benefits from existing telecom infrastructure, which can reduce the burden of managing connectivity networks internally.
+</p>
+
+<p>
+LoRaWAN provides greater flexibility and ownership, but may require more active planning around:
+</p>
+
+<ul>
+
+<li>Gateway deployment</li>
+<li>Network maintenance</li>
+<li>Interference management</li>
+<li>Capacity optimization</li>
+
+</ul>
+
+<p>
+The operational implications are different rather than inherently superior or inferior.
+</p>
+
+
+<h3>4. Network Ownership Changes the Operating Model</h3>
+
+<p>
+One of the largest differences between NB-IoT and LoRaWAN is operational ownership.
+</p>
+
+<p>
+With NB-IoT, utilities typically depend on mobile network operators for connectivity infrastructure.
+</p>
+
+<p>
+This can provide:
+</p>
+
+<ul>
+
+<li>Simplified deployment</li>
+<li>Managed infrastructure</li>
+<li>Reduced internal network operations</li>
+
+</ul>
+
+<p>
+However, it also introduces dependency on operator coverage quality, subscription models and telecom availability.
+</p>
+
+<p>
+LoRaWAN provides greater ownership and control. Utilities can deploy and manage private gateway infrastructure, allowing more customization and potentially greater independence.
+</p>
+
+<p>
+At the same time, ownership also creates responsibility. Coverage planning, maintenance, optimization and troubleshooting can become part of internal operations.
+</p>
+
+
+<h3>5. Firmware and Maintenance Behave Differently Than Expected</h3>
+
+<p>
+Connectivity decisions influence more than data transmission. They also affect long-term operational maintenance.
+</p>
+
+<p>
+Firmware updates, retry logic, communication intervals and device behaviour all interact with connectivity performance.
+</p>
+
+<p>
+Utilities may change operating requirements after deployment. For example:
+</p>
+
+<ul>
+
+<li>Reporting frequency may increase</li>
+<li>Additional alarms may be enabled</li>
+<li>Retry settings may be adjusted to improve reliability</li>
+
+</ul>
+
+<p>
+These changes can alter performance assumptions established during pilots.
+</p>
+
+<p>
+Real deployments are dynamic rather than static.
+</p>
+
+</section>
+
+
+<section>
+
+<h2>Where NB-IoT Often Performs Well</h2>
+
+<p>
+NB-IoT is commonly effective when utilities prioritize:
+</p>
+
+<ul>
+
+<li>Wide-area coverage through telecom infrastructure</li>
+<li>Simplified connectivity operations</li>
+<li>Integration with operator-managed networks</li>
+<li>Large-scale deployments across geographically dispersed areas</li>
+
+</ul>
+
+<p>
+It can be particularly attractive when utilities prefer not to manage communications infrastructure themselves.
+</p>
+
+</section>
+
+
+<section>
+
+<h2>Where LoRaWAN Often Performs Well</h2>
+
+<p>
+LoRaWAN is commonly effective when utilities prioritize:
+</p>
+
+<ul>
+
+<li>Infrastructure ownership and control</li>
+<li>Flexible deployment models</li>
+<li>Targeted coverage optimization</li>
+<li>Localized or campus-style deployments</li>
+
+</ul>
+
+<p>
+It can perform especially well where gateway placement can be carefully engineered to suit environmental conditions.
+</p>
+
+</section>
+
+
+<section>
+
+<h2>Common Connectivity Selection Mistakes</h2>
+
+<h3>1. Treating Specifications as Guarantees</h3>
+
+<p>
+Coverage, battery life and reliability are highly dependent on deployment conditions. Laboratory assumptions rarely translate perfectly into field reality.
+</p>
+
+
+<h3>2. Optimizing for Pilot Success Instead of Operational Scale</h3>
+
+<p>
+What works across hundreds of devices may become difficult to manage across much larger deployments.
+</p>
+
+
+<h3>3. Underestimating Network Planning</h3>
+
+<p>
+Connectivity quality is often influenced more by implementation decisions than by protocol choice alone.
+</p>
+
+
+<h3>4. Ignoring Long-Term Operational Ownership</h3>
+
+<p>
+The question is not only which technology works, but which operating model the utility can realistically sustain over the long term.
+</p>
+
+</section>
+
+
+<section>
+
+<h2>A Practical Decision Framework for Utilities</h2>
+
+<p>
+Rather than asking whether NB-IoT or LoRaWAN is better, utilities should consider the operational context of the deployment.
+</p>
+
+<ul>
+
+<li>What installation environments exist?</li>
+
+<li>Who will manage network operations?</li>
+
+<li>What level of coverage consistency is required?</li>
+
+<li>How important is infrastructure ownership?</li>
+
+<li>What reporting frequency and device behaviour are expected?</li>
+
+<li>How will requirements evolve after deployment?</li>
+
+</ul>
+
+<p>
+In many cases, the answer depends more on operational priorities than on technology capability alone.
+</p>
+
+</section>
+
+
+<section>
+
+<h2>Conclusion</h2>
+
+<p>
+NB-IoT and LoRaWAN are both established technologies for smart metering and utility IoT.
+</p>
+
+<p>
+The question is rarely which technology is universally superior.
+</p>
+
+<p>
+Instead, successful deployment depends on how well the chosen connectivity model aligns with deployment conditions, operational capabilities and long-term utility objectives.
+</p>
+
+<p>
+In real deployments, connectivity performance is shaped not only by protocol design but also by coverage planning, operating models, device behaviour and system decisions.
+</p>
+
+<p>
+Connectivity should therefore be treated as an operational strategy — not simply a technology choice.
+</p>
+
+</section>
+          
+
+            <!-- =================================================
+                 FULL ARTICLE ON MEDIUM
+                 ================================================= -->
+
+<section class="medium-link">
+
+<h2>Read the Full Article on Medium</h2>
+
+<p>
+This article was originally published on Medium, where the full discussion explores what actually happens when NB-IoT and LoRaWAN move from pilot projects into real-world smart metering deployments.
+</p>
+
+<p>
+<a href="https://medium.com/@smartinfra.insights/nb-iot-vs-lorawan-in-real-deployments-what-actually-happens-in-the-field-824b1e0c0f53"
+target="_blank"
+rel="noopener noreferrer">
+Read the Full Article on Medium →
+</a>
+</p>
+
+</section>
+            <!-- =================================================
+                 RELATED ARTICLES
+                 ================================================= -->
+
+<section>
+
+<h2>Related Smart Metering Topics</h2>
+
+<ul>
+
+<li>
+<a href="/publications/nb-iot-vs-lorawan-vs-lte-m.html">
+NB-IoT vs LoRaWAN vs LTE-M: Choosing the Right IoT Connectivity for Smart Utilities
+</a>
+</li>
+
+<li>
+<a href="/publications/what-is-nb-iot.html">
+What Is NB-IoT? A Practical Guide for IoT and Smart Metering Deployments
+</a>
+</li>
+
+<li>
+<a href="/publications/lorawan-explained.html">
+LoRaWAN Explained: Architecture, Use Cases, and Limitations in Real Deployments
+</a>
+</li>
+
+<li>
+<a href="/publications/smart-meter-battery-life.html">
+Smart Meter Battery Life Explained: Why “10 Years” Is Not Just a Specification
+</a>
+</li>
+
+<li>
+<a href="/publications/smart-metering-in-asia.html">
+Smart Metering in Asia: Challenges, Deployment Lessons, and Real-World Constraints
+</a>
+</li>
+
+<li>
+<a href="/publications/why-smart-metering-pilots-fail.html">
+Why Smart Metering Pilots Fail at Scale — And How Utilities Can Avoid It
+</a>
+</li>
+
+<li>
+<a href="/publications/smart-metering-architecture.html">
+Smart Metering System Architecture: End-to-End Design for Utilities
+</a>
+</li>
+
+</ul>
+
+</section>
+
+
+
+        </article>
+
+    </main>
+
+  
+
+<footer>
+
+<p>© 2026 Vincent Wong. All rights reserved.</p>
+
+<p style="font-style: italic; text-align: justify; color: #555;">
+The personal engineering insights shared here represent aspirational industry best practices and do not reflect the active bidding strategies or commercial policies of any current or past employer. Read the full <a href="/about/#disclaimer" style="text-decoration: underline; color: #0066cc; font-weight: bold;">Strategic Disclaimer</a>.
+</p>
+
+<p>
+Smart Metering | AMI | Smart Water | Utility IoT | NB-IoT
+</p>
+<p>
+<a href="/">Home</a> |
+<a href="/about/">About</a> |
+<a href="/whitepapers/">Whitepapers</a> |
+<a href="/publications/">Publications</a> |
+<a href="/patents/">Patents</a> |
+<a href="/speaking/">Speaking</a> |
+<a href="/recognition/">Recognition</a>  
+</p>
+
+</footer>
+
+</body>
+</html>
