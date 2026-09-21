@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Utility Procurement for AMI: How to Avoid Costly Mistakes | Vincent Wong</title>
+
+<meta name="description" content="A practical guide to AMI procurement, covering total cost of ownership, integration, interoperability, cybersecurity, SLAs, vendor stability and long-term lifecycle risks.">
+
+<meta name="author" content="Vincent Wong Yew Hon">
+
+<link rel="canonical" href="https://vincentwong-smartmetering.github.io/publications/utility-procurement-for-ami.html">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Utility Procurement for AMI: How to Avoid Costly Mistakes">
+<meta property="og:description" content="A practical guide to the procurement decisions that influence AMI cost, flexibility, cybersecurity, integration and long-term operational performance.">
+<meta property="og:url" content="https://vincentwong-smartmetering.github.io/publications/utility-procurement-for-ami.html">
+<meta property="og:site_name" content="Vincent Wong Smart Metering">
+<meta property="og:image" content="https://vincentwong-smartmetering.github.io/publications/images/utility-procurement-for-ami.jpg">
+<meta property="og:image:alt" content="Utility Procurement for AMI: How to Avoid Costly Mistakes">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Vincent Wong Yew Hon">
+<meta property="article:published_time" content="2026-07-09">
+<meta property="article:modified_time" content="2026-07-09">
+<meta property="article:section" content="AMI Procurement">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Utility Procurement for AMI: How to Avoid Costly Mistakes">
+<meta name="twitter:description" content="A practical guide to AMI procurement, from business objectives and total cost of ownership to integration, cybersecurity and lifecycle support.">
+<meta name="twitter:image" content="https://vincentwong-smartmetering.github.io/publications/images/utility-procurement-for-ami.jpg">
+<meta name="twitter:image:alt" content="Utility Procurement for AMI: How to Avoid Costly Mistakes">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Utility Procurement for AMI: How to Avoid Costly Mistakes",
+  "description": "A practical guide to AMI procurement, covering total cost of ownership, integration, interoperability, cybersecurity, SLAs, vendor stability and long-term lifecycle risks.",
+  "url": "https://vincentwong-smartmetering.github.io/publications/utility-procurement-for-ami.html",
+  "datePublished": "2026-07-09",
+  "dateModified": "2026-07-09",
+  "author": {
+    "@type": "Person",
+    "name": "Vincent Wong Yew Hon",
+    "url": "https://vincentwong-smartmetering.github.io/about/"
+  },
+  "image": "https://vincentwong-smartmetering.github.io/publications/images/utility-procurement-for-ami.jpg",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://vincentwong-smartmetering.github.io/publications/utility-procurement-for-ami.html"
+  }
+}
+</script>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<style>
+
+/* Fixes the main hero image scaling on mobile devices */
+.article-hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.article-category {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #0066cc; 
+    margin-bottom: 8px;
+}
+
+.article-meta {
+    font-size: 0.95rem;         /* Slightly smaller than body text */
+    color: #64748b;             /* Subdued gray to sit quietly in the background */
+    margin-top: 0;
+    margin-bottom: 28px;        /* Creates clean space before the hero image starts */
+}
+
+.article-subtitle {
+    font-size: 1.25rem;         /* Visually larger than body text */
+    font-weight: 400;           /* Lighter weight to contrast with the bold H1 */
+    color: #4a5568;             /* Soft charcoal slate color (easier on eyes) */
+    line-height: 1.5;           /* Relaxed spacing for high readability */
+    margin-top: 0;              
+    margin-bottom: 24px;        /* Pushes metadata neatly down */
+}
+
+.article-header h1 {
+    font-size: 2.2rem;          /* Pronounced, high-contrast size */
+    font-weight: 800;           /* Clean, bold appearance */
+    color: #002244;             /* Premium, deep corporate blue */
+    line-height: 1.25;          /* Gives text breathing room when it wraps */
+    margin-top: 8px;            /* Tight gap beneath the category kicker */
+    margin-bottom: 12px;        /* Controlled space above the subtitle */
+    letter-spacing: -0.02em;    /* Slightly tighter tracking for a modern feel */
+}
+
+</style>
+</head>
+
+<body>
+
+<h1 id="top">Publications</h1>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/whitepapers/">Whitepapers</a>
+    <a href="/publications/">Publications</a>
+    <a href="/patents/">Patents</a>
+    <a href="/speaking/">Speaking</a>
+    <a href="/recognition/">Recognition</a>
+</nav>
+
+<hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 25px;">
+    
+
+<main class="container">
+
+        <article>
+
+            <!-- =================================================
+                 ARTICLE HEADER
+                 ================================================= -->
+
+<header class="article-header">
+
+<p class="article-category">AMI Procurement</p>
+
+<h1>Utility Procurement for AMI: How to Avoid Costly Mistakes</h1>
+
+<p class="article-subtitle">
+Why AMI procurement is more than buying meters—and how decisions made before deployment can shape cost, flexibility, integration, cybersecurity and long-term operations.
+</p>
+
+<div class="article-hero">
+<img src="/publications/images/utility-procurement-for-ami.jpg"
+alt="Utility Procurement for AMI: How to Avoid Costly Mistakes"
+loading="eager">
+</div>
+
+<p class="article-meta">
+By <strong>Vincent Wong Yew Hon</strong> · 9 July 2026
+</p>
+
+</header>
+
+            <!-- =================================================
+                 ARTICLE INTRODUCTION
+                 ================================================= -->
+
+<section>
+<h2>Introduction</h2>
+
+<p>
+For many utilities, procurement is the first major step in an Advanced Metering Infrastructure (AMI) initiative.
+</p>
+
+<p>
+It establishes the foundation for technology selection, project delivery, operational performance, and long-term scalability.
+</p>
+
+<p>
+Yet many AMI challenges begin long before the first meter is installed.
+</p>
+
+<p>
+They begin during procurement.
+</p>
+
+<p>
+Procurement is often viewed as an administrative process focused on technical specifications, vendor evaluation, and commercial negotiations.
+</p>
+
+<p>
+In reality, procurement decisions can influence a utility's operational flexibility, cybersecurity posture, integration capabilities, and total cost of ownership for the next 10–15 years.
+</p>
+
+<p>
+Small mistakes made during procurement can become expensive problems later.
+</p>
+
+<p>
+This is why successful AMI programs treat procurement as a strategic activity rather than simply a purchasing exercise.
+</p>
+</section>
+
+<section>
+<h2>Key Takeaways</h2>
+
+<ul>
+<li>AMI procurement is the procurement of an ecosystem, not simply meters.</li>
+<li>Lowest upfront cost does not necessarily mean lowest lifecycle cost.</li>
+<li>Business objectives should be established before technology requirements are defined.</li>
+<li>Total Cost of Ownership should include communications, software, integration, support, cybersecurity and upgrades.</li>
+<li>Integration requirements need to be addressed before contracts are finalized.</li>
+<li>Interoperability and reasonable flexibility can reduce long-term vendor dependency.</li>
+<li>Cybersecurity requirements should be incorporated from the beginning.</li>
+<li>Service levels and vendor support responsibilities need clear contractual definition.</li>
+<li>Vendor stability and long-term support capability matter for infrastructure with a 10–15 year lifecycle.</li>
+<li>Procurement decisions should consider the complete operational lifecycle, not only deployment.</li>
+</ul>
+</section>
+
+<section>
+<h2>Why Procurement Matters More Than Many Utilities Realize</h2>
+
+<p>
+Smart metering projects are fundamentally different from purchasing standalone equipment.
+</p>
+
+<p>
+An AMI deployment involves:
+</p>
+
+<ul>
+<li>meters</li>
+<li>communication networks</li>
+<li>software platforms</li>
+<li>data management systems</li>
+<li>enterprise integrations</li>
+<li>cybersecurity controls</li>
+<li>long-term operational support</li>
+</ul>
+
+<p>
+The procurement process determines how these components will work together throughout the system lifecycle.
+</p>
+
+<p>
+A well-structured procurement process reduces risk and improves long-term flexibility.
+</p>
+
+<p>
+A weak procurement process can create operational constraints that remain long after deployment is complete.
+</p>
+
+<p>
+In many cases, procurement decisions influence project outcomes more than the technology itself.
+</p>
+</section>
+
+<section>
+<h2>Procurement Is About More Than Buying Meters</h2>
+
+<p>
+One of the most common misconceptions is that AMI procurement is primarily about selecting meters.
+</p>
+
+<p>
+Meters are important.
+</p>
+
+<p>
+However, utilities are actually procuring an ecosystem.
+</p>
+
+<p>Questions that matter include:</p>
+
+<ul>
+<li>How will data be managed?</li>
+<li>How will systems integrate?</li>
+<li>How will firmware be maintained?</li>
+<li>How will cybersecurity be managed?</li>
+<li>How will the solution evolve over time?</li>
+<li>What happens if business requirements change?</li>
+</ul>
+
+<p>
+Focusing exclusively on meter specifications can lead to important lifecycle considerations being overlooked.
+</p>
+</section>
+
+<section>
+<h2>Common Procurement Mistake #1: Focusing on Lowest Initial Cost</h2>
+
+<p>
+Cost is always important.
+</p>
+
+<p>
+However, selecting a solution primarily because it offers the lowest upfront price can create challenges later.
+</p>
+
+<p>
+A lower purchase price may be offset by:
+</p>
+
+<ul>
+<li>higher integration costs</li>
+<li>increased maintenance effort</li>
+<li>limited scalability</li>
+<li>higher communication costs</li>
+<li>software licensing expenses</li>
+<li>reduced operational flexibility</li>
+</ul>
+
+<p>
+The cheapest proposal is not always the most economical solution over the life of the system.
+</p>
+
+<p>
+Utilities should evaluate long-term value rather than only initial expenditure.
+</p>
+</section>
+
+<section>
+<h2>Common Procurement Mistake #2: Defining Technology Before Business Objectives</h2>
+
+<p>
+Procurement documents often begin with technical requirements.
+</p>
+
+<p>
+While technical specifications are necessary, they should support clearly defined business objectives.
+</p>
+
+<p>A utility should first ask:</p>
+
+<ul>
+<li>What problems are we trying to solve?</li>
+<li>What operational outcomes are expected?</li>
+<li>What business value should the system deliver?</li>
+</ul>
+
+<p>Examples may include:</p>
+
+<ul>
+<li>reducing non-revenue water</li>
+<li>improving billing accuracy</li>
+<li>reducing manual meter reading costs</li>
+<li>enhancing customer engagement</li>
+<li>improving outage visibility</li>
+</ul>
+
+<p>
+Once objectives are established, technology can be evaluated against those goals.
+</p>
+
+<p>
+When procurement focuses on technology first, solutions may become disconnected from operational priorities.
+</p>
+</section>
+
+<section>
+<h2>Common Procurement Mistake #3: Ignoring Total Cost of Ownership</h2>
+
+<p>
+One of the most important procurement concepts is Total Cost of Ownership (TCO).
+</p>
+
+<p>
+Unfortunately, it is also one of the most frequently underestimated.
+</p>
+
+<p>
+The cost of an AMI system extends far beyond meter procurement.
+</p>
+
+<p>TCO may include:</p>
+
+<ul>
+<li>hardware</li>
+<li>communication services</li>
+<li>software licenses</li>
+<li>implementation services</li>
+<li>system integration</li>
+<li>training</li>
+<li>cybersecurity measures</li>
+<li>maintenance and support</li>
+<li>upgrades and enhancements</li>
+</ul>
+
+<p>
+Over a 10–15 year lifecycle, operational costs can exceed initial procurement costs.
+</p>
+
+<p>
+Utilities that focus only on capital expenditure may overlook significant long-term financial commitments.
+</p>
+</section>
+
+<section>
+<h2>Common Procurement Mistake #4: Underestimating Integration Requirements</h2>
+
+<p>
+AMI systems rarely operate in isolation.
+</p>
+
+<p>
+Most utilities require integration with:
+</p>
+
+<ul>
+<li>billing systems</li>
+<li>GIS platforms</li>
+<li>ERP systems</li>
+<li>customer portals</li>
+<li>analytics environments</li>
+<li>outage management systems</li>
+</ul>
+
+<p>
+Integration often proves more complex than anticipated.
+</p>
+
+<p>Questions that should be addressed early include:</p>
+
+<ul>
+<li>Are APIs available?</li>
+<li>Are industry standards supported?</li>
+<li>What integration tools are required?</li>
+<li>Who owns integration responsibilities?</li>
+</ul>
+
+<p>
+Failure to address integration requirements during procurement can create delays and unexpected costs during implementation.
+</p>
+</section>
+
+<section>
+<h2>Common Procurement Mistake #5: Creating Vendor Lock-In</h2>
+
+<p>
+Utilities typically expect AMI systems to remain operational for more than a decade.
+</p>
+
+<p>
+Over that period, technologies evolve, vendors change, and business requirements develop.
+</p>
+
+<p>
+Vendor lock-in occurs when future flexibility becomes limited because systems rely heavily on proprietary technologies or interfaces.
+</p>
+
+<p>Potential risks include:</p>
+
+<ul>
+<li>limited interoperability</li>
+<li>reduced competitive options</li>
+<li>higher upgrade costs</li>
+<li>dependency on a single supplier</li>
+</ul>
+
+<p>
+While no solution is entirely vendor-independent, procurement should seek reasonable flexibility wherever possible.
+</p>
+
+<p>
+Open standards and well-documented interfaces can reduce future constraints.
+</p>
+</section>
+
+<section>
+<h2>Common Procurement Mistake #6: Treating Cybersecurity as a Later Phase</h2>
+
+<p>
+Cybersecurity is sometimes addressed only after technology selection has been completed.
+</p>
+
+<p>
+This approach introduces unnecessary risk.
+</p>
+
+<p>
+Cybersecurity requirements should be incorporated into procurement from the beginning.
+</p>
+
+<p>Areas to consider include:</p>
+
+<ul>
+<li>authentication mechanisms</li>
+<li>encryption capabilities</li>
+<li>firmware security</li>
+<li>access control management</li>
+<li>security monitoring</li>
+<li>vulnerability management processes</li>
+</ul>
+
+<p>
+Security features are often much easier to implement when included in procurement requirements than when added later.
+</p>
+</section>
+
+<section>
+<h2>Common Procurement Mistake #7: Weak Service Level Agreements</h2>
+
+<p>
+Technical specifications receive significant attention during procurement.
+</p>
+
+<p>
+Operational support requirements sometimes receive less scrutiny.
+</p>
+
+<p>
+However, long-term success often depends on support quality.
+</p>
+
+<p>Important considerations include:</p>
+
+<ul>
+<li>response times</li>
+<li>resolution targets</li>
+<li>escalation procedures</li>
+<li>software support commitments</li>
+<li>firmware maintenance responsibilities</li>
+<li>performance reporting</li>
+</ul>
+
+<p>
+A technically capable solution can still create operational challenges if support expectations are unclear.
+</p>
+</section>
+
+<section>
+<h2>Common Procurement Mistake #8: Failing to Evaluate Vendor Stability</h2>
+
+<p>
+AMI systems often remain in operation for many years.
+</p>
+
+<p>
+A vendor's ability to support the solution throughout its lifecycle is therefore important.
+</p>
+
+<p>Utilities should assess factors such as:</p>
+
+<ul>
+<li>financial stability</li>
+<li>market presence</li>
+<li>deployment experience</li>
+<li>product roadmap</li>
+<li>local support capabilities</li>
+</ul>
+
+<p>
+This is not about selecting the largest vendor.
+</p>
+
+<p>
+It is about understanding whether the vendor can realistically support long-term operational requirements.
+</p>
+</section>
+
+<section>
+<h2>Questions Utilities Should Ask During Procurement</h2>
+
+<p>
+Strong procurement processes focus on asking the right questions.
+</p>
+
+<p>Examples include:</p>
+
+<ul>
+<li>How does the solution support future scalability?</li>
+<li>What interoperability standards are supported?</li>
+<li>How are firmware updates managed?</li>
+<li>What cybersecurity controls are included?</li>
+<li>How is data ownership handled?</li>
+<li>What integration capabilities exist?</li>
+<li>How will the system evolve over the next decade?</li>
+<li>What operational support is provided?</li>
+</ul>
+
+<p>
+The quality of these discussions often reveals more than technical datasheets.
+</p>
+</section>
+
+<section>
+<h2>Why Procurement Should Consider the Entire Lifecycle</h2>
+
+<p>
+Many procurement exercises focus primarily on deployment.
+</p>
+
+<p>
+However, deployment is only the beginning.
+</p>
+
+<p>
+Once systems become operational, utilities must manage:
+</p>
+
+<ul>
+<li>firmware updates</li>
+<li>battery performance</li>
+<li>cybersecurity risks</li>
+<li>technology evolution</li>
+<li>communication network changes</li>
+<li>software upgrades</li>
+</ul>
+
+<p>
+Lifecycle considerations should influence procurement decisions from the outset.
+</p>
+
+<p>
+A solution that appears attractive during deployment may create challenges later if lifecycle requirements are not adequately considered.
+</p>
+</section>
+
+<section>
+<h2>What Successful Utilities Do Differently</h2>
+
+<h3>They Start With Business Outcomes</h3>
+
+<p>
+Technology requirements are derived from operational objectives rather than the other way around.
+</p>
+
+<h3>They Evaluate Total Cost of Ownership</h3>
+
+<p>
+Long-term financial impact receives as much attention as upfront costs.
+</p>
+
+<h3>They Prioritize Interoperability</h3>
+
+<p>
+Future flexibility is considered during technology selection.
+</p>
+
+<h3>They Include Operations Teams Early</h3>
+
+<p>
+Procurement decisions reflect operational realities rather than purely technical preferences.
+</p>
+
+<h3>They Plan Beyond Deployment</h3>
+
+<p>
+Support, maintenance, upgrades, and lifecycle management are considered before contracts are signed.
+</p>
+</section>
+
+<section>
+<h2>Field Notes from Real Deployments</h2>
+
+<p>
+Across many smart metering projects, some of the most expensive problems are not caused by technology failures.
+</p>
+
+<p>
+They originate from procurement decisions that failed to consider long-term operational realities.
+</p>
+
+<p>
+A communication solution selected primarily on cost may create coverage challenges.
+</p>
+
+<p>
+A software platform chosen without integration planning may increase implementation effort.
+</p>
+
+<p>
+A contract that lacks clear support obligations may create operational uncertainty.
+</p>
+
+<p>
+These issues often become visible only after deployment begins.
+</p>
+
+<p>
+By then, they are significantly more difficult and expensive to address.
+</p>
+
+<p>
+The strongest procurement processes recognize that AMI is not a short-term technology purchase.
+</p>
+
+<p>
+It is a long-term operational investment.
+</p>
+</section>
+
+<section>
+<h2>Conclusion</h2>
+
+<p>
+Procurement is one of the most influential phases of any AMI program.
+</p>
+
+<p>
+The decisions made before deployment begins can affect operational performance, flexibility, cybersecurity, integration complexity, and lifecycle costs for years to come.
+</p>
+
+<p>
+Successful utilities recognize that procurement is not simply about comparing products and prices.
+</p>
+
+<p>
+It is about selecting technologies, partners, and commercial frameworks that support long-term business objectives.
+</p>
+
+<p>
+A well-structured procurement process reduces risk, improves adaptability, and increases the likelihood of achieving expected outcomes.
+</p>
+
+<p>
+In smart metering, some of the most important project decisions are made long before the first meter is installed.
+</p>
+</section>
+          
+
+            <!-- =================================================
+                 FULL ARTICLE ON MEDIUM
+                 ================================================= -->
+
+<section class="medium-link">
+<h2>Read the Full Article on Medium</h2>
+
+<p>
+This article was originally published on Medium, where the full discussion examines the procurement decisions that can shape AMI cost, flexibility, integration, cybersecurity and long-term operational performance.
+</p>
+
+<p>
+<a href="https://medium.com/@smartinfra.insights/utility-procurement-for-ami-how-to-avoid-costly-mistakes-7392b17e0fe2"
+target="_blank"
+rel="noopener noreferrer">
+Read the Full Article on Medium →
+</a>
+</p>
+</section>
+            <!-- =================================================
+                 RELATED ARTICLES
+                 ================================================= -->
+
+<section>
+<h2>Related Smart Metering Topics</h2>
+
+<ul>
+<li>
+<a href="/publications/what-is-ami.html">
+What Is AMI (Advanced Metering Infrastructure)? Architecture, Components, and How It Works
+</a>
+</li>
+
+<li>
+<a href="/publications/smart-metering-architecture.html">
+Smart Metering System Architecture: End-to-End Design for Utilities
+</a>
+</li>
+
+<li>
+<a href="/publications/nb-iot-vs-lorawan-vs-lte-m.html">
+NB-IoT vs LoRaWAN vs LTE-M: Choosing the Right IoT Connectivity for Smart Utilities
+</a>
+</li>
+
+<li>
+<a href="/publications/nb-iot-vs-lorawan-in-real-deployments.html">
+NB-IoT vs LoRaWAN in Real Deployments: What Actually Happens in the Field
+</a>
+</li>
+
+<li>
+<a href="/publications/smart-meter-rollout-strategy.html">
+Smart Meter Rollout Strategy: Phased vs Full Deployment
+</a>
+</li>
+
+<li>
+<a href="/publications/why-smart-metering-pilots-fail.html">
+Why Smart Metering Pilots Fail at Scale — And How Utilities Can Avoid It
+</a>
+</li>
+
+<li>
+<a href="/publications/firmware-management-in-ami.html">
+Firmware Management in AMI: The Hidden Operational Challenge
+</a>
+</li>
+
+<li>
+<a href="/publications/cybersecurity-in-smart-metering.html">
+Cybersecurity in Smart Metering: Real Risks, System Weaknesses, and Practical Defenses
+</a>
+</li>
+</ul>
+</section>
+
+
+        </article>
+
+    </main>
+
+  
+
+<footer>
+
+<p>© 2026 Vincent Wong. All rights reserved.</p>
+
+<p style="font-style: italic; text-align: justify; color: #555;">
+The personal engineering insights shared here represent aspirational industry best practices and do not reflect the active bidding strategies or commercial policies of any current or past employer. Read the full <a href="/about/#disclaimer" style="text-decoration: underline; color: #0066cc; font-weight: bold;">Strategic Disclaimer</a>.
+</p>
+
+<p>
+Smart Metering | AMI | Smart Water | Utility IoT | NB-IoT
+</p>
+<p>
+<a href="/">Home</a> |
+<a href="/about/">About</a> |
+<a href="/whitepapers/">Whitepapers</a> |
+<a href="/publications/">Publications</a> |
+<a href="/patents/">Patents</a> |
+<a href="/speaking/">Speaking</a> |
+<a href="/recognition/">Recognition</a>  
+</p>
+
+</footer>
+
+</body>
+</html>
