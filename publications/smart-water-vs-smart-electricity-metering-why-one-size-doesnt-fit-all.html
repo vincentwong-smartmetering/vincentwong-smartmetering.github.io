@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Smart Water vs. Smart Electricity Metering: Why One Size Doesn't Fit All | Vincent Wong</title>
+<meta name="description" content="Why smart water and electricity metering require different engineering approaches, from power availability and communication to data, deployment environment, firmware and maintenance.">
+<meta name="author" content="Vincent Wong Yew Hon">
+<link rel="canonical" href="https://vincentwong-smartmetering.github.io/publications/smart-water-vs-smart-electricity-metering-why-one-size-doesnt-fit-all.html">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Smart Water vs. Smart Electricity Metering: Why One Size Doesn't Fit All">
+<meta property="og:description" content="A practical comparison of smart water and electricity metering across power, communications, data, deployment, operations, firmware and maintenance.">
+<meta property="og:url" content="https://vincentwong-smartmetering.github.io/publications/smart-water-vs-smart-electricity-metering-why-one-size-doesnt-fit-all.html">
+<meta property="og:site_name" content="Vincent Wong Smart Metering">
+<meta property="og:image" content="https://vincentwong-smartmetering.github.io/publications/images/smart-water-vs-smart-electricity-metering-why-one-size-doesnt-fit-all.jpg">
+<meta property="og:image:alt" content="Smart Water vs. Smart Electricity Metering: Why One Size Doesn't Fit All">
+<meta property="og:locale" content="en_US">
+
+<meta property="article:author" content="Vincent Wong Yew Hon">
+<meta property="article:published_time" content="2026-08-06">
+<meta property="article:modified_time" content="2026-08-06">
+<meta property="article:section" content="Smart Water Metering">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Smart Water vs. Smart Electricity Metering: Why One Size Doesn't Fit All">
+<meta name="twitter:description" content="A practical comparison of the different technical and operational constraints shaping smart water and electricity metering.">
+<meta name="twitter:image" content="https://vincentwong-smartmetering.github.io/publications/images/smart-water-vs-smart-electricity-metering-why-one-size-doesnt-fit-all.jpg">
+<meta name="twitter:image:alt" content="Smart Water vs. Smart Electricity Metering: Why One Size Doesn't Fit All">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Smart Water vs. Smart Electricity Metering: Why One Size Doesn't Fit All",
+  "description": "A practical comparison of smart water and electricity metering across power, communications, data, deployment, operations, firmware and maintenance.",
+  "url": "https://vincentwong-smartmetering.github.io/publications/smart-water-vs-smart-electricity-metering-why-one-size-doesnt-fit-all.html",
+  "datePublished": "2026-08-06",
+  "dateModified": "2026-08-06",
+  "author": {
+    "@type": "Person",
+    "name": "Vincent Wong Yew Hon",
+    "url": "https://vincentwong-smartmetering.github.io/about/"
+  },
+  "image": "https://vincentwong-smartmetering.github.io/publications/images/smart-water-vs-smart-electricity-metering-why-one-size-doesnt-fit-all.jpg",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://vincentwong-smartmetering.github.io/publications/smart-water-vs-smart-electricity-metering-why-one-size-doesnt-fit-all.html"
+  }
+}
+</script>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<style>
+
+/* Fixes the main hero image scaling on mobile devices */
+.article-hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.article-category {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #0066cc; 
+    margin-bottom: 8px;
+}
+
+.article-meta {
+    font-size: 0.95rem;         /* Slightly smaller than body text */
+    color: #64748b;             /* Subdued gray to sit quietly in the background */
+    margin-top: 0;
+    margin-bottom: 28px;        /* Creates clean space before the hero image starts */
+}
+
+.article-subtitle {
+    font-size: 1.25rem;         /* Visually larger than body text */
+    font-weight: 400;           /* Lighter weight to contrast with the bold H1 */
+    color: #4a5568;             /* Soft charcoal slate color (easier on eyes) */
+    line-height: 1.5;           /* Relaxed spacing for high readability */
+    margin-top: 0;              
+    margin-bottom: 24px;        /* Pushes metadata neatly down */
+}
+
+.article-header h1 {
+    font-size: 2.2rem;          /* Pronounced, high-contrast size */
+    font-weight: 800;           /* Clean, bold appearance */
+    color: #002244;             /* Premium, deep corporate blue */
+    line-height: 1.25;          /* Gives text breathing room when it wraps */
+    margin-top: 8px;            /* Tight gap beneath the category kicker */
+    margin-bottom: 12px;        /* Controlled space above the subtitle */
+    letter-spacing: -0.02em;    /* Slightly tighter tracking for a modern feel */
+}
+
+</style>
+</head>
+
+<body>
+
+<h1 id="top">Publications</h1>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/whitepapers/">Whitepapers</a>
+    <a href="/publications/">Publications</a>
+    <a href="/patents/">Patents</a>
+    <a href="/speaking/">Speaking</a>
+    <a href="/recognition/">Recognition</a>
+</nav>
+
+<hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 25px;">
+    
+
+<main class="container">
+
+        <article>
+
+            <!-- =================================================
+                 ARTICLE HEADER
+                 ================================================= -->
+
+<header class="article-header">
+<p class="article-category">Smart Water Metering</p>
+
+<h1>Smart Water vs. Smart Electricity Metering: Why One Size Doesn't Fit All</h1>
+
+<p class="article-subtitle">
+Why smart water and electricity metering share common AMI objectives but require different approaches to power, connectivity, data, deployment, firmware and long-term operations.
+</p>
+
+<div class="article-hero">
+<img src="/publications/images/smart-water-vs-smart-electricity-metering-why-one-size-doesnt-fit-all.jpg"
+alt="Smart Water vs. Smart Electricity Metering: Why One Size Doesn't Fit All"
+loading="eager">
+</div>
+
+<p class="article-meta">
+By <strong>Vincent Wong Yew Hon</strong> · 6 August 2026
+</p>
+</header>
+
+            <!-- =================================================
+                 ARTICLE INTRODUCTION
+                 ================================================= -->
+
+<section>
+
+<h2>Introduction</h2>
+
+<p>
+Smart metering is often discussed as though the same technology can be applied across every utility sector. While smart water and smart electricity metering share the broad objective of collecting consumption information remotely, the engineering and operational constraints are quite different.
+</p>
+
+<p>
+Electricity meters normally have continuous access to electrical power, while many smart water meters operate from batteries for 10–15 years. Electricity AMI may require frequent communication for grid visibility and demand management, whereas water AMI often prioritizes reliable daily reporting, leak detection and long battery life.
+</p>
+
+<p>
+These differences influence almost every layer of the solution, from device design and connectivity to firmware, maintenance and operational workflows.
+</p>
+
+<h2>Key Takeaways</h2>
+
+<ul>
+<li>Smart water and electricity metering share common objectives but operate under different constraints.</li>
+<li>Power availability is one of the most important differences between the two environments.</li>
+<li>Water metering places much greater emphasis on battery life and low-power communication.</li>
+<li>Electricity AMI often supports more frequent data exchange and grid-related applications.</li>
+<li>Installation conditions can make communication particularly challenging for water meters.</li>
+<li>Technology selection should follow utility objectives and deployment conditions rather than sector assumptions.</li>
+<li>There is no universal smart metering architecture that fits every utility.</li>
+</ul>
+
+<h2>Similar Objectives, Different Constraints</h2>
+
+<p>
+Both smart water and electricity metering can support:
+</p>
+
+<ul>
+<li>Remote meter reading</li>
+<li>Improved billing accuracy</li>
+<li>Reduced manual meter reading</li>
+<li>Faster fault detection</li>
+<li>Better customer visibility</li>
+<li>Operational efficiency</li>
+<li>Digital utility transformation</li>
+</ul>
+
+<p>
+The difference is how these objectives need to be achieved.
+</p>
+
+<p>
+A solution designed around continuous electrical power and frequent communications may not translate directly to a battery-powered water meter expected to operate for many years in an underground chamber.
+</p>
+
+<h2>Power Availability Changes the Design</h2>
+
+<h3>Smart Electricity Meters</h3>
+
+<p>
+Electricity meters are generally connected directly to the electrical supply. This provides the power required for frequent communication, greater local processing and continuous operation.
+</p>
+
+<p>
+Power consumption is therefore usually less dominant as a system-level design constraint.
+</p>
+
+<h3>Smart Water Meters</h3>
+
+<p>
+Many smart water meters are battery powered and expected to operate for 10–15 years without battery replacement.
+</p>
+
+<p>
+This makes energy consumption a fundamental design consideration.
+</p>
+
+<ul>
+<li>Deep-sleep operation</li>
+<li>Efficient radio usage</li>
+<li>Optimized firmware</li>
+<li>Low-power sensing</li>
+<li>Controlled communication frequency</li>
+</ul>
+
+<p>
+For water metering, battery life is not simply a device specification. It influences communication strategy, firmware behavior and maintenance planning throughout the deployment lifecycle.
+</p>
+
+<h2>Communication Requirements Are Different</h2>
+
+<p>
+Electricity AMI may support applications such as:
+</p>
+
+<ul>
+<li>Near real-time monitoring</li>
+<li>Demand response</li>
+<li>Outage detection</li>
+<li>Voltage monitoring</li>
+<li>Load management</li>
+</ul>
+
+<p>
+These applications can require relatively frequent communication.
+</p>
+
+<p>
+Water utilities more commonly prioritize:
+</p>
+
+<ul>
+<li>Daily consumption reporting</li>
+<li>Leak detection</li>
+<li>Tamper alerts</li>
+<li>Reverse-flow detection</li>
+<li>Occasional configuration updates</li>
+</ul>
+
+<p>
+For many water applications, minute-by-minute communication is unnecessary. Communication reliability and energy efficiency can therefore be more important than maximum reporting frequency.
+</p>
+
+<h2>Data Characteristics Also Differ</h2>
+
+<p>
+Electricity consumption can change continuously throughout the day. Utilities may analyse load profiles, peak demand, voltage quality, current imbalance and power factor.
+</p>
+
+<p>
+Water consumption behaves differently. Long periods of zero or low consumption can occur, while continuous flow can itself become an important signal.
+</p>
+
+<p>
+Water analytics may therefore focus on:
+</p>
+
+<ul>
+<li>Continuous flow</li>
+<li>Possible leaks</li>
+<li>Backflow</li>
+<li>Tampering</li>
+<li>Abnormal consumption</li>
+</ul>
+
+<p>
+The difference is not simply the amount of data collected. It is the type of operational question that the data needs to answer.
+</p>
+
+<h2>Installation Environment Matters</h2>
+
+<p>
+Electricity meters are commonly installed in buildings, electrical cabinets, meter rooms or accessible utility enclosures where communication conditions may be relatively predictable.
+</p>
+
+<p>
+Water meters can be installed in:
+</p>
+
+<ul>
+<li>Underground chambers</li>
+<li>Roadside pits</li>
+<li>Basements</li>
+<li>Moist or flooded environments</li>
+<li>Remote rural locations</li>
+</ul>
+
+<p>
+These environments can introduce poor radio coverage, moisture, corrosion and difficult physical access.
+</p>
+
+<p>
+Consequently, smart water communication solutions often place greater emphasis on coverage and penetration than on high bandwidth.
+</p>
+
+<h2>Communication Technology Selection</h2>
+
+<p>
+The technologies considered by each sector can overlap, but the selection criteria can be different.
+</p>
+
+<p>
+Water utilities may evaluate technologies such as:
+</p>
+
+<ul>
+<li>NB-IoT</li>
+<li>LoRaWAN</li>
+<li>Wireless M-Bus</li>
+<li>Proprietary RF</li>
+<li>LTE-M for selected applications</li>
+</ul>
+
+<p>
+Electricity utilities may also use:
+</p>
+
+<ul>
+<li>RF Mesh</li>
+<li>Power Line Communication (PLC)</li>
+<li>Cellular networks</li>
+<li>Fibre networks</li>
+<li>Private LTE</li>
+</ul>
+
+<p>
+The important point is that there is no universally superior technology. The appropriate choice depends on deployment conditions, communication requirements, power availability and operational objectives.
+</p>
+
+<h2>Operational Priorities Influence Architecture</h2>
+
+<p>
+Electricity utilities often focus on:
+</p>
+
+<ul>
+<li>Demand management</li>
+<li>Outage restoration</li>
+<li>Grid visibility</li>
+<li>Renewable integration</li>
+<li>Time-of-use tariffs</li>
+</ul>
+
+<p>
+Water utilities typically place greater emphasis on:
+</p>
+
+<ul>
+<li>Reducing non-revenue water</li>
+<li>Leak detection</li>
+<li>Accurate billing</li>
+<li>Minimizing field visits</li>
+<li>Extending battery life</li>
+<li>Improving customer service</li>
+</ul>
+
+<p>
+These priorities directly influence architecture, device requirements and investment decisions.
+</p>
+
+<h2>Firmware Strategy Is Also Different</h2>
+
+<p>
+Firmware management reflects the underlying power constraints.
+</p>
+
+<p>
+Electricity meters generally have continuous power available, allowing firmware updates to be larger or more frequent where required.
+</p>
+
+<p>
+Water meters must balance firmware improvements against battery consumption. Communication sessions, processing and update activities can all affect energy usage.
+</p>
+
+<p>
+Firmware strategy therefore needs to consider not only functionality and security, but also the operational lifespan of the battery-powered device.
+</p>
+
+<h2>Maintenance Considerations</h2>
+
+<p>
+The maintenance model also changes between the two sectors.
+</p>
+
+<p>
+Electricity meters generally have less concern about battery replacement, although firmware, calibration and regulatory requirements remain important.
+</p>
+
+<p>
+Water meter maintenance can involve:
+</p>
+
+<ul>
+<li>Battery longevity</li>
+<li>Environmental protection</li>
+<li>Communication performance</li>
+<li>Mechanical wear</li>
+<li>Physical accessibility</li>
+</ul>
+
+<p>
+When thousands of water meters are deployed across difficult-to-access locations, maximizing operational life can have a significant effect on long-term maintenance effort.
+</p>
+
+<h2>Cybersecurity Remains Important in Both</h2>
+
+<p>
+Both water and electricity AMI require cybersecurity throughout the system lifecycle.
+</p>
+
+<p>
+Electricity infrastructure is closely connected to grid stability and critical infrastructure, while water systems increasingly depend on connected devices, remote monitoring and digital platforms.
+</p>
+
+<p>
+Key considerations include:
+</p>
+
+<ul>
+<li>Protecting customer data</li>
+<li>Securing communication channels</li>
+<li>Authenticating devices</li>
+<li>Protecting firmware and software</li>
+<li>Preventing unauthorized configuration changes</li>
+<li>Maintaining operational continuity</li>
+</ul>
+
+<p>
+The risk profile may differ, but the principle is common: cybersecurity should be designed into the system rather than added after deployment.
+</p>
+
+<h2>Common Misconceptions</h2>
+
+<h3>“Water AMI is simply electricity AMI with a different meter.”</h3>
+
+<p>
+The battery constraints, communication patterns, installation environments and operational objectives require different design decisions.
+</p>
+
+<h3>“More frequent communication always provides more value.”</h3>
+
+<p>
+Not necessarily. For many water applications, once- or twice-daily reporting may provide sufficient operational information while preserving battery life.
+</p>
+
+<h3>“The same communication technology works equally well everywhere.”</h3>
+
+<p>
+Technology performance depends on deployment conditions, coverage, power requirements, operational objectives and lifecycle expectations.
+</p>
+
+<h2>Practical Lessons from Real Deployments</h2>
+
+<ol>
+<li>
+<strong>Battery constraints influence almost every design decision.</strong>
+Power optimization is central to long-life smart water deployments.
+</li>
+
+<li>
+<strong>Communication reliability can matter more than communication frequency.</strong>
+Reliable daily data can provide greater operational value than unreliable high-frequency reporting.
+</li>
+
+<li>
+<strong>Environmental conditions cannot be ignored.</strong>
+Underground installations, dense urban environments and remote locations can all affect communication performance.
+</li>
+
+<li>
+<strong>Utility objectives should drive technology choices.</strong>
+Technology should support the required operational outcome rather than determine the outcome by itself.
+</li>
+</ol>
+
+<h2>Conclusion</h2>
+
+<p>
+Smart water and smart electricity metering share many AMI principles, but they operate under different technical and operational constraints.
+</p>
+
+<p>
+Electricity AMI is often shaped by grid visibility, energy management and frequent communication. Water AMI places greater emphasis on long battery life, reliable connectivity, leak detection and operational efficiency.
+</p>
+
+<p>
+Understanding these differences helps utilities establish realistic requirements and avoid transferring assumptions from one sector directly into another.
+</p>
+
+<p>
+There is no universal smart metering solution. The starting point should always be the utility's operational requirements, deployment environment and long-term objectives.
+</p>
+
+</section>
+          
+
+            <!-- =================================================
+                 FULL ARTICLE ON MEDIUM
+                 ================================================= -->
+
+<section class="medium-link">
+<h2>Read the Full Article on Medium</h2>
+
+<p>
+This article was originally published on Medium, where the full discussion compares smart water and electricity metering across power, communication, data, deployment environment, firmware, maintenance and operational requirements.
+</p>
+
+<p>
+<a href="https://medium.com/@smartinfra.insights/smart-water-vs-smart-electricity-metering-why-one-size-doesnt-fit-all-47975652e2bc"
+target="_blank"
+rel="noopener noreferrer">
+Read the Full Article on Medium →
+</a>
+</p>
+</section>
+            <!-- =================================================
+                 RELATED ARTICLES
+                 ================================================= -->
+
+<section>
+<h2>Related Smart Metering Topics</h2>
+
+<ul>
+
+<li>
+<a href="/publications/smart-meter-battery-life.html">
+Smart Meter Battery Life Explained: Why “10 Years” Is Not Just a Specification
+</a>
+</li>
+
+<li>
+<a href="/publications/nb-iot-vs-lorawan-in-real-deployments.html">
+NB-IoT vs LoRaWAN in Real Deployments: What Actually Happens in the Field
+</a>
+</li>
+
+<li>
+<a href="/publications/nb-iot-vs-lorawan-vs-lte-m.html">
+NB-IoT vs LoRaWAN vs LTE-M: Choosing the Right IoT Connectivity for Smart Utilities
+</a>
+</li>
+
+<li>
+<a href="/publications/what-is-nb-iot.html">
+What Is NB-IoT? A Practical Guide for IoT and Smart Metering Deployments
+</a>
+</li>
+
+<li>
+<a href="/publications/lorawan-explained.html">
+LoRaWAN Explained: Architecture, Use Cases, and Limitations in Real Deployments
+</a>
+</li>
+
+<li>
+<a href="/publications/smart-metering-architecture.html">
+Smart Metering System Architecture: End-to-End Design for Utilities
+</a>
+</li>
+
+<li>
+<a href="/publications/what-is-ami.html">
+What Is AMI (Advanced Metering Infrastructure)? Architecture, Components, and How It Works
+</a>
+</li>
+
+<li>
+<a href="/publications/data-to-roi.html">
+From Data to ROI: Measuring the Business Value of AMI
+</a>
+</li>
+
+</ul>
+</section>
+
+        </article>
+
+    </main>
+
+  
+
+<footer>
+
+<p>© 2026 Vincent Wong. All rights reserved.</p>
+
+<p style="font-style: italic; text-align: justify; color: #555;">
+The personal engineering insights shared here represent aspirational industry best practices and do not reflect the active bidding strategies or commercial policies of any current or past employer. Read the full <a href="/about/#disclaimer" style="text-decoration: underline; color: #0066cc; font-weight: bold;">Strategic Disclaimer</a>.
+</p>
+
+<p>
+Smart Metering | AMI | Smart Water | Utility IoT | NB-IoT
+</p>
+<p>
+<a href="/">Home</a> |
+<a href="/about/">About</a> |
+<a href="/whitepapers/">Whitepapers</a> |
+<a href="/publications/">Publications</a> |
+<a href="/patents/">Patents</a> |
+<a href="/speaking/">Speaking</a> |
+<a href="/recognition/">Recognition</a>  
+</p>
+
+</footer>
+
+</body>
+</html>
