@@ -18,4 +18,5 @@ User-agent: MSNBot-Media
 Allow: /
 
 Sitemap: https://vincentwong-smartmetering.github.io/sitemap.xml
+Sitemap: https://vincentwong-smartmetering.github.io/sitemap-images.xml
 
