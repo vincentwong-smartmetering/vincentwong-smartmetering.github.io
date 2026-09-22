@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DLMS/COSEM Explained Practically: What Utilities Need to Know Before Choosing a Metering Protocol | Vincent Wong</title>
+<meta name="description" content="A practical guide to DLMS/COSEM, COSEM objects, OBIS codes, interoperability, HES, MDMS, smart water, battery impact, LwM2M and protocol selection.">
+<meta name="author" content="Vincent Wong Yew Hon">
+<link rel="canonical" href="https://vincentwong-smartmetering.github.io/publications/dlms-cosem-explained-practically.html">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="DLMS/COSEM Explained Practically: What Utilities Need to Know Before Choosing a Metering Protocol">
+<meta property="og:description" content="A practical guide to DLMS/COSEM, interoperability, smart water considerations, battery impact, LwM2M and choosing a metering protocol based on the complete AMI architecture.">
+<meta property="og:url" content="https://vincentwong-smartmetering.github.io/publications/dlms-cosem-explained-practically.html">
+<meta property="og:site_name" content="Vincent Wong Smart Metering">
+<meta property="og:image" content="https://vincentwong-smartmetering.github.io/publications/images/dlms-cosem-explained-practically.jpg">
+<meta property="og:image:alt" content="DLMS/COSEM Explained Practically: What Utilities Need to Know Before Choosing a Metering Protocol">
+<meta property="og:locale" content="en_US">
+
+<meta property="article:author" content="Vincent Wong Yew Hon">
+<meta property="article:published_time" content="2026-09-03">
+<meta property="article:modified_time" content="2026-09-03">
+<meta property="article:section" content="AMI Interoperability">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DLMS/COSEM Explained Practically: What Utilities Need to Know Before Choosing a Metering Protocol">
+<meta name="twitter:description" content="Understand DLMS/COSEM, interoperability, smart water requirements, battery impact, LwM2M and practical protocol selection for AMI.">
+<meta name="twitter:image" content="https://vincentwong-smartmetering.github.io/publications/images/dlms-cosem-explained-practically.jpg">
+<meta name="twitter:image:alt" content="DLMS/COSEM Explained Practically: What Utilities Need to Know Before Choosing a Metering Protocol">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "DLMS/COSEM Explained Practically: What Utilities Need to Know Before Choosing a Metering Protocol",
+  "description": "A practical guide to DLMS/COSEM, interoperability, smart water considerations, battery impact, LwM2M and choosing a metering protocol based on the complete AMI architecture.",
+  "url": "https://vincentwong-smartmetering.github.io/publications/dlms-cosem-explained-practically.html",
+  "datePublished": "2026-09-03",
+  "dateModified": "2026-09-03",
+  "author": {
+    "@type": "Person",
+    "name": "Vincent Wong Yew Hon",
+    "url": "https://vincentwong-smartmetering.github.io/about/"
+  },
+  "image": "https://vincentwong-smartmetering.github.io/publications/images/dlms-cosem-explained-practically.jpg",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://vincentwong-smartmetering.github.io/publications/dlms-cosem-explained-practically.html"
+  }
+}
+</script>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<style>
+
+/* Fixes the main hero image scaling on mobile devices */
+.article-hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.article-category {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #0066cc; 
+    margin-bottom: 8px;
+}
+
+.article-meta {
+    font-size: 0.95rem;         /* Slightly smaller than body text */
+    color: #64748b;             /* Subdued gray to sit quietly in the background */
+    margin-top: 0;
+    margin-bottom: 28px;        /* Creates clean space before the hero image starts */
+}
+
+.article-subtitle {
+    font-size: 1.25rem;         /* Visually larger than body text */
+    font-weight: 400;           /* Lighter weight to contrast with the bold H1 */
+    color: #4a5568;             /* Soft charcoal slate color (easier on eyes) */
+    line-height: 1.5;           /* Relaxed spacing for high readability */
+    margin-top: 0;              
+    margin-bottom: 24px;        /* Pushes metadata neatly down */
+}
+
+.article-header h1 {
+    font-size: 2.2rem;          /* Pronounced, high-contrast size */
+    font-weight: 800;           /* Clean, bold appearance */
+    color: #002244;             /* Premium, deep corporate blue */
+    line-height: 1.25;          /* Gives text breathing room when it wraps */
+    margin-top: 8px;            /* Tight gap beneath the category kicker */
+    margin-bottom: 12px;        /* Controlled space above the subtitle */
+    letter-spacing: -0.02em;    /* Slightly tighter tracking for a modern feel */
+}
+
+</style>
+</head>
+
+<body>
+
+<h1 id="top">Publications</h1>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/whitepapers/">Whitepapers</a>
+    <a href="/publications/">Publications</a>
+    <a href="/patents/">Patents</a>
+    <a href="/speaking/">Speaking</a>
+    <a href="/recognition/">Recognition</a>
+</nav>
+
+<hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 25px;">
+    
+
+<main class="container">
+
+        <article>
+
+            <!-- =================================================
+                 ARTICLE HEADER
+                 ================================================= -->
+
+<header class="article-header">
+<p class="article-category">AMI Interoperability</p>
+
+<h1>DLMS/COSEM Explained Practically: What Utilities Need to Know Before Choosing a Metering Protocol</h1>
+
+<p class="article-subtitle">
+A practical look at DLMS/COSEM, interoperability, smart water requirements, battery impact, LwM2M and the questions utilities should answer before choosing a metering protocol.
+</p>
+
+<div class="article-hero">
+<img src="/publications/images/dlms-cosem-explained-practically.jpg"
+alt="DLMS/COSEM Explained Practically: What Utilities Need to Know Before Choosing a Metering Protocol"
+loading="eager">
+</div>
+
+<p class="article-meta">
+By <strong>Vincent Wong Yew Hon</strong> · 3 September 2026
+</p>
+</header>
+
+            <!-- =================================================
+                 ARTICLE INTRODUCTION
+                 ================================================= -->
+
+<section>
+
+<h2>Introduction</h2>
+
+<p>When utilities discuss smart meter interoperability, DLMS/COSEM is often one of the first standards mentioned.</p>
+
+<p>It has become an important technology in smart metering, particularly in electricity metering, and is also relevant to smart water.</p>
+
+<p>But an important practical question remains:</p>
+
+<p><strong>Does every smart metering deployment need DLMS/COSEM?</strong></p>
+
+<p>The answer depends on the complete architecture.</p>
+
+<p>Utilities have different meter types, communication technologies, device capabilities, battery constraints, HES and MDMS architectures, operational requirements and long-term strategies.</p>
+
+<p>Other approaches, such as <strong>LwM2M</strong>, can also play a role in IoT device management and lifecycle control.</p>
+
+<p>The important lesson is therefore not that one protocol is universally better than another.</p>
+
+<p>It is that <strong>protocol selection should follow the AMI architecture — not the other way around.</strong></p>
+
+
+<h2>Key Takeaways</h2>
+
+<ul>
+<li>DLMS/COSEM provides a structured framework for representing and exchanging metering information.</li>
+<li>DLMS/COSEM is an application-level framework, not a communication network.</li>
+<li>COSEM objects, OBIS codes and DLMS services are central concepts for understanding how it works.</li>
+<li>Standardization can support multi-vendor interoperability, but supporting the standard does not automatically prove interoperability.</li>
+<li>HES and MDMS architecture remain critical when integrating multiple meter vendors.</li>
+<li>DLMS/COSEM is relevant to smart water, but battery consumption and low-power communication require additional consideration.</li>
+<li>LwM2M has a different emphasis, particularly around lightweight IoT device management and lifecycle control.</li>
+<li>DLMS/COSEM and LwM2M should not automatically be treated as direct substitutes; they can potentially coexist in an architecture.</li>
+<li>Protocol selection should start with data, communication frequency, battery life, device management, HES and MDMS requirements.</li>
+<li>End-to-end testing under realistic conditions is more informative than a standards-compliance statement alone.</li>
+</ul>
+
+
+<h2>What Is DLMS/COSEM?</h2>
+
+<p><strong>DLMS</strong> stands for <strong>Device Language Message Specification</strong>.</p>
+
+<p><strong>COSEM</strong> stands for <strong>Companion Specification for Energy Metering</strong>.</p>
+
+<p>DLMS/COSEM provides an international framework for representing and exchanging information between metering devices and systems such as Head-End Systems (HES).</p>
+
+<p>At a high level:</p>
+
+<ul>
+<li><strong>COSEM</strong> defines how meter information and functionality are represented.</li>
+<li><strong>DLMS</strong> provides mechanisms for accessing and exchanging that information.</li>
+</ul>
+
+<p>Instead of treating a smart meter as a collection of proprietary registers, the framework provides a structured approach for representing meter data and functions.</p>
+
+<p>This becomes particularly useful when a utility needs to integrate equipment from multiple vendors.</p>
+
+
+<h2>DLMS/COSEM Is Not a Communication Network</h2>
+
+<p>One of the most common misunderstandings is to treat DLMS/COSEM as a communication technology.</p>
+
+<p>It is not.</p>
+
+<p>DLMS/COSEM operates at the application level and can work over different communication technologies.</p>
+
+<p>Depending on the architecture, the underlying network could involve:</p>
+
+<ul>
+<li>Cellular</li>
+<li>NB-IoT</li>
+<li>LTE-M</li>
+<li>RF</li>
+<li>PLC</li>
+<li>Ethernet</li>
+<li>Other communication technologies</li>
+</ul>
+
+<p>A simplified AMI architecture is:</p>
+
+<p><strong>Smart Meter → Communication Network → HES → MDMS → Utility Applications</strong></p>
+
+<p>The communication network transports the information.</p>
+
+<p>DLMS/COSEM defines how metering information and services are represented and exchanged.</p>
+
+<p>This separation matters because the communication technology and application protocol do not necessarily have to change together.</p>
+
+
+<h2>The Three Concepts You Need to Understand</h2>
+
+<p>Three concepts are particularly useful when approaching DLMS/COSEM:</p>
+
+<ol>
+<li>COSEM objects</li>
+<li>OBIS codes</li>
+<li>DLMS services</li>
+</ol>
+
+<h3>1. COSEM Objects</h3>
+
+<p>COSEM represents meter functionality using objects.</p>
+
+<p>A meter may expose objects representing:</p>
+
+<ul>
+<li>Energy registers</li>
+<li>Instantaneous values</li>
+<li>Load profiles</li>
+<li>Clock</li>
+<li>Communication settings</li>
+<li>Tariff information</li>
+<li>Event logs</li>
+<li>Security parameters</li>
+<li>Device information</li>
+</ul>
+
+<p>Instead of simply saying that a particular register contains a reading, the system can represent the measurement as a defined object with specific attributes and behaviour.</p>
+
+<p>This structured model becomes increasingly valuable when different manufacturers are involved.</p>
+
+<h3>2. OBIS Codes</h3>
+
+<p><strong>OBIS</strong> stands for <strong>Object Identification System</strong>.</p>
+
+<p>OBIS provides a standardized way of identifying meter data.</p>
+
+<p>An OBIS identifier can describe characteristics such as:</p>
+
+<ul>
+<li>What is being measured</li>
+<li>Which measurement channel is involved</li>
+<li>What type of quantity is represented</li>
+<li>How the value is being used</li>
+</ul>
+
+<p>This gives the HES or another client system a structured way of identifying information.</p>
+
+<p>However, utilities should not assume that OBIS codes automatically guarantee interoperability.</p>
+
+<p>Different devices can support different objects, profiles, optional features and manufacturer-specific extensions.</p>
+
+<p>The actual implementation still matters.</p>
+
+<h3>3. DLMS Services</h3>
+
+<p>DLMS provides mechanisms used by a client to access information from the meter.</p>
+
+<p>In a typical architecture:</p>
+
+<p><strong>Smart Meter = Server</strong></p>
+
+<p><strong>HES = Client</strong></p>
+
+<p>The HES establishes communication with the meter and requests information from relevant COSEM objects.</p>
+
+<p>A simplified sequence can be:</p>
+
+<p><strong>Connect → Authenticate → Request Data → Meter Responds → HES Processes Data</strong></p>
+
+<p>Actual exchanges can become more complex when security, association, block transfers, selective access and different communication profiles are involved.</p>
+
+
+<h2>Why DLMS/COSEM Matters for Interoperability</h2>
+
+<p>The major attraction of DLMS/COSEM is standardization.</p>
+
+<p>Without a common approach, a utility could end up with:</p>
+
+<p><strong>Vendor A meter → Proprietary protocol</strong></p>
+<p><strong>Vendor B meter → Proprietary protocol</strong></p>
+<p><strong>Vendor C meter → Proprietary protocol</strong></p>
+
+<p>The HES would then require separate integrations for each vendor.</p>
+
+<p>With a standardized approach, the architecture can move closer to:</p>
+
+<p><strong>Multiple Meter Vendors → Common Metering Model → HES</strong></p>
+
+<p>This does not eliminate integration work.</p>
+
+<p>It can, however, reduce unnecessary vendor dependency and provide a common framework for exchanging metering information.</p>
+
+<p>For infrastructure expected to operate for 10–15 years or more, that flexibility can be significant.</p>
+
+
+<h2>Standardized Does Not Mean Automatically Interoperable</h2>
+
+<p>This is one of the most important practical lessons.</p>
+
+<p>Two vendors can both state that their meters support DLMS/COSEM and still require significant integration work.</p>
+
+<p>Implementations can differ in:</p>
+
+<ul>
+<li>Supported objects</li>
+<li>Optional features</li>
+<li>Communication profiles</li>
+<li>Security configuration</li>
+<li>Association handling</li>
+<li>Data access methods</li>
+<li>Event handling</li>
+<li>Firmware functionality</li>
+<li>Manufacturer-specific extensions</li>
+</ul>
+
+<p>Therefore:</p>
+
+<p><strong>“Supports DLMS/COSEM” is not the same as “has been proven interoperable with our AMI architecture.”</strong></p>
+
+<p>Utilities should test the actual implementation.</p>
+
+
+<h2>HES Interoperability</h2>
+
+<p>The HES becomes particularly important when multiple meter vendors are involved.</p>
+
+<p>A utility may eventually have:</p>
+
+<ul>
+<li>Different meter manufacturers</li>
+<li>Different meter models</li>
+<li>Different firmware generations</li>
+<li>Different communication technologies</li>
+<li>Different device capabilities</li>
+</ul>
+
+<p>The HES needs to manage this complexity without creating a separate operational silo for every vendor.</p>
+
+<p>Utilities should therefore ask:</p>
+
+<ul>
+<li>Can the HES support multiple meter vendors?</li>
+<li>Can it manage different device models?</li>
+<li>Can it maintain different configurations?</li>
+<li>Can it handle different supported object sets?</li>
+<li>Can it expose consistent data to the MDMS?</li>
+<li>Can it accommodate future device technologies?</li>
+</ul>
+
+
+<h2>MDMS Interoperability</h2>
+
+<p>The MDMS introduces another important layer.</p>
+
+<p>Different meters may produce information in different structures, even when they use the same underlying standard.</p>
+
+<p>The MDMS needs to transform this information into a consistent representation that downstream systems can use.</p>
+
+<p>A simplified architecture might look like:</p>
+
+<p><strong>Meter A / Meter B / Meter C → HES → MDMS → Common Data Representation → Billing / Analytics / Operations</strong></p>
+
+<p>Ideally, downstream applications should not need to know which manufacturer produced the meter.</p>
+
+<p>They should consume consistent information.</p>
+
+<p>This abstraction is one of the valuable outcomes of a well-designed AMI architecture.</p>
+
+
+<h2>DLMS/COSEM and Smart Water</h2>
+
+<p>Although COSEM includes “Energy Metering” in its name, the DLMS/COSEM framework can also be relevant to smart water metering.</p>
+
+<p>Water meters may need to expose information such as:</p>
+
+<ul>
+<li>Cumulative consumption</li>
+<li>Flow information</li>
+<li>Reverse flow</li>
+<li>Leak indicators</li>
+<li>Valve status</li>
+<li>Battery status</li>
+<li>Events</li>
+<li>Diagnostics</li>
+<li>Device configuration</li>
+</ul>
+
+<p>A standardized data model can help utilities integrate different meter manufacturers into a common AMI environment.</p>
+
+<p>However, smart water introduces additional considerations.</p>
+
+<p>Unlike many electricity meters, smart water meters are frequently:</p>
+
+<ul>
+<li>Battery powered</li>
+<li>Installed underground</li>
+<li>Expected to operate for many years</li>
+<li>Connected using low-power communication</li>
+<li>Required to transmit relatively small amounts of data</li>
+</ul>
+
+<p>The protocol implementation therefore needs to be considered together with the meter's energy budget.</p>
+
+
+<h2>DLMS/COSEM and Low-Power Communication</h2>
+
+<p>DLMS/COSEM does not require a high-bandwidth network.</p>
+
+<p>The application protocol can be carried over different communication technologies, including architectures involving:</p>
+
+<ul>
+<li>NB-IoT</li>
+<li>LTE-M</li>
+<li>RF</li>
+<li>PLC</li>
+<li>Other low-power or wireless technologies</li>
+</ul>
+
+<p>However, application-level compatibility does not automatically guarantee good field performance.</p>
+
+<p>A protocol may work well in laboratory conditions but behave differently when the meter is:</p>
+
+<ul>
+<li>Underground</li>
+<li>In a poor coverage area</li>
+<li>Operating with a weak signal</li>
+<li>Experiencing repeated communication retries</li>
+<li>Running on a limited battery budget</li>
+</ul>
+
+<p>Protocol evaluation should therefore include realistic deployment conditions.</p>
+
+
+<h2>The Hidden Challenge: Battery Consumption</h2>
+
+<p>For mains-powered equipment, additional communication exchanges may have relatively little impact on operating cost.</p>
+
+<p>For a battery-powered smart water meter, the situation is different.</p>
+
+<p>Every communication event consumes energy.</p>
+
+<p>Additional exchanges may result from:</p>
+
+<ul>
+<li>Authentication</li>
+<li>Session establishment</li>
+<li>Data requests</li>
+<li>Retries</li>
+<li>Diagnostics</li>
+<li>Configuration changes</li>
+<li>Remote commands</li>
+<li>Firmware management</li>
+</ul>
+
+<p>Across a single transaction, the difference may appear insignificant.</p>
+
+<p>Across thousands of transactions over many years, it can become important.</p>
+
+<p>The question should therefore not simply be:</p>
+
+<p><strong>“Does the meter support DLMS/COSEM?”</strong></p>
+
+<p>It should also be:</p>
+
+<p><strong>“What is the energy impact of the actual implementation?”</strong></p>
+
+
+<h2>DLMS/COSEM vs LwM2M</h2>
+
+<p>LwM2M, or <strong>Lightweight Machine-to-Machine</strong>, is an IoT device-management framework designed around lightweight communication and device lifecycle management.</p>
+
+<p>It has a different emphasis from DLMS/COSEM.</p>
+
+<h3>DLMS/COSEM</h3>
+
+<p>Its strengths include:</p>
+
+<ul>
+<li>Standardized metering data models</li>
+<li>Structured meter objects</li>
+<li>Data identification</li>
+<li>Metering services</li>
+<li>Multi-vendor metering interoperability</li>
+<li>Utility-oriented data exchange</li>
+</ul>
+
+<h3>LwM2M</h3>
+
+<p>Its strengths include:</p>
+
+<ul>
+<li>Device management</li>
+<li>Device provisioning</li>
+<li>Remote configuration</li>
+<li>Monitoring</li>
+<li>Firmware management</li>
+<li>Lightweight IoT communication</li>
+<li>Resource-oriented device models</li>
+</ul>
+
+<p>This leads to an important distinction:</p>
+
+<p><strong>DLMS/COSEM is strongly metering-oriented, while LwM2M is strongly device-management and IoT-oriented.</strong></p>
+
+<p>They should therefore not automatically be treated as direct substitutes.</p>
+
+
+<h2>Could DLMS/COSEM and LwM2M Coexist?</h2>
+
+<p>Yes.</p>
+
+<p>A modern IoT architecture does not necessarily need one technology to perform every function.</p>
+
+<p>Different layers can use different mechanisms.</p>
+
+<p>For example, one approach could provide standardized meter data representation while another provides device lifecycle management.</p>
+
+<p>A simplified architecture might be:</p>
+
+<p><strong>Meter → Communication Layer → Device Management / Application Layer → HES → MDMS → Utility Applications</strong></p>
+
+<p>The exact architecture depends on the deployment.</p>
+
+<p>The key lesson is:</p>
+
+<p><strong>Do not force one protocol to solve every problem.</strong></p>
+
+
+<h2>Why Different Utilities Make Different Choices</h2>
+
+<p>Utilities can make different protocol decisions because their requirements are different.</p>
+
+<p>Relevant factors include:</p>
+
+<ul>
+<li>Existing AMI infrastructure</li>
+<li>Meter type</li>
+<li>Communication technology</li>
+<li>Device processing capability</li>
+<li>Battery constraints</li>
+<li>HES architecture</li>
+<li>MDMS architecture</li>
+<li>Regulatory requirements</li>
+<li>Cybersecurity requirements</li>
+<li>Device-management requirements</li>
+<li>Vendor ecosystem</li>
+<li>Long-term lifecycle strategy</li>
+</ul>
+
+<p>A protocol that fits one deployment well may be unnecessarily complex — or insufficient — for another.</p>
+
+<p>This is why copying another utility's technology stack without understanding its architecture can be risky.</p>
+
+
+<h2>Don't Choose the Protocol First</h2>
+
+<p>One of the common mistakes in AMI procurement is starting with the protocol.</p>
+
+<p>A better approach is to start with requirements.</p>
+
+<h3>What data do we actually need?</h3>
+
+<ul>
+<li>Daily consumption?</li>
+<li>Hourly consumption?</li>
+<li>Interval data?</li>
+<li>Events?</li>
+<li>Diagnostics?</li>
+<li>Leak information?</li>
+</ul>
+
+<h3>How frequently must the meter communicate?</h3>
+
+<ul>
+<li>Once per day?</li>
+<li>Several times per day?</li>
+<li>On demand?</li>
+<li>Near real time?</li>
+</ul>
+
+<h3>What is the battery-life requirement?</h3>
+
+<ul>
+<li>Five years?</li>
+<li>Ten years?</li>
+<li>Fifteen years?</li>
+</ul>
+
+<h3>What device-management capabilities are required?</h3>
+
+<ul>
+<li>Configuration?</li>
+<li>Diagnostics?</li>
+<li>Firmware updates?</li>
+<li>Remote commands?</li>
+</ul>
+
+<h3>What must the HES support?</h3>
+
+<ul>
+<li>Multiple meter vendors?</li>
+<li>Multiple communication technologies?</li>
+<li>Large-scale device management?</li>
+</ul>
+
+<h3>What must the MDMS receive?</h3>
+
+<ul>
+<li>Raw readings?</li>
+<li>Validated data?</li>
+<li>Events?</li>
+<li>Profiles?</li>
+<li>Diagnostics?</li>
+</ul>
+
+<p>Only after these questions are answered should protocol selection become clearer.</p>
+
+
+<h2>Testing Matters More Than the Specification</h2>
+
+<p>A protocol specification can describe what should happen.</p>
+
+<p>A field test shows what actually happens.</p>
+
+<p>A proper interoperability programme should test:</p>
+
+<p><strong>Meter → Network → HES → MDMS</strong></p>
+
+<p>under realistic conditions.</p>
+
+<p>Testing should include:</p>
+
+<ul>
+<li>Normal data collection</li>
+<li>Missing communication</li>
+<li>Retries</li>
+<li>Duplicate messages</li>
+<li>Delayed messages</li>
+<li>Incorrect timestamps</li>
+<li>Device resets</li>
+<li>Configuration changes</li>
+<li>Security failures</li>
+<li>Firmware updates</li>
+<li>Meter replacement</li>
+</ul>
+
+<p>The failure cases are particularly important.</p>
+
+<p>A system that works only when everything is perfect is not necessarily ready for a large-scale AMI deployment.</p>
+
+
+<h2>What Utilities Should Ask Vendors</h2>
+
+<h3>Which DLMS/COSEM Features Are Supported?</h3>
+
+<p>Request the actual implementation details rather than relying only on a general compliance statement.</p>
+
+<h3>Which Objects and OBIS Codes Are Available?</h3>
+
+<p>Do not assume the standard automatically provides every function required by the project.</p>
+
+<h3>Which Communication Profiles Are Supported?</h3>
+
+<p>This matters when using cellular, RF, PLC or other communication technologies.</p>
+
+<h3>What Security Mechanisms Are Implemented?</h3>
+
+<p>Understand authentication, encryption, key management and access levels.</p>
+
+<h3>How Has Interoperability Been Tested?</h3>
+
+<p>Ask for actual evidence rather than relying only on documentation.</p>
+
+<h3>How Does the Meter Behave Under Poor Communication Conditions?</h3>
+
+<p>This is particularly important for low-power deployments.</p>
+
+<h3>What Is the Impact on Battery Life?</h3>
+
+<p>Evaluate the complete communication process rather than the protocol name alone.</p>
+
+<h3>How Are Firmware Updates Handled?</h3>
+
+<p>Device lifecycle management should be considered from the beginning.</p>
+
+<h3>Can the HES Manage Multiple Vendors?</h3>
+
+<p>This connects directly to the interoperability strategy discussed in Article #24.</p>
+
+
+<h2>A Practical Comparison</h2>
+
+<p>The comparison between DLMS/COSEM and LwM2M is not about declaring one technology the winner.</p>
+
+<p>They have different strengths and address different architectural requirements.</p>
+
+<p>The appropriate choice depends on the complete system architecture, including the meter, communication network, HES, MDMS, device-management requirements and lifecycle strategy.</p>
+
+
+<h2>Practical Lessons From AMI Deployments</h2>
+
+<h3>1. Standards Do Not Eliminate Engineering</h3>
+
+<p>A standard provides a framework. The implementation determines real-world performance.</p>
+
+<h3>2. Interoperability Must Be Demonstrated</h3>
+
+<p>A compliance statement is not a substitute for end-to-end testing.</p>
+
+<h3>3. Protocol Choice Should Follow Architecture</h3>
+
+<p>Do not select a protocol simply because it is widely used elsewhere.</p>
+
+<h3>4. Low-Power Devices Need Special Consideration</h3>
+
+<p>A protocol implementation that works well in a mains-powered device may require careful optimization in a battery-powered smart water meter.</p>
+
+<h3>5. Device Management Is Becoming Increasingly Important</h3>
+
+<p>Modern AMI is moving beyond simple meter reading toward:</p>
+
+<ul>
+<li>Remote configuration</li>
+<li>Diagnostics</li>
+<li>Firmware management</li>
+<li>Device monitoring</li>
+<li>Richer data services</li>
+</ul>
+
+<h3>6. Different Deployment Environments Can Justify Different Technologies</h3>
+
+<p>There is no universal AMI architecture.</p>
+
+<p>The appropriate solution depends on the meter, network, HES, MDMS, operational requirements and lifecycle strategy.</p>
+
+<h3>7. Future Flexibility Matters</h3>
+
+<p>A protocol decision made today can influence a utility's ability to introduce new meter vendors, communication technologies and software platforms years later.</p>
+
+
+<h2>The Real Question Is Not “Which Protocol?”</h2>
+
+<p>The better question is:</p>
+
+<p><strong>“What do we need the meter and AMI platform to do over the next 10–15 years?”</strong></p>
+
+<p>If the primary requirement is standardized metering data exchange across multiple vendors, DLMS/COSEM can be attractive.</p>
+
+<p>If the architecture places greater emphasis on lightweight IoT device management, remote lifecycle control and broader IoT integration, LwM2M may be attractive.</p>
+
+<p>In some architectures, different technologies may also coexist.</p>
+
+<p>The decision should therefore be based on:</p>
+
+<p><strong>Meter + Communication + HES + MDMS + Security + Operations + Lifecycle</strong></p>
+
+<p>—not on the protocol name alone.</p>
+
+
+<h2>Conclusion</h2>
+
+<p>DLMS/COSEM remains an important technology for standardized smart-meter data exchange.</p>
+
+<p>Its structured object model, data identification mechanisms, application services and support for different communication profiles make it useful for multi-vendor utility environments.</p>
+
+<p>But the practical lesson is not that every utility should choose DLMS/COSEM.</p>
+
+<p>The comparison with LwM2M demonstrates something more important: different technologies can solve different architectural problems.</p>
+
+<p>For smart water in particular, utilities need to consider not only interoperability and functionality, but also:</p>
+
+<ul>
+<li>Battery life</li>
+<li>Communication efficiency</li>
+<li>Device-management requirements</li>
+<li>Firmware lifecycle</li>
+<li>HES integration</li>
+<li>MDMS integration</li>
+<li>Security</li>
+<li>Long-term maintainability</li>
+</ul>
+
+<p>The most suitable protocol is the one that fits the meter, communication network, HES, MDMS, security architecture, operational model and long-term business requirements as one system.</p>
+
+<p><strong>Don't choose the protocol first. Design the architecture first — and then choose the protocol that fits it.</strong></p>
+
+</section>
+          
+
+            <!-- =================================================
+                 FULL ARTICLE ON MEDIUM
+                 ================================================= -->
+
+<section class="medium-link">
+<h2>Read the Full Article on Medium</h2>
+
+<p>
+This article was originally published on Medium, where the full discussion explores DLMS/COSEM, interoperability, smart water considerations, battery impact, LwM2M and practical protocol selection for AMI.
+</p>
+
+<p>
+<a href="https://medium.com/@smartinfra.insights/dlms-cosem-explained-practically-what-utilities-need-to-know-before-choosing-a-metering-protocol-bd5307c061d0"
+target="_blank"
+rel="noopener noreferrer">
+Read the Full Article on Medium →
+</a>
+</p>
+</section>
+            <!-- =================================================
+                 RELATED ARTICLES
+                 ================================================= -->
+
+<section>
+<h2>Related Smart Metering Topics</h2>
+
+<ul>
+<li><a href="/publications/interoperability-in-multi-vendor-ami-systems.html">Interoperability in Multi-Vendor AMI Systems</a></li>
+
+<li><a href="/publications/head-end-systems-hes-explained-the-communication-hub-of-ami.html">Head-End Systems (HES) Explained: The Communication Hub of AMI</a></li>
+
+<li><a href="/publications/meter-data-management-systems-mdms-explained-turning-data-into-information.html">Meter Data Management Systems (MDMS) Explained: Turning Data into Information</a></li>
+
+<li><a href="/publications/smart-metering-architecture.html">Smart Metering System Architecture: End-to-End Design for Utilities</a></li>
+
+<li><a href="/publications/nb-iot-vs-lorawan-in-real-deployments.html">NB-IoT vs LoRaWAN in Real Deployments: What Actually Happens in the Field</a></li>
+
+<li><a href="/publications/nb-iot-vs-lorawan-vs-lte-m.html">NB-IoT vs LoRaWAN vs LTE-M: Choosing the Right IoT Connectivity for Smart Utilities</a></li>
+
+<li><a href="/publications/firmware-management-in-ami.html">Firmware Management in AMI: The Hidden Operational Challenge</a></li>
+
+<li><a href="/publications/smart-meter-battery-life.html">Smart Meter Battery Life Explained: Why “10 Years” Is Not Just a Specification</a></li>
+</ul>
+</section>
+
+        </article>
+
+    </main>
+
+  
+
+<footer>
+
+<p>© 2026 Vincent Wong. All rights reserved.</p>
+
+<p style="font-style: italic; text-align: justify; color: #555;">
+The personal engineering insights shared here represent aspirational industry best practices and do not reflect the active bidding strategies or commercial policies of any current or past employer. Read the full <a href="/about/#disclaimer" style="text-decoration: underline; color: #0066cc; font-weight: bold;">Strategic Disclaimer</a>.
+</p>
+
+<p>
+Smart Metering | AMI | Smart Water | Utility IoT | NB-IoT
+</p>
+<p>
+<a href="/">Home</a> |
+<a href="/about/">About</a> |
+<a href="/whitepapers/">Whitepapers</a> |
+<a href="/publications/">Publications</a> |
+<a href="/patents/">Patents</a> |
+<a href="/speaking/">Speaking</a> |
+<a href="/recognition/">Recognition</a>  
+</p>
+
+</footer>
+
+</body>
+</html>
