@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Interoperability in Multi-Vendor AMI Systems | Vincent Wong</title>
+<meta name="description" content="A practical guide to interoperability in multi-vendor AMI systems, covering standards, HES, MDMS, testing, cybersecurity, procurement and lifecycle flexibility.">
+<meta name="author" content="Vincent Wong Yew Hon">
+<link rel="canonical" href="https://vincentwong-smartmetering.github.io/publications/interoperability-in-multi-vendor-ami-systems.html">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Interoperability in Multi-Vendor AMI Systems">
+<meta property="og:description" content="How utilities can design multi-vendor AMI architectures for interoperability, flexibility, secure integration and long-term lifecycle management.">
+<meta property="og:url" content="https://vincentwong-smartmetering.github.io/publications/interoperability-in-multi-vendor-ami-systems.html">
+<meta property="og:site_name" content="Vincent Wong Smart Metering">
+<meta property="og:image" content="https://vincentwong-smartmetering.github.io/publications/images/interoperability-in-multi-vendor-ami-systems.jpg">
+<meta property="og:image:alt" content="Interoperability in Multi-Vendor AMI Systems">
+<meta property="og:locale" content="en_US">
+
+<meta property="article:author" content="Vincent Wong Yew Hon">
+<meta property="article:published_time" content="2026-08-27">
+<meta property="article:modified_time" content="2026-08-27">
+<meta property="article:section" content="AMI Architecture">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Interoperability in Multi-Vendor AMI Systems">
+<meta name="twitter:description" content="A practical guide to interoperability across meters, networks, HES, MDMS and utility applications in multi-vendor AMI environments.">
+<meta name="twitter:image" content="https://vincentwong-smartmetering.github.io/publications/images/interoperability-in-multi-vendor-ami-systems.jpg">
+<meta name="twitter:image:alt" content="Interoperability in Multi-Vendor AMI Systems">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Interoperability in Multi-Vendor AMI Systems",
+  "description": "A practical guide to interoperability across meters, networks, HES, MDMS and utility applications in multi-vendor AMI environments.",
+  "url": "https://vincentwong-smartmetering.github.io/publications/interoperability-in-multi-vendor-ami-systems.html",
+  "datePublished": "2026-08-27",
+  "dateModified": "2026-08-27",
+  "author": {
+    "@type": "Person",
+    "name": "Vincent Wong Yew Hon",
+    "url": "https://vincentwong-smartmetering.github.io/about/"
+  },
+  "image": "https://vincentwong-smartmetering.github.io/publications/images/interoperability-in-multi-vendor-ami-systems.jpg",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://vincentwong-smartmetering.github.io/publications/interoperability-in-multi-vendor-ami-systems.html"
+  }
+}
+</script>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<style>
+
+/* Fixes the main hero image scaling on mobile devices */
+.article-hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.article-category {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #0066cc; 
+    margin-bottom: 8px;
+}
+
+.article-meta {
+    font-size: 0.95rem;         /* Slightly smaller than body text */
+    color: #64748b;             /* Subdued gray to sit quietly in the background */
+    margin-top: 0;
+    margin-bottom: 28px;        /* Creates clean space before the hero image starts */
+}
+
+.article-subtitle {
+    font-size: 1.25rem;         /* Visually larger than body text */
+    font-weight: 400;           /* Lighter weight to contrast with the bold H1 */
+    color: #4a5568;             /* Soft charcoal slate color (easier on eyes) */
+    line-height: 1.5;           /* Relaxed spacing for high readability */
+    margin-top: 0;              
+    margin-bottom: 24px;        /* Pushes metadata neatly down */
+}
+
+.article-header h1 {
+    font-size: 2.2rem;          /* Pronounced, high-contrast size */
+    font-weight: 800;           /* Clean, bold appearance */
+    color: #002244;             /* Premium, deep corporate blue */
+    line-height: 1.25;          /* Gives text breathing room when it wraps */
+    margin-top: 8px;            /* Tight gap beneath the category kicker */
+    margin-bottom: 12px;        /* Controlled space above the subtitle */
+    letter-spacing: -0.02em;    /* Slightly tighter tracking for a modern feel */
+}
+
+</style>
+</head>
+
+<body>
+
+<h1 id="top">Publications</h1>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/whitepapers/">Whitepapers</a>
+    <a href="/publications/">Publications</a>
+    <a href="/patents/">Patents</a>
+    <a href="/speaking/">Speaking</a>
+    <a href="/recognition/">Recognition</a>
+</nav>
+
+<hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 25px;">
+    
+
+<main class="container">
+
+        <article>
+
+            <!-- =================================================
+                 ARTICLE HEADER
+                 ================================================= -->
+
+<header class="article-header">
+<p class="article-category">AMI Architecture</p>
+
+<h1>Interoperability in Multi-Vendor AMI Systems</h1>
+
+<p class="article-subtitle">
+How utilities can design multi-vendor AMI architectures that support interoperability, secure integration, operational consistency and long-term flexibility.
+</p>
+
+<div class="article-hero">
+<img src="/publications/images/interoperability-in-multi-vendor-ami-systems.jpg"
+alt="Interoperability in Multi-Vendor AMI Systems"
+loading="eager">
+</div>
+
+<p class="article-meta">
+By <strong>Vincent Wong Yew Hon</strong> · 27 August 2026
+</p>
+</header>
+
+            <!-- =================================================
+                 ARTICLE INTRODUCTION
+                 ================================================= -->
+
+<section>
+
+<h2>Introduction</h2>
+
+<p>A utility may begin an AMI deployment with one meter vendor, one communication technology and one software platform. But AMI infrastructure can remain in operation for 10–15 years, and the technology landscape rarely stays unchanged for that long.</p>
+
+<p>New meter models appear. Communication technologies evolve. Existing equipment reaches end-of-life. New vendors enter the market. Utility requirements change.</p>
+
+<p>This creates a fundamental question:</p>
+
+<p><strong>Can different components continue to work together as one AMI system?</strong></p>
+
+<p>This is the challenge of interoperability.</p>
+
+<p>Interoperability is broader than protocol compatibility. It affects architecture, procurement, HES and MDMS design, testing, cybersecurity, operations and the utility's ability to evolve its AMI infrastructure over time.</p>
+
+<p>For a long-lived AMI programme, interoperability should therefore be treated as a <strong>lifecycle strategy</strong>, not simply a specification requirement.</p>
+
+
+<h2>Key Takeaways</h2>
+
+<ul>
+<li>Multi-vendor AMI can provide procurement flexibility, technology choice and supply continuity.</li>
+<li>Interoperability goes beyond supporting the same communication protocol.</li>
+<li>Physical, communication, data, functional and operational interoperability all matter.</li>
+<li>Standards such as DLMS/COSEM help establish common frameworks, but proven end-to-end interoperability still requires testing.</li>
+<li>HES and MDMS architecture are central to managing multiple vendors without creating isolated systems.</li>
+<li>Vendor-specific extensions should be controlled so that they do not create excessive long-term dependency.</li>
+<li>Interoperability testing should include failure cases, firmware changes and real field conditions.</li>
+<li>Cybersecurity governance becomes increasingly important as the number of vendors and interfaces increases.</li>
+<li>Interoperability requirements should be defined during procurement and made specific, testable and enforceable.</li>
+<li>The long-term objective is not identical equipment. It is the utility's freedom to change vendors and technologies without redesigning the entire AMI architecture.</li>
+</ul>
+
+
+<h2>What Is Interoperability in AMI?</h2>
+
+<p>In simple terms, interoperability means that equipment and systems from different vendors can exchange information and perform their intended functions within the same overall architecture.</p>
+
+<p>A simplified AMI architecture is:</p>
+
+<p><strong>Smart Meter → Communication Network → HES → MDMS → Utility Applications</strong></p>
+
+<p>In a multi-vendor environment, several meter manufacturers may feed into the same communication and backend architecture.</p>
+
+<p>The objective is not necessarily to make every device identical.</p>
+
+<p>The objective is to ensure that different components can:</p>
+
+<ul>
+<li>Communicate with one another</li>
+<li>Exchange meaningful information</li>
+<li>Perform required functions</li>
+<li>Be managed within the overall architecture</li>
+</ul>
+
+<p>This distinction is important because a technically connected system is not necessarily an interoperable operational system.</p>
+
+
+<h2>Why Utilities Move Toward Multi-Vendor AMI</h2>
+
+<h3>1. Procurement Flexibility</h3>
+
+<p>Depending entirely on one supplier can create long-term commercial and technical dependency. Multiple qualified vendors can provide greater flexibility during future procurement exercises.</p>
+
+<h3>2. Technology Evolution</h3>
+
+<p>A technology selected today may not remain the preferred choice throughout a 10- or 15-year infrastructure lifecycle. Utilities may want to introduce newer meter architectures or communication technologies without replacing the entire AMI platform.</p>
+
+<h3>3. Supply Continuity</h3>
+
+<p>Large infrastructure programmes can be affected by manufacturing capacity, component shortages, logistics or vendor changes. Alternative qualified suppliers can reduce supply risk.</p>
+
+<h3>4. Geographic Requirements</h3>
+
+<p>Urban, rural, high-rise, underground and difficult RF environments may require different technical approaches. A multi-vendor architecture can provide greater flexibility where deployment conditions vary.</p>
+
+<h3>5. Legacy Equipment</h3>
+
+<p>Utilities rarely replace every meter and system at exactly the same time. Existing equipment may need to coexist with newer generations.</p>
+
+<p>This creates a practical interoperability challenge:</p>
+
+<p><strong>How can new technology be introduced without breaking the existing system?</strong></p>
+
+
+<h2>Interoperability Is More Than Protocol Compatibility</h2>
+
+<p>A common assumption is that if two devices support the same protocol, they are automatically interoperable.</p>
+
+<p>That is not necessarily the case.</p>
+
+<p>Two systems using the same protocol may still differ in:</p>
+
+<ul>
+<li>Data models</li>
+<li>Object structures</li>
+<li>Command implementation</li>
+<li>Security mechanisms</li>
+<li>Firmware behaviour</li>
+<li>Configuration</li>
+<li>Error handling</li>
+<li>Timing</li>
+<li>Optional features</li>
+</ul>
+
+<p>Interoperability therefore needs to be considered across multiple layers rather than reduced to a single protocol-support statement.</p>
+
+
+<h2>The Different Layers of Interoperability</h2>
+
+<h3>1. Physical Interoperability</h3>
+
+<p>Can the devices physically communicate?</p>
+
+<p>This can involve technologies such as:</p>
+
+<ul>
+<li>RF</li>
+<li>Cellular</li>
+<li>NB-IoT</li>
+<li>LTE-M</li>
+<li>LoRaWAN</li>
+<li>PLC</li>
+<li>Wireless M-Bus</li>
+</ul>
+
+<p>Physical connectivity is the starting point, but it is only the starting point.</p>
+
+<h3>2. Communication Interoperability</h3>
+
+<p>Can the devices exchange messages using compatible communication protocols?</p>
+
+<p>Two devices may use the same underlying network while still requiring different application-layer protocols or implementations.</p>
+
+<h3>3. Data Interoperability</h3>
+
+<p>Can the receiving system correctly understand what the data represents?</p>
+
+<p>For example, a value such as <strong>12345</strong> could represent total consumption, instantaneous flow, reverse flow, a tariff register, a cumulative reading or a diagnostic value.</p>
+
+<p>Interoperability therefore requires agreement not only on how data is transported, but also on what the data means.</p>
+
+<h3>4. Functional Interoperability</h3>
+
+<p>Can the systems actually perform the required functions?</p>
+
+<p>Examples include:</p>
+
+<ul>
+<li>Reading meter data</li>
+<li>Synchronizing time</li>
+<li>Changing configuration</li>
+<li>Retrieving diagnostics</li>
+<li>Receiving alarms</li>
+<li>Performing remote operations</li>
+<li>Managing firmware</li>
+</ul>
+
+<p>A system may successfully exchange messages while still failing to support important operational functions.</p>
+
+<h3>5. Operational Interoperability</h3>
+
+<p>Can utility personnel manage different devices consistently?</p>
+
+<p>If an operations team manages several meter vendors and each vendor requires a completely different workflow, dashboard, diagnostic process and troubleshooting procedure, technical interoperability may exist while operational complexity remains high.</p>
+
+<p>Good interoperability should reduce this burden rather than simply move it somewhere else.</p>
+
+
+<h2>Standards Help — but Standards Alone Are Not Enough</h2>
+
+<p>Standards such as DLMS/COSEM can provide a common framework for meter communication and data exchange.</p>
+
+<p>However, supporting a standard does not automatically guarantee seamless interoperability.</p>
+
+<p>Different vendors may implement optional features differently. Device-specific extensions may also exist.</p>
+
+<p>Utilities should therefore distinguish between:</p>
+
+<p><strong>“Supports the standard”</strong></p>
+
+<p>and:</p>
+
+<p><strong>“Has been proven to interoperate with our complete AMI architecture.”</strong></p>
+
+<p>The second statement provides a much more meaningful basis for deployment decisions.</p>
+
+
+<h2>HES Interoperability</h2>
+
+<p>The HES becomes particularly important in a multi-vendor environment.</p>
+
+<p>A utility may have different meter vendors, communication technologies, firmware generations and device capabilities.</p>
+
+<p>The HES needs to provide an operational layer capable of managing these differences.</p>
+
+<p>Utilities should consider questions such as:</p>
+
+<ul>
+<li>Can the HES support multiple meter vendors?</li>
+<li>Can it manage different device models?</li>
+<li>Can it maintain different configurations?</li>
+<li>Can it normalize device information?</li>
+<li>Can it expose consistent interfaces to the MDMS?</li>
+<li>Can it support future meter technologies?</li>
+</ul>
+
+<p>The objective should be to prevent the HES from becoming a collection of isolated vendor-specific systems.</p>
+
+
+<h2>MDMS Interoperability</h2>
+
+<p>The MDMS introduces another important interoperability challenge.</p>
+
+<p>Different meters may provide information using different structures. The MDMS needs to transform that information into a consistent representation for downstream applications.</p>
+
+<p>A simplified model is:</p>
+
+<p><strong>Meter A / Meter B / Meter C → HES → MDMS → Common Data Model → Billing / Analytics / Operations</strong></p>
+
+<p>This abstraction is valuable because downstream applications should ideally not need to know which manufacturer produced the meter.</p>
+
+<p>They should be able to consume consistent information regardless of the meter vendor.</p>
+
+
+<h2>The Danger of Vendor-Specific Extensions</h2>
+
+<p>Vendor-specific features can be useful. They may provide capabilities that are not available through a common standard.</p>
+
+<p>The risk appears when proprietary functionality becomes deeply embedded in the overall architecture.</p>
+
+<p>Over time, the utility may discover that:</p>
+
+<ul>
+<li>A specific feature only works with one vendor</li>
+<li>Replacing the vendor requires significant software changes</li>
+<li>Historical data becomes difficult to migrate</li>
+<li>New meters cannot support existing workflows</li>
+<li>Integration costs increase</li>
+</ul>
+
+<p>Proprietary functionality is not automatically bad. The important consideration is how deeply it becomes coupled to the rest of the system.</p>
+
+<p>A good architecture should clearly distinguish between:</p>
+
+<p><strong>Core interoperable functions</strong></p>
+
+<p>and</p>
+
+<p><strong>Vendor-specific capabilities.</strong></p>
+
+
+<h2>Testing Is Where Interoperability Becomes Real</h2>
+
+<p>Interoperability should not be proven through documentation alone. It needs to be tested.</p>
+
+<p>A proper interoperability programme may include several levels of testing.</p>
+
+<h3>Factory Testing</h3>
+
+<p>Testing individual devices and systems before deployment.</p>
+
+<h3>Integration Testing</h3>
+
+<p>Testing communication between the meter, network, HES, MDMS and enterprise systems.</p>
+
+<h3>Multi-Vendor Testing</h3>
+
+<p>Testing devices from different manufacturers within the same architecture.</p>
+
+<h3>Field Testing</h3>
+
+<p>Testing under real environmental and communication conditions.</p>
+
+<h3>Regression Testing</h3>
+
+<p>Ensuring that adding a new vendor or firmware version does not break existing functionality.</p>
+
+<p>This last point is particularly important. A system can be interoperable today and become less interoperable after a software or firmware update.</p>
+
+
+<h2>Test the Failure Cases, Not Just the Happy Path</h2>
+
+<p>A common mistake is testing only successful communication.</p>
+
+<p>A simple test might be:</p>
+
+<p><strong>Meter sends reading → HES receives reading → MDMS processes reading</strong></p>
+
+<p>But real systems also experience:</p>
+
+<ul>
+<li>Lost packets</li>
+<li>Duplicate messages</li>
+<li>Delayed messages</li>
+<li>Incorrect timestamps</li>
+<li>Device resets</li>
+<li>Partial data</li>
+<li>Network outages</li>
+<li>Firmware failures</li>
+<li>Authentication errors</li>
+</ul>
+
+<p>Interoperability testing should therefore ask:</p>
+
+<p><strong>What happens when something goes wrong?</strong></p>
+
+<p>The answer can reveal much more about the maturity of an AMI architecture than a successful reading test alone.</p>
+
+
+<h2>Interoperability and Firmware Management</h2>
+
+<p>A long-lived AMI system may eventually contain multiple generations of firmware across multiple vendors.</p>
+
+<p>The HES and device-management architecture therefore needs to understand:</p>
+
+<ul>
+<li>Firmware versions</li>
+<li>Compatibility</li>
+<li>Upgrade procedures</li>
+<li>Rollback</li>
+<li>Device capabilities</li>
+<li>Security requirements</li>
+</ul>
+
+<p>An OTA update that works for one meter family may not work for another.</p>
+
+<p>Firmware management should therefore be included in interoperability planning from the beginning.</p>
+
+
+<h2>Interoperability and Cybersecurity</h2>
+
+<p>Adding more vendors also increases the number of interfaces and potential attack surfaces.</p>
+
+<p>Each additional system may introduce:</p>
+
+<ul>
+<li>Credentials</li>
+<li>APIs</li>
+<li>Certificates</li>
+<li>Network connections</li>
+<li>Management interfaces</li>
+<li>Software components</li>
+</ul>
+
+<p>Utilities therefore need strong governance around:</p>
+
+<ul>
+<li>Authentication</li>
+<li>Authorization</li>
+<li>Encryption</li>
+<li>Certificate management</li>
+<li>Access control</li>
+<li>Audit logging</li>
+<li>Vendor access</li>
+</ul>
+
+<p>Interoperability should never mean uncontrolled connectivity.</p>
+
+<p>The objective is <strong>controlled and secure interaction between trusted components.</strong></p>
+
+
+<h2>The Business Case for Interoperability</h2>
+
+<p>Interoperability may initially appear to increase project cost because it can require additional testing, integration, certification, documentation and technical governance.</p>
+
+<p>However, these activities can provide long-term flexibility.</p>
+
+<p>A multi-vendor architecture can potentially reduce:</p>
+
+<ul>
+<li>Vendor lock-in</li>
+<li>Replacement constraints</li>
+<li>Supply-chain risk</li>
+<li>Technology obsolescence</li>
+<li>Future migration costs</li>
+</ul>
+
+<p>The important question is therefore not simply:</p>
+
+<p><strong>“Is interoperability more expensive today?”</strong></p>
+
+<p>It is:</p>
+
+<p><strong>“What will it cost if we cannot change vendors tomorrow?”</strong></p>
+
+
+<h2>Procurement Requirements Matter</h2>
+
+<p>Interoperability should be addressed during procurement, not after contracts are signed.</p>
+
+<p>Tender requirements can define:</p>
+
+<ul>
+<li>Supported standards</li>
+<li>Required interfaces</li>
+<li>Data models</li>
+<li>API requirements</li>
+<li>Security requirements</li>
+<li>Device certification</li>
+<li>HES integration</li>
+<li>MDMS integration</li>
+<li>Testing requirements</li>
+<li>Documentation</li>
+<li>Ownership and access to data</li>
+</ul>
+
+<p>Broad statements such as <strong>“the system must be interoperable”</strong> provide limited measurable protection.</p>
+
+<p>Interoperability requirements should instead be <strong>specific, testable and contractually enforceable.</strong></p>
+
+
+<h2>Avoid Creating a Multi-Vendor Silo</h2>
+
+<p>There is a subtle risk in multi-vendor architecture.</p>
+
+<p>A utility may successfully deploy several vendors but still end up with:</p>
+
+<p><strong>Vendor A → HES A → MDMS A</strong></p>
+<p><strong>Vendor B → HES B → MDMS B</strong></p>
+<p><strong>Vendor C → HES C → MDMS C</strong></p>
+
+<p>Technically, multiple vendors exist. Operationally, however, the utility now has three separate AMI systems.</p>
+
+<p>That is not the same as true interoperability.</p>
+
+<p>A stronger architecture aims for:</p>
+
+<p><strong>Multiple Vendors → Common Operational Architecture → Common Data Layer → Common Utility Applications</strong></p>
+
+<p>This provides greater flexibility while reducing unnecessary operational fragmentation.</p>
+
+
+<h2>A Practical Interoperability Strategy</h2>
+
+<p>For utilities planning long-term AMI deployment, a practical strategy can be built around seven principles.</p>
+
+<h3>1. Define the Architecture First</h3>
+
+<p>Decide which functions belong in the meter, communication network, HES, MDMS and enterprise applications.</p>
+
+<h3>2. Prioritize Open Interfaces</h3>
+
+<p>Minimize unnecessary dependence on proprietary interfaces.</p>
+
+<h3>3. Define a Common Data Model</h3>
+
+<p>Downstream systems should receive consistent information regardless of meter manufacturer.</p>
+
+<h3>4. Certify Devices</h3>
+
+<p>Establish a formal process for approving new meter models and vendors.</p>
+
+<h3>5. Test End-to-End</h3>
+
+<p>Test the entire chain rather than only individual components.</p>
+
+<h3>6. Test Lifecycle Changes</h3>
+
+<p>Include firmware upgrades, configuration changes, device replacement and system upgrades.</p>
+
+<h3>7. Plan for the Next Vendor</h3>
+
+<p>A useful test of architecture quality is simple:</p>
+
+<p><strong>Could another qualified vendor be introduced without redesigning the entire system?</strong></p>
+
+<p>If the answer is no, the architecture may be too tightly coupled.</p>
+
+
+<h2>The Real Goal: Freedom to Change</h2>
+
+<p>Interoperability is often presented as a technical objective. Its deeper value is strategic flexibility.</p>
+
+<p>An AMI infrastructure may remain operational for more than a decade. During that period, the utility may want to:</p>
+
+<ul>
+<li>Change meter suppliers</li>
+<li>Introduce new communication technologies</li>
+<li>Upgrade the HES</li>
+<li>Replace the MDMS</li>
+<li>Add analytics</li>
+<li>Introduce AI</li>
+<li>Integrate new operational platforms</li>
+</ul>
+
+<p>A well-designed architecture allows these changes to happen progressively.</p>
+
+<p>A tightly coupled architecture can make every change more expensive and disruptive.</p>
+
+<p>This difference can have a significant impact on the total cost of ownership of AMI.</p>
+
+
+<h2>Conclusion</h2>
+
+<p>Multi-vendor AMI is not simply about buying meters from different manufacturers.</p>
+
+<p>It is about creating an architecture in which different technologies, devices and software platforms can operate together throughout the lifecycle of the system.</p>
+
+<p>True interoperability requires more than protocol support. It requires:</p>
+
+<ul>
+<li>Compatible communication</li>
+<li>Consistent data models</li>
+<li>Functional compatibility</li>
+<li>Open interfaces</li>
+<li>HES and MDMS integration</li>
+<li>End-to-end testing</li>
+<li>Security</li>
+<li>Lifecycle governance</li>
+</ul>
+
+<p>Most importantly, interoperability should be designed before the first meter is deployed.</p>
+
+<p>The objective is not to eliminate vendor differences. It is to prevent those differences from becoming barriers to the utility's future.</p>
+
+<p>For long-lived AMI infrastructure, that flexibility can become one of the most valuable architectural decisions a utility makes.</p>
+
+<p><strong>The strongest AMI architecture is not necessarily the one with the most features today. It is the one that gives the utility the freedom to evolve tomorrow.</strong></p>
+
+</section>
+          
+
+            <!-- =================================================
+                 FULL ARTICLE ON MEDIUM
+                 ================================================= -->
+
+<section class="medium-link">
+<h2>Read the Full Article on Medium</h2>
+
+<p>
+This article was originally published on Medium, where the full discussion explores interoperability across multi-vendor AMI architectures, including standards, HES, MDMS, testing, cybersecurity, procurement and long-term lifecycle flexibility.
+</p>
+
+<p>
+<a href="https://medium.com/@smartinfra.insights/interoperability-in-multi-vendor-ami-systems-a5c314485a60"
+target="_blank"
+rel="noopener noreferrer">
+Read the Full Article on Medium →
+</a>
+</p>
+</section>
+            <!-- =================================================
+                 RELATED ARTICLES
+                 ================================================= -->
+
+<section>
+<h2>Related Smart Metering Topics</h2>
+
+<ul>
+<li><a href="/publications/what-is-ami.html">What Is AMI (Advanced Metering Infrastructure)? Architecture, Components, and How It Works</a></li>
+
+<li><a href="/publications/smart-metering-architecture.html">Smart Metering System Architecture: End-to-End Design for Utilities</a></li>
+
+<li><a href="/publications/head-end-systems-hes-explained-the-communication-hub-of-ami.html">Head-End Systems (HES) Explained: The Communication Hub of AMI</a></li>
+
+<li><a href="/publications/meter-data-management-systems-mdms-explained-turning-data-into-information.html">Meter Data Management Systems (MDMS) Explained: Turning Data into Information</a></li>
+
+<li><a href="/publications/utility-procurement-for-ami.html">Utility Procurement for AMI: How to Avoid Costly Mistakes</a></li>
+
+<li><a href="/publications/firmware-management-in-ami.html">Firmware Management in AMI: The Hidden Operational Challenge</a></li>
+
+<li><a href="/publications/cybersecurity-in-smart-metering.html">Cybersecurity in Smart Metering: Real Risks, System Weaknesses, and Practical Defenses</a></li>
+
+<li><a href="/publications/dlms-cosem-explained-practically.html">DLMS/COSEM Explained Practically: What Utilities Need to Know Before Choosing a Metering Protocol</a></li>
+</ul>
+</section>
+
+        </article>
+
+    </main>
+
+  
+
+<footer>
+
+<p>© 2026 Vincent Wong. All rights reserved.</p>
+
+<p style="font-style: italic; text-align: justify; color: #555;">
+The personal engineering insights shared here represent aspirational industry best practices and do not reflect the active bidding strategies or commercial policies of any current or past employer. Read the full <a href="/about/#disclaimer" style="text-decoration: underline; color: #0066cc; font-weight: bold;">Strategic Disclaimer</a>.
+</p>
+
+<p>
+Smart Metering | AMI | Smart Water | Utility IoT | NB-IoT
+</p>
+<p>
+<a href="/">Home</a> |
+<a href="/about/">About</a> |
+<a href="/whitepapers/">Whitepapers</a> |
+<a href="/publications/">Publications</a> |
+<a href="/patents/">Patents</a> |
+<a href="/speaking/">Speaking</a> |
+<a href="/recognition/">Recognition</a>  
+</p>
+
+</footer>
+
+</body>
+</html>
