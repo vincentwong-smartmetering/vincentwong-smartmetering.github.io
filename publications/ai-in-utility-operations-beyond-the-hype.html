@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI in Utility Operations: Beyond the Hype | Vincent Wong</title>
+
+<meta name="description" content="A practical guide to AI in utility operations, covering data quality, leak detection, predictive maintenance, network analytics, edge AI, explainability, governance and ROI.">
+
+<meta name="author" content="Vincent Wong Yew Hon">
+
+<link rel="canonical" href="https://vincentwong-smartmetering.github.io/publications/ai-in-utility-operations-beyond-the-hype.html">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI in Utility Operations: Beyond the Hype">
+<meta property="og:description" content="How utilities can use AI for leak detection, anomaly prioritization, predictive maintenance and network operations while maintaining data quality, governance and measurable business value.">
+<meta property="og:url" content="https://vincentwong-smartmetering.github.io/publications/ai-in-utility-operations-beyond-the-hype.html">
+<meta property="og:site_name" content="Vincent Wong Smart Metering">
+<meta property="og:image" content="https://vincentwong-smartmetering.github.io/publications/images/ai-in-utility-operations-beyond-the-hype.jpg">
+<meta property="og:image:alt" content="AI in Utility Operations: Beyond the Hype">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Vincent Wong Yew Hon">
+<meta property="article:published_time" content="2026-10-08">
+<meta property="article:modified_time" content="2026-10-08">
+<meta property="article:section" content="Utility Intelligence">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI in Utility Operations: Beyond the Hype">
+<meta name="twitter:description" content="A practical look at AI for utility operations, from leak detection and predictive maintenance to network analytics, governance and measurable ROI.">
+<meta name="twitter:image" content="https://vincentwong-smartmetering.github.io/publications/images/ai-in-utility-operations-beyond-the-hype.jpg">
+<meta name="twitter:image:alt" content="AI in Utility Operations: Beyond the Hype">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "AI in Utility Operations: Beyond the Hype",
+  "description": "A practical guide to AI in utility operations, covering data quality, leak detection, predictive maintenance, network analytics, edge AI, explainability, governance and ROI.",
+  "url": "https://vincentwong-smartmetering.github.io/publications/ai-in-utility-operations-beyond-the-hype.html",
+  "datePublished": "2026-10-08",
+  "dateModified": "2026-10-08",
+  "author": {
+    "@type": "Person",
+    "name": "Vincent Wong Yew Hon"
+  },
+  "image": "https://vincentwong-smartmetering.github.io/publications/images/ai-in-utility-operations-beyond-the-hype.jpg",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://vincentwong-smartmetering.github.io/publications/ai-in-utility-operations-beyond-the-hype.html"
+  }
+}
+</script>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<style>
+
+/* Fixes the main hero image scaling on mobile devices */
+.article-hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.article-category {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #0066cc; 
+    margin-bottom: 8px;
+}
+
+.article-meta {
+    font-size: 0.95rem;         /* Slightly smaller than body text */
+    color: #64748b;             /* Subdued gray to sit quietly in the background */
+    margin-top: 0;
+    margin-bottom: 28px;        /* Creates clean space before the hero image starts */
+}
+
+.article-subtitle {
+    font-size: 1.25rem;         /* Visually larger than body text */
+    font-weight: 400;           /* Lighter weight to contrast with the bold H1 */
+    color: #4a5568;             /* Soft charcoal slate color (easier on eyes) */
+    line-height: 1.5;           /* Relaxed spacing for high readability */
+    margin-top: 0;              
+    margin-bottom: 24px;        /* Pushes metadata neatly down */
+}
+
+.article-header h1 {
+    font-size: 2.2rem;          /* Pronounced, high-contrast size */
+    font-weight: 800;           /* Clean, bold appearance */
+    color: #002244;             /* Premium, deep corporate blue */
+    line-height: 1.25;          /* Gives text breathing room when it wraps */
+    margin-top: 8px;            /* Tight gap beneath the category kicker */
+    margin-bottom: 12px;        /* Controlled space above the subtitle */
+    letter-spacing: -0.02em;    /* Slightly tighter tracking for a modern feel */
+}
+
+</style>
+</head>
+
+<body>
+
+<h1 id="top">Publications</h1>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/whitepapers/">Whitepapers</a>
+    <a href="/publications/">Publications</a>
+    <a href="/patents/">Patents</a>
+    <a href="/speaking/">Speaking</a>
+    <a href="/recognition/">Recognition</a>
+</nav>
+
+<hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 25px;">
+    
+
+<main class="container">
+
+        <article>
+
+            <!-- =================================================
+                 ARTICLE HEADER
+                 ================================================= -->
+
+<header class="article-header">
+<p class="article-category">Utility Intelligence</p>
+
+<h1>AI in Utility Operations: Beyond the Hype</h1>
+
+<p class="article-subtitle">
+How utilities can apply AI to leak detection, anomaly prioritization, predictive maintenance and network operations — without losing sight of data quality, human judgement and measurable outcomes.
+</p>
+
+<div class="article-hero">
+<img src="/publications/images/ai-in-utility-operations-beyond-the-hype.jpg" width="1536" height="1024"
+alt="AI in Utility Operations: Beyond the Hype | Vincent Wong | Smart Metering Expert | Malaysia"
+loading="eager">
+</div>
+
+<p class="article-meta">
+By <strong>Vincent Wong Yew Hon</strong> · 8 October 2026
+</p>
+</header>
+
+            <!-- =================================================
+                 ARTICLE INTRODUCTION
+                 ================================================= -->
+
+<section class="article-content">
+
+<h2>Introduction</h2>
+
+<p>
+Artificial intelligence is becoming increasingly relevant to utility operations. Smart meters generate large volumes of consumption and operational data, while HES, MDMS and edge platforms provide increasingly sophisticated sources of information.
+</p>
+
+<p>
+The opportunity is significant. AI can help utilities identify abnormal consumption, detect potential leaks, predict equipment problems, improve network operations and prioritize field activities.
+</p>
+
+<p>
+But having AI and creating value with AI are two different things.
+</p>
+
+<p>
+The real value appears when intelligence helps a utility make a decision faster, more accurately or more consistently — and when that improvement can be measured.
+</p>
+
+<h2>Key Takeaways</h2>
+
+<ul>
+<li>AI depends on reliable, representative and well-managed utility data.</li>
+<li>AI does not replace the AMI architecture, HES or MDMS.</li>
+<li>Utilities should start with an operational problem rather than a desire to “use AI.”</li>
+<li>Leak detection and anomaly prioritization are natural smart water applications.</li>
+<li>AI can also support predictive maintenance and communication network operations.</li>
+<li>Edge AI and central AI serve different purposes and can complement each other.</li>
+<li>More complex models are not automatically more useful.</li>
+<li>AI outputs should support human decision-making rather than remove people from the operational loop.</li>
+<li>False positives, model drift, cybersecurity and privacy require continuous attention.</li>
+<li>The business case should be based on measurable operational outcomes, not AI adoption itself.</li>
+<li>The strongest architecture is likely to combine rules, analytics, AI, edge intelligence, central intelligence and human expertise.</li>
+</ul>
+
+<h2>AI Starts With Data</h2>
+
+<p>
+AI depends on data, but smart metering data is not automatically clean or reliable.
+</p>
+
+<p>
+Utility systems may contain consumption readings, interval data, alarms, communication status, battery information, tamper events, flow patterns, diagnostics and historical records.
+</p>
+
+<p>
+At the same time, the data may contain missing readings, duplicates, incorrect timestamps, communication gaps, configuration problems, meter anomalies and inconsistent formats.
+</p>
+
+<p>
+An advanced AI model cannot indefinitely compensate for poor data quality.
+</p>
+
+<p>
+The foundation therefore remains:
+</p>
+
+<p>
+<strong>Reliable data → Reliable analysis → Useful intelligence</strong>
+</p>
+
+<h2>AI Does Not Replace the AMI Architecture</h2>
+
+<p>
+AI should not be treated as a replacement for the existing AMI architecture.
+</p>
+
+<p>
+A typical environment remains:
+</p>
+
+<p>
+<strong>Smart Meter → Communication Network → HES → MDMS → Analytics → Utility Applications</strong>
+</p>
+
+<p>
+Different layers can contribute different forms of intelligence.
+</p>
+
+<ul>
+<li>The meter can perform basic event detection.</li>
+<li>The edge layer can filter or classify information.</li>
+<li>The HES can provide device and communication information.</li>
+<li>The MDMS can provide validated historical data.</li>
+<li>An AI platform can identify patterns across large datasets.</li>
+<li>Utility applications can turn insights into operational decisions.</li>
+</ul>
+
+<p>
+The architectural question is therefore not simply where AI should be installed.
+</p>
+
+<p>
+It is:
+</p>
+
+<p>
+<strong>Where can intelligence create the most useful decision?</strong>
+</p>
+
+<h2>Start With the Utility Problem</h2>
+
+<p>
+One of the easiest ways for an AI project to lose direction is to start with the technology.
+</p>
+
+<p>
+“We want to use AI” is not an operational objective.
+</p>
+
+<p>
+A better starting point is:
+</p>
+
+<p>
+<strong>What problem are we trying to solve?</strong>
+</p>
+
+<p>
+Examples include:
+</p>
+
+<ul>
+<li>High apparent water losses → identify unusual consumption patterns.</li>
+<li>Too many alarms → prioritize events according to likelihood and impact.</li>
+<li>Unexpected equipment failures → identify early indicators of abnormal behaviour.</li>
+<li>Too much raw data → convert large datasets into actionable patterns and exceptions.</li>
+</ul>
+
+<p>
+This problem-first approach keeps AI connected to measurable utility outcomes.
+</p>
+
+<h2>Leak Detection Is a Natural Use Case</h2>
+
+<p>
+For smart water utilities, leak analytics is one of the most natural areas for AI.
+</p>
+
+<p>
+A basic system might use a fixed rule such as continuous flow above a defined threshold for a specified period.
+</p>
+
+<p>
+But real consumption patterns vary with occupancy, operating hours, building characteristics, customer behaviour and seasonality.
+</p>
+
+<p>
+AI can potentially learn normal patterns and identify meaningful deviations:
+</p>
+
+<p>
+<strong>Normal pattern → Sustained change → Anomaly score → Investigation priority</strong>
+</p>
+
+<p>
+Importantly, AI does not necessarily need to declare that a leak definitely exists.
+</p>
+
+<p>
+A more useful output may be:
+</p>
+
+<p>
+<strong>This meter shows an unusual pattern and should be investigated.</strong>
+</p>
+
+<p>
+That keeps AI in a decision-support role rather than treating its output as unquestionable truth.
+</p>
+
+<h2>From Alarm Detection to Prioritization</h2>
+
+<p>
+Utilities can generate thousands of alarms, but not every alarm has the same operational importance.
+</p>
+
+<p>
+AI can potentially combine multiple signals such as:
+</p>
+
+<ul>
+<li>Continuous flow</li>
+<li>Historical consumption</li>
+<li>Time of day</li>
+<li>Recent changes</li>
+<li>Neighbouring meter behaviour</li>
+<li>Previous events</li>
+</ul>
+
+<p>
+The objective is not necessarily to generate more alarms.
+</p>
+
+<p>
+It is to transform:
+</p>
+
+<p>
+<strong>10,000 events → Ranked list → Targeted investigation</strong>
+</p>
+
+<p>
+The value comes from better allocation of limited field resources.
+</p>
+
+<h2>Predictive Maintenance</h2>
+
+<p>
+Smart meters already generate information about their own condition.
+</p>
+
+<p>
+Potential inputs include:
+</p>
+
+<ul>
+<li>Battery status</li>
+<li>Communication behaviour</li>
+<li>Error events</li>
+<li>Restart frequency</li>
+<li>Signal quality</li>
+<li>Firmware status</li>
+<li>Device diagnostics</li>
+</ul>
+
+<p>
+When analysed over time, these signals may reveal patterns associated with future failures.
+</p>
+
+<p>
+The objective changes from:
+</p>
+
+<p>
+<strong>Meter fails → Alarm → Field visit</strong>
+</p>
+
+<p>
+toward:
+</p>
+
+<p>
+<strong>Behaviour changes → Risk identified → Planned intervention</strong>
+</p>
+
+<p>
+However, predictive maintenance requires sufficient historical data and reliable failure records. Without them, claims of predictive capability can be difficult to validate.
+</p>
+
+<h2>AI Can Also Improve Communication Operations</h2>
+
+<p>
+AI does not have to focus only on water consumption.
+</p>
+
+<p>
+AMI communication itself produces useful operational data, including:
+</p>
+
+<ul>
+<li>Communication success rates</li>
+<li>Retry behaviour</li>
+<li>Signal quality</li>
+<li>Offline periods</li>
+<li>Network registration</li>
+<li>Gateway performance</li>
+<li>Geographic failure patterns</li>
+</ul>
+
+<p>
+These patterns can help utilities identify developing communication problems before they become widespread.
+</p>
+
+<p>
+For example, increasing retries across a group of meters in the same building could indicate a developing network or environmental issue.
+</p>
+
+<p>
+This is particularly relevant to high-rise buildings, basements, underground installations and other difficult communication environments.
+</p>
+
+<h2>From Reactive to Proactive Operations</h2>
+
+<p>
+Traditional utility operations often follow:
+</p>
+
+<p>
+<strong>Problem → Alarm → Investigation → Repair</strong>
+</p>
+
+<p>
+AI can potentially introduce:
+</p>
+
+<p>
+<strong>Data → Pattern → Risk → Prioritization → Action</strong>
+</p>
+
+<p>
+For example, instead of simply reacting to a low-battery alarm, an analytical model could examine the rate of battery change, compare similar devices and identify which meters should be serviced first.
+</p>
+
+<p>
+This moves the utility from responding to individual events toward managing operational risk.
+</p>
+
+<h2>Edge AI and Central AI Serve Different Purposes</h2>
+
+<p>
+The previous article in this series examined edge computing. AI makes the distinction between local and central processing even more important.
+</p>
+
+<p>
+Edge intelligence can support:
+</p>
+
+<ul>
+<li>Basic anomaly detection</li>
+<li>Local event classification</li>
+<li>Simple pattern recognition</li>
+<li>Data filtering</li>
+</ul>
+
+<p>
+Central AI can support:
+</p>
+
+<ul>
+<li>Fleet-wide analysis</li>
+<li>Cross-building comparisons</li>
+<li>Long-term consumption modelling</li>
+<li>Population-level anomaly detection</li>
+<li>Asset risk analysis</li>
+</ul>
+
+<p>
+The practical architecture can therefore combine:
+</p>
+
+<p>
+<strong>Edge intelligence → Local decisions</strong>
+</p>
+
+<p>
+and:
+</p>
+
+<p>
+<strong>Central AI → Fleet-wide intelligence</strong>
+</p>
+
+<p>
+The challenge is deciding which intelligence belongs at which layer.
+</p>
+
+<h2>More Complex Models Are Not Always Better</h2>
+
+<p>
+AI projects can become overly focused on model sophistication.
+</p>
+
+<p>
+But a complex model is not automatically more useful than a simpler one.
+</p>
+
+<p>
+A field engineer may not benefit much from receiving:
+</p>
+
+<p>
+<strong>Meter risk score: 0.873</strong>
+</p>
+
+<p>
+A more useful output might provide the context behind the recommendation:
+</p>
+
+<p>
+<strong>High investigation priority — continuous flow detected, consumption is significantly above the normal overnight pattern, and the deviation began recently.</strong>
+</p>
+
+<p>
+Operational AI therefore needs explainability. Users need enough context to understand why a recommendation was generated and what action it suggests.
+</p>
+
+<h2>AI Should Support Humans</h2>
+
+<p>
+Utilities operate physical infrastructure. AI can identify patterns, but field intervention often still requires people.
+</p>
+
+<p>
+A practical operating model is:
+</p>
+
+<p>
+<strong>AI identifies → Human validates → Field team acts → Outcome returns to the system</strong>
+</p>
+
+<p>
+A confirmed leak provides useful feedback. A false alarm caused by normal customer behaviour is also valuable information.
+</p>
+
+<p>
+The field response is therefore part of the AI system, not something separate from it.
+</p>
+
+<h2>False Positives Matter</h2>
+
+<p>
+A model that identifies every possible anomaly can appear impressive during a demonstration but become difficult to operate in the field.
+</p>
+
+<p>
+If an AI system identifies 20,000 potential anomalies while the utility can investigate only 1,000, the operational problem has not necessarily been solved.
+</p>
+
+<p>
+Useful measures include:
+</p>
+
+<ul>
+<li>Precision</li>
+<li>False-positive rate</li>
+<li>Detection rate</li>
+<li>Investigation conversion</li>
+<li>Confirmed cases</li>
+<li>Time to resolution</li>
+<li>Cost per intervention</li>
+</ul>
+
+<p>
+The most useful AI system may not be the one that finds the most anomalies.
+</p>
+
+<p>
+It may be the one that helps the utility identify the most actionable anomalies.
+</p>
+
+<h2>AI Requires Continuous Governance</h2>
+
+<p>
+AI models can degrade as operating conditions change.
+</p>
+
+<p>
+Customer behaviour changes. Buildings change. Meters are replaced. Networks evolve. Operating conditions shift.
+</p>
+
+<p>
+A model trained on historical data may therefore become less accurate over time.
+</p>
+
+<p>
+Utilities should monitor:
+</p>
+
+<ul>
+<li>Model performance</li>
+<li>Input data quality</li>
+<li>False positives and false negatives</li>
+<li>Changes in operating conditions</li>
+<li>Model versions</li>
+<li>Training datasets</li>
+<li>Deployment versions</li>
+</ul>
+
+<p>
+AI should therefore be managed as a lifecycle capability rather than a one-time deployment.
+</p>
+
+<h2>Cybersecurity Becomes More Important</h2>
+
+<p>
+AI introduces another layer into the utility technology stack.
+</p>
+
+<p>
+Security therefore needs to cover:
+</p>
+
+<ul>
+<li>Training data</li>
+<li>Operational data</li>
+<li>AI models</li>
+<li>Model interfaces</li>
+<li>APIs</li>
+<li>Edge devices</li>
+<li>Credentials</li>
+<li>Model updates</li>
+<li>Configuration</li>
+</ul>
+
+<p>
+An attacker does not necessarily need to compromise the AI model itself. Manipulating the underlying data can also produce misleading results.
+</p>
+
+<p>
+This reinforces a broader principle:
+</p>
+
+<p>
+<strong>Trustworthy AI requires trustworthy data and trustworthy infrastructure.</strong>
+</p>
+
+<h2>Privacy Should Not Be Ignored</h2>
+
+<p>
+Smart meter data can reveal detailed consumption patterns. Depending on the application and jurisdiction, those patterns can have privacy implications.
+</p>
+
+<p>
+AI can make these patterns even more useful by identifying behavioural characteristics.
+</p>
+
+<p>
+Utilities therefore need appropriate controls around:
+</p>
+
+<ul>
+<li>Data access</li>
+<li>Data retention</li>
+<li>Data anonymization where appropriate</li>
+<li>User permissions</li>
+<li>Data sharing</li>
+<li>Model training datasets</li>
+<li>Governance</li>
+</ul>
+
+<p>
+The ability to analyse data does not automatically mean every possible analysis should be performed. A clear purpose and appropriate governance remain necessary.
+</p>
+
+<h2>AI Economics Need to Be Measured</h2>
+
+<p>
+The business case for AI should ultimately be connected to measurable outcomes.
+</p>
+
+<p>
+Potential value areas include:
+</p>
+
+<ul>
+<li><strong>Reduced water losses:</strong> better identification and investigation of abnormal consumption.</li>
+<li><strong>Lower field costs:</strong> better prioritization and fewer unnecessary visits.</li>
+<li><strong>Improved asset management:</strong> earlier identification of equipment risks.</li>
+<li><strong>Better network performance:</strong> faster detection of communication problems.</li>
+<li><strong>Improved customer service:</strong> earlier identification of customer-impacting issues.</li>
+<li><strong>Better operational planning:</strong> improved understanding of system behaviour.</li>
+</ul>
+
+<p>
+The business case should therefore move beyond:
+</p>
+
+<p>
+<strong>“AI is the future.”</strong>
+</p>
+
+<p>
+and toward:
+</p>
+
+<p>
+<strong>“This AI capability improves this operational outcome by this measurable amount.”</strong>
+</p>
+
+<h2>Questions Utilities Should Ask Before Starting an AI Project</h2>
+
+<ol>
+<li><strong>What problem are we solving?</strong> A clear operational problem should come before the technology.</li>
+
+<li><strong>Do we have sufficient data?</strong> Historical, reliable and representative data is critical.</li>
+
+<li><strong>Is the data trustworthy?</strong> AI cannot reliably compensate for systematic data-quality problems.</li>
+
+<li><strong>What decision will change?</strong> An AI output should lead to an operational action.</li>
+
+<li><strong>Who will act on the result?</strong> There should be a clear operational owner.</li>
+
+<li><strong>How will success be measured?</strong> Define operational KPIs before deployment.</li>
+
+<li><strong>Can the result be explained?</strong> Operators need appropriate context and confidence information.</li>
+
+<li><strong>How will the model be maintained?</strong> Plan for updates, monitoring and model drift.</li>
+
+<li><strong>Where should the intelligence run?</strong> At the meter, edge, utility platform or cloud?</li>
+
+<li><strong>What happens when the model is wrong?</strong> Failure handling is as important as successful detection.</li>
+</ol>
+
+<h2>The Future Is Likely to Be Hybrid</h2>
+
+<p>
+The future of utility AI is unlikely to be one large model making every decision.
+</p>
+
+<p>
+A more practical architecture can combine:
+</p>
+
+<ul>
+<li><strong>Rules</strong> — for simple and deterministic conditions.</li>
+<li><strong>Analytics</strong> — for trends and historical relationships.</li>
+<li><strong>AI / Machine Learning</strong> — for complex patterns and anomaly detection.</li>
+<li><strong>Edge Intelligence</strong> — for local, low-latency decisions.</li>
+<li><strong>Central Intelligence</strong> — for fleet-wide analysis.</li>
+<li><strong>Human Expertise</strong> — for validation, intervention and judgement.</li>
+</ul>
+
+<p>
+The objective is not to replace one with another.
+</p>
+
+<p>
+It is to combine them effectively.
+</p>
+
+<h2>Intelligence Is Only Valuable When It Changes an Outcome</h2>
+
+<p>
+Smart metering has evolved from manual reading to automated reading, then to AMI and increasingly toward data-driven utility operations.
+</p>
+
+<p>
+AI is another step in that evolution.
+</p>
+
+<p>
+But the ultimate objective remains the same:
+</p>
+
+<p>
+<strong>Better utility outcomes.</strong>
+</p>
+
+<p>
+If AI detects a leak but nobody investigates it, the value is limited.
+</p>
+
+<p>
+If AI predicts an equipment problem but the maintenance process does not change, the value is limited.
+</p>
+
+<p>
+If AI produces thousands of dashboards but operators cannot act on them, the value is limited.
+</p>
+
+<p>
+The real value appears when the system closes the loop:
+</p>
+
+<p>
+<strong>Data → Insight → Decision → Action → Outcome</strong>
+</p>
+
+<p>
+That is the real measure of intelligence.
+</p>
+
+<h2>Conclusion</h2>
+
+<p>
+AI has genuine potential to improve utility operations. For smart water utilities, leak analytics, anomaly detection, predictive maintenance, communication monitoring and operational prioritization are particularly relevant applications.
+</p>
+
+<p>
+But AI should not be introduced simply because it is available.
+</p>
+
+<p>
+The stronger approach is to begin with the operational problem, establish trustworthy data, identify the decision that needs improvement and then determine whether AI is the right tool.
+</p>
+
+<p>
+In some cases, a simple rule will be enough. In others, statistical analytics may provide the answer. More complex patterns may justify machine learning, while some intelligence may operate directly at the edge.
+</p>
+
+<p>
+The future of utility AI is therefore unlikely to be about putting AI everywhere.
+</p>
+
+<p>
+It is about putting the <strong>right intelligence in the right place, connected to the right decision.</strong>
+</p>
+
+<p>
+The question utilities should ask is not:
+</p>
+
+<p>
+<strong>“Where can we use AI?”</strong>
+</p>
+
+<p>
+It is:
+</p>
+
+<p>
+<strong>“Which utility decisions can we make better with intelligence — and how will we prove it?”</strong>
+</p>
+
+<p>
+That is how utilities move beyond the hype and toward AI that delivers measurable operational value.
+</p>
+
+<p>
+<strong>AI is not the outcome. Better utility decisions are.</strong>
+</p>
+
+</section>
+          
+
+            <!-- =================================================
+                 FULL ARTICLE ON MEDIUM
+                 ================================================= -->
+
+<section class="medium-link">
+<h2>Read the Full Article on Medium</h2>
+
+<p>
+This article was originally published on Medium, where the full discussion explores AI data foundations, leak detection, predictive maintenance, network operations, edge AI, explainability, human validation, governance, cybersecurity, privacy and measurable utility outcomes.
+</p>
+
+<p>
+<a href="https://medium.com/@smartinfra.insights/ai-in-utility-operations-beyond-the-hype-b9b509f9d6ad"
+target="_blank"
+rel="noopener noreferrer">
+Read the Full Article on Medium →
+</a>
+</p>
+</section>
+          
+            <!-- =================================================
+                 RELATED ARTICLES
+                 ================================================= -->
+
+<section class="related-topics">
+<h2>Related Smart Metering Topics</h2>
+
+<ul>
+
+<li>
+<a href="/publications/from-smart-meters-to-smart-decisions.html">
+From Smart Meters to Smart Decisions: How AMI Data Becomes Intelligence for Utilities and Smart Cities
+</a>
+</li>
+
+<li>
+<a href="/publications/what-is-ami.html">
+What Is AMI (Advanced Metering Infrastructure)? Architecture, Components, and How It Works
+</a>
+</li>
+
+<li>
+<a href="/publications/smart-metering-architecture.html">
+Smart Metering System Architecture: End-to-End Design for Utilities
+</a>
+</li>
+
+<li>
+<a href="/publications/meter-data-management-systems-mdms-explained-turning-data-into-information.html">
+Meter Data Management Systems (MDMS) Explained: Turning Data into Information
+</a>
+</li>
+
+<li>
+<a href="/publications/edge-computing-in-smart-metering.html">
+Edge Computing in Smart Metering: Why Processing Data at the Edge Matters
+</a>
+</li>
+
+<li>
+<a href="/publications/how-utilities-actually-use-smart-meter-data-beyond-billing.html">
+How Utilities Actually Use Smart Meter Data (Beyond Billing)
+</a>
+</li>
+
+<li>
+<a href="/publications/data-to-roi.html">
+From Data to ROI: Measuring the Business Value of AMI
+</a>
+</li>
+
+<li>
+<a href="/publications/cybersecurity-in-smart-metering.html">
+Cybersecurity in Smart Metering: Real Risks, System Weaknesses, and Practical Defenses
+</a>
+</li>
+
+</ul>
+</section>
+
+        </article>
+
+    </main>
+
+  
+
+<footer>
+
+<p>© 2026 Vincent Wong. All rights reserved.</p>
+
+<p style="font-style: italic; text-align: justify; color: #555;">
+The personal engineering insights shared here represent aspirational industry best practices and do not reflect the active bidding strategies or commercial policies of any current or past employer. Read the full <a href="/about/#disclaimer" style="text-decoration: underline; color: #0066cc; font-weight: bold;">Strategic Disclaimer</a>.
+</p>
+
+<p>
+Smart Metering | AMI | Smart Water | Utility IoT | NB-IoT
+</p>
+<p>
+<a href="/">Home</a> |
+<a href="/about/">About</a> |
+<a href="/whitepapers/">Whitepapers</a> |
+<a href="/publications/">Publications</a> |
+<a href="/patents/">Patents</a> |
+<a href="/speaking/">Speaking</a> |
+<a href="/recognition/">Recognition</a>  
+</p>
+
+</footer>
+
+</body>
+</html>
