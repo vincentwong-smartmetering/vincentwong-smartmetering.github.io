@@ -117,6 +117,15 @@
     <image:image>
       <image:loc>https://vincentwong-smartmetering.github.io/publications/images/ai-in-utility-operations-beyond-the-hype.jpg</image:loc>
     </image:image>
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/digital-twins-for-water-utilities.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/predictive-maintenance-using-ami-data.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/leak-analysis-beyond-threshold-alarms.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://vincentwong-smartmetering.github.io/publications/amr-vs-ami.html</loc>
@@ -272,6 +281,24 @@
     <loc>https://vincentwong-smartmetering.github.io/publications/what-is-smart-metering.html</loc>
     <image:image>
       <image:loc>https://vincentwong-smartmetering.github.io/publications/images/what-is-smart-metering.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vincentwong-smartmetering.github.io/publications/digital-twins-for-water-utilities.html</loc>
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/digital-twins-for-water-utilities.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vincentwong-smartmetering.github.io/publications/predictive-maintenance-using-ami-data.html</loc>
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/predictive-maintenance-using-ami-data.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vincentwong-smartmetering.github.io/publications/leak-analysis-beyond-threshold-alarms.html</loc>
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/leak-analysis-beyond-threshold-alarms.jpg</image:loc>
     </image:image>
   </url>
   <url>
