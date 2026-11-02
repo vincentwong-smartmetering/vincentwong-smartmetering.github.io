@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Predictive Maintenance Using AMI Data: Moving from Reactive to Proactive Operations | Vincent Wong</title>
+
+<meta name="description" content="Explore how water utilities can use AMI communication records, battery indicators, consumption patterns and device alarms to support predictive maintenance and better intervention decisions.">
+
+<meta name="author" content="Vincent Wong Yew Hon">
+
+<link rel="canonical" href="https://vincentwong-smartmetering.github.io/publications/predictive-maintenance-using-ami-data.html">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Predictive Maintenance Using AMI Data: Moving from Reactive to Proactive Operations">
+<meta property="og:description" content="A practical guide to using AMI data for maintenance signals, combining operational evidence, validating predictions and measuring maintenance outcomes.">
+<meta property="og:url" content="https://vincentwong-smartmetering.github.io/publications/predictive-maintenance-using-ami-data.html">
+<meta property="og:site_name" content="Vincent Wong Smart Metering">
+<meta property="og:image" content="https://vincentwong-smartmetering.github.io/publications/images/predictive-maintenance-using-ami-data.jpg">
+<meta property="og:image:alt" content="Predictive Maintenance Using AMI Data: Moving from Reactive to Proactive Operations">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Vincent Wong Yew Hon">
+<meta property="article:published_time" content="2026-10-22">
+<meta property="article:modified_time" content="2026-10-22">
+<meta property="article:section" content="AMI Operations">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Predictive Maintenance Using AMI Data: Moving from Reactive to Proactive Operations">
+<meta name="twitter:description" content="How AMI data can help utilities identify potential maintenance problems earlier, prioritise investigations and improve maintenance decisions.">
+<meta name="twitter:image" content="https://vincentwong-smartmetering.github.io/publications/images/predictive-maintenance-using-ami-data.jpg">
+<meta name="twitter:image:alt" content="Predictive Maintenance Using AMI Data: Moving from Reactive to Proactive Operations">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Predictive Maintenance Using AMI Data: Moving from Reactive to Proactive Operations",
+  "description": "A practical guide to using AMI data for maintenance signals, combining operational evidence, validating predictions and measuring maintenance outcomes.",
+  "url": "https://vincentwong-smartmetering.github.io/publications/predictive-maintenance-using-ami-data.html",
+  "datePublished": "2026-10-22",
+  "dateModified": "2026-10-22",
+  "author": {
+    "@type": "Person",
+    "name": "Vincent Wong Yew Hon"
+  },
+  "image": "https://vincentwong-smartmetering.github.io/publications/images/predictive-maintenance-using-ami-data.jpg",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://vincentwong-smartmetering.github.io/publications/predictive-maintenance-using-ami-data.html"
+  }
+}
+</script>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<style>
+
+/* Fixes the main hero image scaling on mobile devices */
+.article-hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.article-category {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #0066cc; 
+    margin-bottom: 8px;
+}
+
+.article-meta {
+    font-size: 0.95rem;         /* Slightly smaller than body text */
+    color: #64748b;             /* Subdued gray to sit quietly in the background */
+    margin-top: 0;
+    margin-bottom: 28px;        /* Creates clean space before the hero image starts */
+}
+
+.article-subtitle {
+    font-size: 1.25rem;         /* Visually larger than body text */
+    font-weight: 400;           /* Lighter weight to contrast with the bold H1 */
+    color: #4a5568;             /* Soft charcoal slate color (easier on eyes) */
+    line-height: 1.5;           /* Relaxed spacing for high readability */
+    margin-top: 0;              
+    margin-bottom: 24px;        /* Pushes metadata neatly down */
+}
+
+.article-header h1 {
+    font-size: 2.2rem;          /* Pronounced, high-contrast size */
+    font-weight: 800;           /* Clean, bold appearance */
+    color: #002244;             /* Premium, deep corporate blue */
+    line-height: 1.25;          /* Gives text breathing room when it wraps */
+    margin-top: 8px;            /* Tight gap beneath the category kicker */
+    margin-bottom: 12px;        /* Controlled space above the subtitle */
+    letter-spacing: -0.02em;    /* Slightly tighter tracking for a modern feel */
+}
+
+</style>
+</head>
+
+<body>
+
+<h1 id="top">Publications</h1>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/whitepapers/">Whitepapers</a>
+    <a href="/publications/">Publications</a>
+    <a href="/patents/">Patents</a>
+    <a href="/speaking/">Speaking</a>
+    <a href="/recognition/">Recognition</a>
+</nav>
+
+<hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 25px;">
+    
+
+<main class="container">
+
+        <article>
+
+            <!-- =================================================
+                 ARTICLE HEADER
+                 ================================================= -->
+
+<header class="article-header">
+<p class="article-category">AMI Operations</p>
+
+<h1>Predictive Maintenance Using AMI Data: Moving from Reactive to Proactive Operations</h1>
+
+<p class="article-subtitle">
+How communication records, battery indicators, consumption patterns and device diagnostics can help utilities identify potential problems earlier and make better maintenance decisions.
+</p>
+
+<div class="article-hero">
+<img src="/publications/images/predictive-maintenance-using-ami-data.jpg"
+alt="Predictive Maintenance Using AMI Data: Moving from Reactive to Proactive Operations"
+loading="eager">
+</div>
+
+<p class="article-meta">
+By <strong>Vincent Wong Yew Hon</strong> · 22 October 2026
+</p>
+</header>
+
+            <!-- =================================================
+                 ARTICLE INTRODUCTION
+                 ================================================= -->
+
+<section class="article-content">
+
+<h2>Introduction</h2>
+
+<p>
+Water utilities have more operational data than ever before. Advanced Metering Infrastructure (AMI) provides more than consumption readings. Depending on the meter, communication technology and system configuration, it can also reveal communication problems, recurring device alarms and patterns that warrant further investigation.
+</p>
+
+<p>
+The opportunity is to use these signals to move beyond reacting to failures towards identifying potential problems earlier.
+</p>
+
+<p>
+However, not every anomaly predicts a failure, and not every failure can be predicted from AMI data alone.
+</p>
+
+<p>
+The real challenge is turning operational data into reliable maintenance decisions.
+</p>
+
+<h2>Key Takeaways</h2>
+
+<ul>
+<li>Predictive maintenance uses historical patterns, condition data and analytical models to estimate future maintenance needs.</li>
+<li>AMI can reveal repeated communication failures, battery-related warning signs, unusual consumption and recurring device alarms.</li>
+<li>A single missed reading or isolated alarm is rarely sufficient to establish an equipment fault.</li>
+<li>Detection and diagnosis should be treated as separate steps.</li>
+<li>AMI data alone may not provide all the diagnostic information required for maintenance prediction.</li>
+<li>Maintenance history and confirmed failure outcomes are essential for building reliable predictive capability.</li>
+<li>Rules and trend analysis can provide value without requiring complex AI models.</li>
+<li>AMI should be combined selectively with device diagnostics, network monitoring, asset registers and maintenance records.</li>
+<li>Predictions must connect to actual maintenance workflows and be validated against field outcomes.</li>
+<li>The objective is better intervention decisions, not simply generating more alerts.</li>
+</ul>
+
+<h2>From Reactive to Predictive Maintenance</h2>
+
+<p>
+Maintenance strategies generally evolve through several approaches.
+</p>
+
+<ul>
+<li><strong>Reactive maintenance:</strong> Repair equipment after a failure occurs. This can lead to unplanned work, service disruption and urgent site visits.</li>
+<li><strong>Preventive maintenance:</strong> Perform maintenance at scheduled intervals, regardless of whether equipment shows signs of deterioration.</li>
+<li><strong>Condition-based maintenance:</strong> Use measured conditions to determine when intervention may be necessary.</li>
+<li><strong>Predictive maintenance:</strong> Use historical patterns, condition data and analytical models to estimate future maintenance needs.</li>
+</ul>
+
+<p>
+These approaches are not mutually exclusive. A utility may use all four, depending on asset criticality, failure consequences, maintenance resources and monitoring costs.
+</p>
+
+<p>
+For smart metering, predictive maintenance does not necessarily require an advanced AI model. A carefully designed rule identifying persistent communication failures may provide more immediate value than a complex model trained on insufficient or unreliable data.
+</p>
+
+<p>
+The objective is not to make maintenance more sophisticated. It is to make maintenance more timely and better informed.
+</p>
+
+<h2>What Can AMI Data Tell Us?</h2>
+
+<h3>1. Repeated Communication Failures</h3>
+
+<p>
+A meter that repeatedly fails to communicate may indicate a problem requiring investigation.
+</p>
+
+<p>
+Possible causes include:
+</p>
+
+<ul>
+<li>Weak or inconsistent network coverage</li>
+<li>Changes in the surrounding radio environment</li>
+<li>Communication module or antenna problems</li>
+<li>Power-related issues</li>
+<li>Backend, configuration or network service problems</li>
+</ul>
+
+<p>
+A single missed reading is rarely enough to establish a fault. It may result from temporary network congestion, scheduled maintenance or a short-lived connectivity interruption.
+</p>
+
+<p>
+A more useful indicator is a persistent or recurring pattern, particularly when compared with the meter's previous behaviour and that of nearby devices.
+</p>
+
+<p>
+If communication failures increase across a group of meters in the same area, the issue may be related to network conditions rather than individual meter hardware. If one meter repeatedly fails while comparable devices remain healthy, an individual device or installation issue becomes a possibility worth investigating.
+</p>
+
+<h3>2. Battery and Power-Related Warning Signs</h3>
+
+<p>
+Battery life is an important consideration for battery-powered water meters and their communication modules.
+</p>
+
+<p>
+Where equipment supports battery-voltage reporting, power diagnostics or relevant event logs, AMI data may help identify devices that require closer assessment.
+</p>
+
+<p>
+Increasing communication retries or changes in reporting behaviour may also provide useful signals, although they are not specific to battery deterioration.
+</p>
+
+<p>
+A meter that communicates less frequently is not necessarily experiencing battery problems. Network conditions, configuration changes, firmware behaviour and backend issues may produce similar symptoms.
+</p>
+
+<p>
+Battery-related predictions therefore require appropriate device information and an understanding of the relationship between operating conditions and power consumption. Historical field results and battery-performance data can improve the reliability of these assessments.
+</p>
+
+<h3>3. Unusual Consumption Patterns</h3>
+
+<p>
+AMI can identify changes in customer consumption that may warrant further investigation.
+</p>
+
+<p>
+Examples include persistent overnight flow, sudden changes in usage or consumption patterns that differ substantially from an established baseline.
+</p>
+
+<p>
+For water utilities, these patterns may help prioritise customer-side inspections or investigations into possible leakage.
+</p>
+
+<p>
+However, unusual consumption is not the same as equipment failure. A continuous flow pattern may reflect a genuine leak, normal customer activity, a faulty meter or a data-quality problem.
+</p>
+
+<p>
+The appropriate response depends on the circumstances and the utility's operating procedures.
+</p>
+
+<h3>4. Recurring Meter Alarms and Device Faults</h3>
+
+<p>
+Some meters and communication modules can report supported diagnostic events, tamper indications or other device-specific alarms.
+</p>
+
+<p>
+When these events are available, their frequency and sequence may provide useful information about equipment behaviour.
+</p>
+
+<p>
+A single alarm may require a routine check. Repeated alarms, particularly when combined with other diagnostic evidence, may indicate a need for inspection or replacement.
+</p>
+
+<p>
+The utility must understand what each event means for the specific device and firmware version. An alarm code should not be treated as a universal diagnosis across different manufacturers or product generations.
+</p>
+
+<h2>From Data Anomalies to Maintenance Signals</h2>
+
+<p>
+Collecting data is only the first step. The more difficult task is deciding which observations justify action.
+</p>
+
+<p>
+A useful workflow separates detection from diagnosis.
+</p>
+
+<ol>
+<li><strong>Establish a baseline:</strong> Understand normal behaviour for the device, asset group or operating environment. Reporting frequency, communication performance and consumption patterns may vary by location, configuration and time.</li>
+<li><strong>Detect meaningful deviations:</strong> Identify persistent changes rather than reacting to every isolated event. Detection may use a threshold, trend rule or statistical model.</li>
+<li><strong>Combine relevant evidence:</strong> Compare the signal with network performance, device diagnostics, firmware version, historical faults and maintenance records.</li>
+<li><strong>Assess the likely cause and consequence:</strong> Determine whether the evidence points towards a device issue, communication problem, data-quality issue or another operational condition.</li>
+<li><strong>Prioritise the intervention:</strong> Consider fault likelihood, operational impact, diagnostic confidence and investigation cost.</li>
+<li><strong>Validate the outcome:</strong> Record what the investigation found and whether the intervention resolved the problem. Use the results to improve future rules and analytical models.</li>
+</ol>
+
+<p>
+This creates a feedback loop between AMI data and maintenance operations.
+</p>
+
+<p>
+Without that loop, a utility may become better at detecting anomalies without becoming better at preventing failures.
+</p>
+
+<h2>Why AMI Data Alone Is Not Enough</h2>
+
+<p>
+AMI is an important source of operational information, but it was not necessarily designed to provide every diagnostic measurement required for maintenance prediction.
+</p>
+
+<h3>Data Quality and Completeness</h3>
+
+<p>
+Missing readings, inconsistent timestamps, delayed transmissions and duplicated records can distort analytical results.
+</p>
+
+<p>
+Before building predictive models, utilities need to understand how data is generated, transmitted, processed and stored.
+</p>
+
+<h3>Limited Failure History</h3>
+
+<p>
+Predictive models benefit from historical examples connecting observed conditions with confirmed outcomes.
+</p>
+
+<p>
+A utility may have extensive communication records but few documented root causes. It may therefore be able to detect abnormal behaviour without reliably predicting which devices will fail.
+</p>
+
+<p>
+Maintenance records should capture not only the reported symptom but also investigation findings, corrective action and eventual outcome.
+</p>
+
+<h3>Correlation Is Not Causation</h3>
+
+<p>
+A communication problem may occur before a meter failure, but that does not establish that one caused the other.
+</p>
+
+<p>
+Both could result from a third factor, such as a change in environmental conditions or network configuration.
+</p>
+
+<p>
+Predictive maintenance requires evidence that observed indicators are meaningfully related to the failure or intervention being predicted.
+</p>
+
+<h3>False Alarms and Missed Failures</h3>
+
+<p>
+An overly sensitive detection rule may generate too many alerts, increasing workload and reducing confidence among maintenance teams.
+</p>
+
+<p>
+An overly conservative rule may miss important faults.
+</p>
+
+<p>
+Utilities need to evaluate both types of error. The acceptable balance depends on the cost of an unnecessary site visit, the consequences of a missed failure and the availability of alternative diagnostic methods.
+</p>
+
+<h2>Combining AMI with Other Operational Data</h2>
+
+<p>
+A stronger maintenance strategy combines AMI observations with information from other systems.
+</p>
+
+<ul>
+<li><strong>AMI and meter records:</strong> Reading history, communication success and supported device events.</li>
+<li><strong>Device diagnostics:</strong> Available battery, power or hardware status information.</li>
+<li><strong>Network monitoring:</strong> Coverage, service interruptions and communication performance.</li>
+<li><strong>Asset registers:</strong> Device type, installation details, age and location.</li>
+<li><strong>Firmware and configuration records:</strong> Software versions, configuration changes and known issues.</li>
+<li><strong>Maintenance management systems:</strong> Reported faults, inspection findings, repairs and replacement history.</li>
+</ul>
+
+<p>
+The aim is not to integrate every available system immediately.
+</p>
+
+<p>
+Start with the data needed to answer a defined maintenance question. Ensure identifiers, timestamps and asset records can be reconciled before expanding the analysis.
+</p>
+
+<p>
+For example, repeated communication failures may be difficult to interpret without knowing whether affected meters share a network, device model, firmware version or installation environment.
+</p>
+
+<h2>Building a Practical Predictive Maintenance Programme</h2>
+
+<p>
+Utilities can begin with a focused use case rather than attempting to predict every possible failure.
+</p>
+
+<ol>
+<li><strong>Select the maintenance problem:</strong> Choose a clearly defined issue, such as recurring communication failures or repeated device alarms.</li>
+<li><strong>Establish the baseline:</strong> Measure the current frequency of the problem, investigation workload, maintenance cost and typical time to resolution.</li>
+<li><strong>Develop and test the detection method:</strong> Begin with transparent rules where appropriate. Introduce more advanced statistical or machine-learning methods when data and business case justify them.</li>
+<li><strong>Connect alerts to maintenance workflows:</strong> Define who receives an alert, how it is assessed, when a site visit is required and how the outcome is recorded.</li>
+<li><strong>Validate against real outcomes:</strong> Compare predictions with confirmed faults and completed maintenance work. Review false alarms and missed failures.</li>
+<li><strong>Expand only when evidence supports it:</strong> Consider additional asset types, diagnostic indicators or maintenance scenarios after the initial approach demonstrates value.</li>
+</ol>
+
+<p>
+This staged approach helps prevent investment in analytical capability before establishing whether the underlying maintenance problem can be identified reliably.
+</p>
+
+<h2>Measuring Whether Predictive Maintenance Works</h2>
+
+<p>
+The success of a predictive maintenance programme should not be measured by the number of alerts generated or the sophistication of its algorithms.
+</p>
+
+<p>
+The more important question is whether maintenance decisions and outcomes improve.
+</p>
+
+<ul>
+<li><strong>Unplanned failures:</strong> Has the frequency of unexpected failures decreased?</li>
+<li><strong>Avoidable site visits:</strong> Can unnecessary inspections be reduced without increasing missed faults?</li>
+<li><strong>Repeat faults:</strong> Are recurring problems being identified and resolved more effectively?</li>
+<li><strong>Time to resolution:</strong> Can the utility diagnose and address problems sooner?</li>
+<li><strong>Maintenance cost:</strong> Does the approach reduce total intervention costs after accounting for monitoring, analysis and implementation?</li>
+<li><strong>Prediction quality:</strong> How often do alerts correspond to confirmed problems, and how many important faults are missed?</li>
+</ul>
+
+<p>
+These indicators should be assessed against a baseline and interpreted in context. A reduction in site visits, for example, is not an improvement if it comes at the expense of detecting genuine faults.
+</p>
+
+<h2>From Reactive Response to Better Maintenance Decisions</h2>
+
+<p>
+AMI provides utilities with a growing stream of operational observations. Used carefully, those observations can help identify persistent problems, prioritise investigations and support more proactive maintenance.
+</p>
+
+<p>
+But data availability does not automatically create predictive capability.
+</p>
+
+<p>
+Reliable results require an understanding of device behaviour, appropriate diagnostic information, trustworthy maintenance records and a process for validating predictions against actual outcomes.
+</p>
+
+<h2>Conclusion</h2>
+
+<p>
+For smart water metering, the objective is not to predict every failure. It is to identify meaningful warning signs early enough to make a better decision about what to inspect, repair, monitor or replace.
+</p>
+
+<p>
+The real value of predictive maintenance lies not in predicting more events, but in helping utilities take the right action at the right time.
+</p>
+
+<p>
+<strong>Better maintenance begins when operational data becomes a reliable reason to investigate — not simply another alert.</strong>
+</p>
+
+</section>
+          
+
+            <!-- =================================================
+                 FULL ARTICLE ON MEDIUM
+                 ================================================= -->
+
+<section class="medium-link">
+<h2>Read the Full Article on Medium</h2>
+
+<p>
+This article was originally published on Medium, where the full discussion explores AMI maintenance signals, communication failures, battery indicators, consumption patterns, data limitations, operational integration and predictive maintenance KPIs.
+</p>
+
+<p>
+<a href="https://medium.com/@smartinfra.insights/predictive-maintenance-using-ami-data-moving-from-reactive-to-proactive-operations-7b13d4fc1b0b"
+target="_blank"
+rel="noopener noreferrer">
+Read the Full Article on Medium →
+</a>
+</p>
+</section>
+          
+            <!-- =================================================
+                 RELATED ARTICLES
+                 ================================================= -->
+
+<section class="related-topics">
+<h2>Related Smart Metering Topics</h2>
+
+<ul>
+
+<li>
+<a href="/publications/smart-meter-battery-life.html">
+Smart Meter Battery Life Explained: Why 10 Years Is Not Just a Specification
+</a>
+</li>
+
+<li>
+<a href="/publications/how-utilities-actually-use-smart-meter-data-beyond-billing.html">
+How Utilities Actually Use Smart Meter Data (Beyond Billing)
+</a>
+</li>
+
+<li>
+<a href="/publications/why-ami-systems-fail.html">
+Why AMI Systems Fail: A System-Level Breakdown (Technology, Data, and Organization)
+</a>
+</li>
+
+<li>
+<a href="/publications/firmware-management-in-ami.html">
+Firmware Management in AMI: The Hidden Operational Challenge
+</a>
+</li>
+
+<li>
+<a href="/publications/ai-in-utility-operations-beyond-the-hype.html">
+AI in Utility Operations: Beyond the Hype
+</a>
+</li>
+
+<li>
+<a href="/publications/edge-computing-in-smart-metering.html">
+Edge Computing in Smart Metering: Why Processing Data at the Edge Matters
+</a>
+</li>
+
+<li>
+<a href="/publications/digital-twins-for-water-utilities.html">
+Digital Twins for Water Utilities: From Visualization to Operational Intelligence
+</a>
+</li>
+
+<li>
+<a href="/publications/leak-analysis-beyond-threshold-alarms.html">
+Leak Analytics Beyond Threshold Alarms: Using Data to Find Hidden Water Losses
+</a>
+</li>
+
+</ul>
+</section>
+
+        </article>
+
+    </main>
+
+  
+
+<footer>
+
+<p>© 2026 Vincent Wong. All rights reserved.</p>
+
+<p style="font-style: italic; text-align: justify; color: #555;">
+The personal engineering insights shared here represent aspirational industry best practices and do not reflect the active bidding strategies or commercial policies of any current or past employer. Read the full <a href="/about/#disclaimer" style="text-decoration: underline; color: #0066cc; font-weight: bold;">Strategic Disclaimer</a>.
+</p>
+
+<p>
+Smart Metering | AMI | Smart Water | Utility IoT | NB-IoT
+</p>
+<p>
+<a href="/">Home</a> |
+<a href="/about/">About</a> |
+<a href="/whitepapers/">Whitepapers</a> |
+<a href="/publications/">Publications</a> |
+<a href="/patents/">Patents</a> |
+<a href="/speaking/">Speaking</a> |
+<a href="/recognition/">Recognition</a>  
+</p>
+
+</footer>
+
+</body>
+</html>
