@@ -5,50 +5,50 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Leak Analytics Beyond Threshold Alarms: Using Data to Find Hidden Water Losses | Vincent Wong</title>
+<title>Selecting the Right Communication Technology for Smart Metering | Vincent Wong</title>
 
-<meta name="description" content="Explore how water utilities can use consumption baselines, continuous-flow analysis, persistence, trend detection and network-level data to identify potential hidden water losses.">
+<meta name="description" content="Explore how utilities can select smart metering communication technologies based on application requirements, coverage, battery life, reliability, network architecture and lifecycle cost.">
 
 <meta name="author" content="Vincent Wong Yew Hon">
 
-<link rel="canonical" href="https://vincentwong-smartmetering.github.io/publications/leak-analysis-beyond-threshold-alarms.html">
+<link rel="canonical" href="https://vincentwong-smartmetering.github.io/publications/selecting-the-right-communication-technology-for-smart-metering.html">
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leak Analytics Beyond Threshold Alarms: Using Data to Find Hidden Water Losses">
-<meta property="og:description" content="A practical guide to moving beyond fixed leak alarms through consumption analytics, network evidence, data quality, investigation workflows and measurable water-loss outcomes.">
-<meta property="og:url" content="https://vincentwong-smartmetering.github.io/publications/leak-analysis-beyond-threshold-alarms.html">
+<meta property="og:title" content="Selecting the Right Communication Technology for Smart Metering">
+<meta property="og:description" content="A practical guide to evaluating NB-IoT, LoRaWAN, Wireless M-Bus, sub-GHz RF and RF mesh based on deployment environments, communication reliability, battery requirements and total cost of ownership.">
+<meta property="og:url" content="https://vincentwong-smartmetering.github.io/publications/selecting-the-right-communication-technology-for-smart-metering.html">
 <meta property="og:site_name" content="Vincent Wong Smart Metering">
-<meta property="og:image" content="https://vincentwong-smartmetering.github.io/publications/images/leak-analysis-beyond-threshold-alarms.jpg">
-<meta property="og:image:alt" content="Leak Analytics Beyond Threshold Alarms: Using Data to Find Hidden Water Losses">
+<meta property="og:image" content="https://vincentwong-smartmetering.github.io/publications/images/selecting-the-right-communication-technology-for-smart-metering.jpg">
+<meta property="og:image:alt" content="Selecting the Right Communication Technology for Smart Metering">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="Vincent Wong Yew Hon">
-<meta property="article:published_time" content="2026-10-29">
-<meta property="article:modified_time" content="2026-10-29">
-<meta property="article:section" content="Smart Water Analytics">
+<meta property="article:published_time" content="2026-11-12">
+<meta property="article:modified_time" content="2026-11-12">
+<meta property="article:section" content="Smart Metering Communication & Connectivity">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Leak Analytics Beyond Threshold Alarms: Using Data to Find Hidden Water Losses">
-<meta name="twitter:description" content="How utilities can identify potential hidden water losses using consumption patterns, changing baselines, persistence and network-level evidence.">
-<meta name="twitter:image" content="https://vincentwong-smartmetering.github.io/publications/images/leak-analysis-beyond-threshold-alarms.jpg">
-<meta name="twitter:image:alt" content="Leak Analytics Beyond Threshold Alarms: Using Data to Find Hidden Water Losses">
+<meta name="twitter:title" content="Selecting the Right Communication Technology for Smart Metering">
+<meta name="twitter:description" content="How utilities can evaluate NB-IoT, LoRaWAN, Wireless M-Bus and other connectivity options based on real deployment and operational requirements.">
+<meta name="twitter:image" content="https://vincentwong-smartmetering.github.io/publications/images/selecting-the-right-communication-technology-for-smart-metering.jpg">
+<meta name="twitter:image:alt" content="Selecting the Right Communication Technology for Smart Metering">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
-  "headline": "Leak Analytics Beyond Threshold Alarms: Using Data to Find Hidden Water Losses",
-  "description": "A practical guide to moving beyond fixed leak alarms through consumption analytics, network evidence, data quality, investigation workflows and measurable water-loss outcomes.",
-  "url": "https://vincentwong-smartmetering.github.io/publications/leak-analysis-beyond-threshold-alarms.html",
-  "datePublished": "2026-10-29",
-  "dateModified": "2026-10-29",
+  "headline": "Selecting the Right Communication Technology for Smart Metering",
+  "description": "A practical guide to evaluating NB-IoT, LoRaWAN, Wireless M-Bus, sub-GHz RF and RF mesh based on deployment environments, communication reliability, battery requirements and total cost of ownership.",
+  "url": "https://vincentwong-smartmetering.github.io/publications/selecting-the-right-communication-technology-for-smart-metering.html",
+  "datePublished": "2026-11-12",
+  "dateModified": "2026-11-12",
   "author": {
     "@type": "Person",
     "name": "Vincent Wong Yew Hon"
   },
-  "image": "https://vincentwong-smartmetering.github.io/publications/images/leak-analysis-beyond-threshold-alarms.jpg",
+  "image": "https://vincentwong-smartmetering.github.io/publications/images/selecting-the-right-communication-technology-for-smart-metering.jpg",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://vincentwong-smartmetering.github.io/publications/leak-analysis-beyond-threshold-alarms.html"
+    "@id": "https://vincentwong-smartmetering.github.io/publications/selecting-the-right-communication-technology-for-smart-metering.html"
   }
 }
 </script>
@@ -123,569 +123,907 @@
 
         <article>
 
-            <!-- =================================================
-                 ARTICLE HEADER
-                 ================================================= -->
+<!-- =================================================
+
+ARTICLE HEADER
+
+================================================= -->
 
 <header class="article-header">
-<p class="article-category">Smart Water Analytics</p>
 
-<h1>Leak Analytics Beyond Threshold Alarms: Using Data to Find Hidden Water Losses</h1>
+<p class="article-category">Smart Metering Communication & Connectivity</p>
+
+<h1>Selecting the Right Communication Technology for Smart Metering</h1>
 
 <p class="article-subtitle">
-How consumption patterns, changing baselines, persistent flow and network-level evidence can help utilities identify potential hidden water losses and prioritise field investigations.
+
+How utilities can evaluate NB-IoT, LoRaWAN, Wireless M-Bus, sub-GHz RF and other connectivity options based on application requirements, deployment environments, communication reliability and long-term operating costs.
+
 </p>
 
 <div class="article-hero">
-<img src="/publications/images/leak-analysis-beyond-threshold-alarms.jpg"
-alt="Leak Analytics Beyond Threshold Alarms: Using Data to Find Hidden Water Losses"
+
+<img src="/publications/images/selecting-the-right-communication-technology-for-smart-metering.jpg"
+
+alt="Selecting the Right Communication Technology for Smart Metering"
+
 loading="eager">
+
 </div>
 
 <p class="article-meta">
-By <strong>Vincent Wong Yew Hon</strong> · 29 October 2026
-</p>
-</header>
 
-            <!-- =================================================
-                 ARTICLE INTRODUCTION
-                 ================================================= -->
+By <strong>Vincent Wong Yew Hon</strong> · 12 November 2026
+
+</p>
+
+</header>
+          
+<!-- =================================================
+
+ARTICLE INTRODUCTION
+
+================================================= -->
 
 <section class="article-content">
 
 <h2>Introduction</h2>
 
 <p>
-A water leak does not always trigger an alarm.
+
+Choosing a communication technology is one of the most important decisions in a smart metering project.
+
 </p>
 
 <p>
-It may begin as a small, persistent increase in consumption. It may occur at night when demand is normally low, develop gradually, remain within predefined thresholds or be hidden by gaps in meter readings.
+
+It influences how meter data is collected, how frequently devices communicate, how much energy they consume, how infrastructure is deployed and how reliably information reaches the utility's systems.
+
 </p>
 
 <p>
-For water utilities, the challenge is not simply detecting unusual readings. It is distinguishing meaningful signals from normal variations in consumption and deciding which situations deserve investigation.
+
+Yet technology selection is sometimes approached too narrowly. A project may favour a particular wireless standard because it is widely adopted, supported by a major telecommunications operator or attractive in terms of initial device cost.
+
 </p>
 
 <p>
-Traditional threshold alarms remain useful. But identifying potential hidden water losses requires a broader view of consumption patterns, behaviour over time and evidence from multiple sources.
+
+These considerations are relevant, but they do not necessarily determine whether the technology is suitable for the actual deployment.
+
+</p>
+
+<p>
+
+A communication solution that performs well in an open residential environment may encounter difficulties in high-rise buildings, underground meter chambers or locations with weak network coverage. Similarly, a technology that offers low device cost may require additional gateways, network infrastructure or operational resources.
+
+</p>
+
+<p>
+
+There is no universally best communication technology for smart metering. The right choice depends on the application, deployment environment, data requirements, infrastructure availability and the utility's long-term operating strategy.
+
+</p>
+
+<p>
+
+This article examines the key considerations when evaluating communication technologies for smart metering, with particular attention to the practical requirements of smart water meter deployments.
+
 </p>
 
 <h2>Key Takeaways</h2>
 
 <ul>
-<li>Fixed threshold alarms are useful but may miss gradual or persistent changes.</li>
-<li>Consumption baselines help identify deviations from expected customer or network behaviour.</li>
-<li>Continuous-flow, overnight-flow, persistence and trend analysis can reveal patterns that individual readings may not show.</li>
-<li>Customer-level analytics and DMA-level analysis provide different but complementary evidence.</li>
-<li>AMI readings should be combined selectively with zone inflow, pressure, SCADA, GIS and field investigation records.</li>
-<li>Reading frequency, meter resolution, missing data and time alignment directly affect analytical reliability.</li>
-<li>An anomaly is not proof of a leak.</li>
-<li>Rules, statistical methods and machine learning should be selected according to the problem and available evidence.</li>
-<li>Analytics must connect to investigation, confirmation and operational feedback.</li>
-<li>The objective is to find the right cases earlier, not simply generate more alerts.</li>
+
+<li>Communication technology should be selected according to application requirements rather than technology trends.</li>
+
+<li>Installation environments, building structures and meter locations influence actual communication performance.</li>
+
+<li>NB-IoT, LoRaWAN, Wireless M-Bus, sub-GHz RF and RF mesh have different infrastructure and operational requirements.</li>
+
+<li>Battery life must be evaluated using realistic communication profiles and actual field conditions.</li>
+
+<li>Coverage does not automatically guarantee reliable data delivery.</li>
+
+<li>Direct and gateway-based architectures have different cost, maintenance and network ownership implications.</li>
+
+<li>Interoperability, cybersecurity, supplier availability and long-term technology support matter throughout the meter lifecycle.</li>
+
+<li>Representative field trials are essential before committing to large-scale deployment.</li>
+
 </ul>
 
-<h2>Why Threshold Alarms Are Not Enough</h2>
+<h2>1. Start with the Application, Not the Technology</h2>
 
 <p>
-Threshold-based monitoring is straightforward. A system triggers an alert when a measurement exceeds a predefined limit.
+
+Before comparing communication standards, utilities should establish what they expect the smart metering system to achieve.
+
 </p>
 
 <p>
-For example, a utility may flag unusually high consumption, continuous flow or a reading that exceeds a configured threshold.
+
+A residential water meter used primarily for monthly billing has different communication requirements from a meter intended for frequent consumption monitoring, leak detection or operational analytics.
+
 </p>
 
 <p>
-These rules are easy to understand and can be effective when the condition is clear. However, several limitations emerge in real deployments.
-</p>
 
-<h3>Fixed Thresholds May Miss Gradual Changes</h3>
+Important questions include:
 
-<p>
-A small increase in consumption may remain below an alarm limit for weeks or months. Yet the cumulative volume can become significant if the flow continues.
-</p>
-
-<h3>Normal Behaviour Differs Between Customers</h3>
-
-<p>
-A consumption level that is unusual for a household may be normal for a commercial property.
-</p>
-
-<p>
-A single threshold applied across different customer types can generate excessive alerts or miss meaningful deviations.
-</p>
-
-<h3>Intermittent Readings Can Obscure Patterns</h3>
-
-<p>
-Communication failures, delayed uploads, missing intervals and irregular reporting can make it difficult to distinguish genuine consumption behaviour from incomplete data.
-</p>
-
-<h3>An Unusual Reading Does Not Establish the Cause</h3>
-
-<p>
-High consumption may indicate a leak, but it can also result from legitimate usage, a change in occupancy, irrigation, plumbing work or a meter-related issue.
-</p>
-
-<p>
-Threshold alarms remain an important first layer. The limitation is treating every threshold crossing as a complete diagnosis — or assuming that everything below the threshold is normal.
-</p>
-
-<h2>What Leak Analytics Adds</h2>
-
-<p>
-Leak analytics examines relationships across time and, where available, across different data sources.
-</p>
-
-<p>
-Instead of asking only whether consumption exceeded a limit, it asks whether observed behaviour differs from what would normally be expected.
-</p>
-
-<h3>Continuous-Flow and Low-Demand Analysis</h3>
-
-<p>
-A household that continues to register flow during periods when consumption is usually low may warrant investigation.
-</p>
-
-<p>
-Repeated overnight flow can be a useful signal, particularly when the pattern persists over several nights.
-</p>
-
-<p>
-However, overnight consumption is not automatically a leak. Some properties have legitimate continuous demand, and meter resolution or reporting intervals may limit what can be inferred.
-</p>
-
-<p>
-The analytical value comes from examining persistence, magnitude, historical behaviour and relevant property context.
-</p>
-
-<h3>Baseline Deviation</h3>
-
-<p>
-A consumption baseline represents the expected behaviour of a customer, property or network segment.
-</p>
-
-<p>
-Analytics can compare recent observations with historical patterns, accounting where possible for recurring daily or weekly behaviour and seasonal changes.
-</p>
-
-<p>
-For example, a property may show a gradual increase in minimum overnight consumption over several weeks. Each individual reading might remain below a fixed alarm threshold, but the trend could justify further investigation.
-</p>
-
-<p>
-A baseline is not necessarily a single fixed number. It may need to adapt as legitimate usage changes.
-</p>
-
-<p>
-However, poorly designed adaptive baselines can create their own problems. If a persistent leak becomes part of the historical norm, an adaptive model may gradually treat the abnormal behaviour as expected. Baselines therefore need appropriate monitoring and reset rules.
-</p>
-
-<h3>Persistence and Recurrence</h3>
-
-<p>
-The duration and recurrence of an unusual pattern can matter as much as its peak value.
-</p>
-
-<p>
-A short spike may reflect normal activity. A modest but persistent flow may be more operationally significant.
-</p>
-
-<p>
-Analytics can rank observations using factors such as:
 </p>
 
 <ul>
-<li>Duration</li>
-<li>Frequency</li>
-<li>Deviation from baseline</li>
-<li>Estimated volume</li>
-<li>Confidence in the available data</li>
+
+<li>How frequently must meter readings be collected?</li>
+
+<li>Is daily reporting sufficient, or is more frequent communication required?</li>
+
+<li>Does the application require event-driven reporting?</li>
+
+<li>How quickly must abnormal consumption or leakage be detected?</li>
+
+<li>Is remote configuration or firmware updating required?</li>
+
+<li>Must the meter communicate directly with the utility network, or can it use an intermediate gateway?</li>
+
+<li>How long is the device expected to operate without battery replacement?</li>
+
+<li>What level of communication availability is required?</li>
+
 </ul>
 
 <p>
-This helps utilities focus on patterns that may have greater consequences rather than responding to every isolated anomaly.
-</p>
 
-<h3>Change-Point and Trend Detection</h3>
+These requirements influence the choice of communication technology.
 
-<p>
-Some losses develop progressively rather than appearing as a sudden spike.
 </p>
 
 <p>
-Change-point detection looks for a shift in behaviour, while trend analysis examines how measurements evolve over time.
+
+For example, a meter that transmits one reading per day may have very different energy requirements from one that reports every 15 minutes. A device expected to support remote firmware updates also needs to account for larger data transfers and potentially longer communication sessions.
+
 </p>
 
 <p>
-These techniques can help identify changes that fixed thresholds overlook.
+
+It is therefore important to define the operational requirements before selecting the communication technology. A more effective approach is to establish the application requirements first and evaluate technologies against them.
+
+</p>
+
+<h2>2. Understand the Deployment Environment</h2>
+
+<p>
+
+The physical environment has a significant influence on communication performance.
+
 </p>
 
 <p>
-Nevertheless, a statistical change indicates that behaviour has changed — not necessarily that a leak has occurred. Operational context and follow-up investigation remain essential.
-</p>
 
-<h2>From Individual Meters to Network-Level Insight</h2>
+Unlike mobile phones, smart meters are usually installed in fixed locations. Their communication conditions are determined by the surrounding building structure, installation position, meter chamber, antenna orientation and available network infrastructure.
 
-<p>
-Customer-meter analytics is only one part of leak investigation.
 </p>
 
 <p>
-Where suitable infrastructure and data are available, utilities can also compare observations across different levels of the water network.
+
+For smart water metering, common deployment environments include:
+
 </p>
 
-<h3>Customer-Level Analysis</h3>
+<h3>Individual Residential Properties</h3>
 
 <p>
-At the customer level, analytics may identify persistent low flow, unusual consumption patterns or a sustained deviation from historical behaviour.
+
+Meters may be installed in outdoor meter boxes, boundary walls or roadside chambers. The communication path may be relatively open, but underground or enclosed installations can introduce signal attenuation.
+
 </p>
 
+<h3>High-Rise Residential Buildings</h3>
+
 <p>
-This can help prioritise properties for customer notification or inspection.
+
+Meters may be located in service risers, meter rooms, basements or individual apartment units. Reinforced concrete, metal enclosures and building layout can affect radio propagation.
+
 </p>
 
+<h3>Commercial and Industrial Properties</h3>
+
 <p>
-The utility still needs to distinguish possible private plumbing leaks from meter faults, legitimate demand and other explanations.
+
+Large buildings, plant rooms and underground facilities can create challenging radio conditions. Meter locations may also be distributed across multiple floors or separate structures.
+
 </p>
 
-<h3>District or Zone-Level Analysis</h3>
+<h3>Remote and Rural Locations</h3>
 
 <p>
-At district metered area (DMA) or zone level, utilities may compare inflow with estimated authorised consumption and other known adjustments.
-</p>
 
-<p>
-A sustained difference may indicate apparent or real losses, but interpretation depends on measurement quality, time alignment, storage effects and the completeness of consumption data.
-</p>
+Network coverage, gateway accessibility, maintenance logistics and power availability may become more important than the nominal communication performance of the technology.
 
-<p>
-A simple subtraction between zone inflow and customer-meter readings is not automatically a reliable leakage estimate.
-</p>
-
-<h3>Combining Customer and Network Evidence</h3>
-
-<p>
-The strongest investigations often combine multiple signals.
-</p>
-
-<p>
-For example, a rise in minimum night flow within a zone may coincide with unusual consumption patterns at several customer meters. Together, these observations can help narrow the investigation.
 </p>
 
 <p>
-But the relationship is not always direct. Network leakage may occur between customer meters, while a customer-side leak may not create a clear zone-level signal.
+
+A technology should therefore be evaluated against representative installation conditions rather than relying exclusively on laboratory measurements or outdoor coverage maps.
+
 </p>
 
 <p>
-The purpose of combining evidence is to improve prioritisation and investigation — not to claim that analytics can identify the exact leak location without supporting measurements.
+
+Field surveys and pilot deployments are particularly useful for identifying coverage gaps and understanding actual communication behaviour.
+
 </p>
 
-<h2>Why Data Quality Determines Analytical Value</h2>
+<h2>3. Comparing the Main Communication Options</h2>
 
 <p>
-Leak analytics depends on the quality and meaning of its inputs. Several practical constraints deserve attention.
+
+Several communication technologies are used or considered for smart metering. Each has different characteristics, infrastructure requirements and operational implications.
+
+</p>
+
+<h3>3.1 NB-IoT</h3>
+
+<p>
+
+Narrowband Internet of Things (NB-IoT) is a cellular low-power wide-area technology designed for applications that transmit relatively small amounts of data and require extended device operating life.
+
+</p>
+
+<p>
+
+It operates within licensed cellular spectrum and uses mobile network infrastructure.
+
+</p>
+
+<p>
+
+Potential advantages include:
+
 </p>
 
 <ul>
-<li><strong>Reading frequency:</strong> Daily readings may reveal persistent changes but may not capture short-duration events or precise flow behaviour. More frequent data can improve temporal resolution if the measurement and communication system supports it.</li>
-<li><strong>Meter resolution:</strong> Small flows may fall below a meter's effective detection capability or be obscured by the available reporting format.</li>
-<li><strong>Missing data:</strong> A communication outage can resemble zero consumption if missing readings are incorrectly interpreted as actual zero values.</li>
-<li><strong>Time alignment:</strong> Comparisons between network inflow and customer consumption become unreliable when timestamps, aggregation intervals or reporting delays differ materially.</li>
-<li><strong>Meter and asset context:</strong> Meter replacements, configuration changes, property changes and known maintenance activities can alter observed patterns.</li>
-<li><strong>Data completeness:</strong> Incomplete customer registers, uncertain meter-to-property mappings or insufficient network boundary information can weaken the analysis.</li>
+
+<li>Wide-area connectivity through cellular operator networks.</li>
+
+<li>Deep coverage capabilities supported by network design and deployment.</li>
+
+<li>No requirement for the utility to establish its own radio gateway network where suitable operator coverage is available.</li>
+
+<li>Standardised cellular technology and established operator ecosystems.</li>
+
+<li>Support for small-data IoT applications.</li>
+
 </ul>
 
 <p>
-These are not merely technical details. They directly affect false alarms, missed signals and the cost of field investigation.
+
+NB-IoT can be particularly attractive for geographically distributed water meters where cellular coverage is available and utilities prefer not to operate a dedicated radio access network.
+
 </p>
 
 <p>
-A more sophisticated algorithm cannot reliably compensate for data that does not represent the underlying physical system.
-</p>
 
-<h2>Moving from Detection to Investigation</h2>
+However, performance depends on actual operator coverage, network configuration and device implementation. Network registration, coverage conditions, retransmissions and communication session duration can influence battery consumption.
 
-<p>
-A useful leak analytics programme should connect its outputs to operational decisions.
 </p>
 
 <p>
-A practical workflow can be organised into six steps.
+
+Device provisioning, SIM or eSIM arrangements, operator commercial terms and long-term network support must also be considered.
+
 </p>
 
-<h3>Step 1: Define the Problem</h3>
+<h3>3.2 LoRaWAN</h3>
 
 <p>
-Start with a specific operational question.
-</p>
 
-<p>
-Is the priority to identify persistent customer-side leakage, detect unusual night flow, prioritise zones for investigation or reduce the time required to assess reported losses?
-</p>
+LoRaWAN is a low-power wide-area networking protocol designed for long-range communication between end devices and gateways.
 
-<p>
-Different objectives require different data, analytical methods and validation procedures.
-</p>
-
-<h3>Step 2: Establish a Reliable Baseline</h3>
-
-<p>
-Understand normal behaviour before attempting to detect deviations.
 </p>
 
 <p>
-Review historical data quality, reporting frequency, seasonal effects, known operational changes and differences between customer types or network zones.
+
+It operates in unlicensed frequency bands, with regional radio regulations determining the applicable frequencies and operating conditions.
+
 </p>
 
 <p>
-Where historical data already contains undetected losses, take care not to treat the existing condition as an unquestioned normal baseline.
-</p>
 
-<h3>Step 3: Combine Relevant Evidence</h3>
+Potential advantages include:
 
-<p>
-Depending on the use case, this may include:
 </p>
 
 <ul>
-<li>AMI readings</li>
-<li>Zone inflow</li>
-<li>Pressure measurements</li>
-<li>SCADA data</li>
-<li>GIS information</li>
-<li>Asset records</li>
-<li>Previous field investigations</li>
+
+<li>Low-power communication suitable for battery-operated devices.</li>
+
+<li>The ability to deploy privately managed gateway infrastructure.</li>
+
+<li>Flexibility in network ownership and deployment architecture.</li>
+
+<li>Support for geographically distributed sensor and metering applications.</li>
+
+<li>An established ecosystem of network servers, gateways and device solutions.</li>
+
 </ul>
 
 <p>
-Not every deployment requires every source. Begin with the evidence that can materially improve the decision.
-</p>
 
-<h3>Step 4: Rank Potential Cases</h3>
+However, utilities need to consider gateway coverage, backhaul connectivity, network server operations and maintenance responsibilities.
 
-<p>
-A useful alert should provide more than a red indicator on a dashboard.
 </p>
 
 <p>
-It should explain the observed behaviour, its persistence, the deviation from expected conditions, confidence in the available data and why the case deserves attention.
+
+The available radio capacity and regulatory restrictions must also be considered when determining the number of devices, message frequency and network design.
+
 </p>
 
 <p>
-Where possible, include an estimate of potential impact. Clearly distinguish measured facts from analytical estimates.
+
+LoRaWAN is therefore not simply a low-cost alternative to cellular connectivity. Its total deployment cost includes the infrastructure and operational responsibilities required to maintain the network.
+
 </p>
 
-<h3>Step 5: Investigate and Confirm</h3>
+<h3>3.3 Wireless M-Bus and Sub-GHz RF</h3>
 
 <p>
-Field teams may use inspections, acoustic equipment, pressure testing, step testing or other appropriate methods to determine whether a leak exists and where further action is needed.
-</p>
 
-<p>
-The appropriate method depends on the network, suspected leak type, available equipment and operating conditions.
-</p>
+Wireless M-Bus is a communication standard developed for meter reading applications. It is commonly associated with short-range and neighbourhood-level wireless metering architectures.
 
-<p>
-Analytics should help direct these activities, not replace physical confirmation where it is necessary.
-</p>
-
-<h3>Step 6: Feed the Outcome Back into the System</h3>
-
-<p>
-Record whether an alert led to a confirmed leak, a meter issue, legitimate consumption, a communications problem or an inconclusive investigation.
 </p>
 
 <p>
-These outcomes help utilities assess analytical performance and improve future prioritisation.
+
+Sub-GHz RF solutions may also be used in proprietary or other standardised communication arrangements, depending on the product and system design.
+
 </p>
 
 <p>
-Without feedback, an alerting system can continue producing the same unhelpful signals without learning whether they lead to useful action.
-</p>
 
-<h2>Choosing Between Rules, Statistical Methods and AI</h2>
+Potential advantages include:
 
-<p>
-Not every leak analytics programme needs machine learning.
 </p>
 
 <ul>
-<li><strong>Rule-based analytics:</strong> Effective when the condition is clearly defined, such as sustained flow during a specified period or repeated deviations from a known operating limit.</li>
-<li><strong>Statistical methods:</strong> Useful for establishing baselines, identifying persistent deviations and detecting changes in consumption behaviour.</li>
-<li><strong>Machine learning:</strong> May be useful when multiple variables and complex patterns need to be evaluated, particularly where sufficient representative data and reliable investigation outcomes are available.</li>
+
+<li>Communication approaches specifically suited to metering applications.</li>
+
+<li>Local radio collection without requiring every meter to have a direct cellular connection.</li>
+
+<li>Potentially low device power consumption.</li>
+
+<li>Flexible deployment using mobile collectors, fixed gateways or concentrator-based architectures.</li>
+
+<li>Suitability for certain residential and building-level installations.</li>
+
 </ul>
 
 <p>
-More complex models introduce additional requirements: model validation, monitoring for changing conditions, explainability and controls for false positives and missed detections.
+
+A fixed-network arrangement may use gateways or concentrators to collect readings from multiple meters before forwarding the data to the head-end system.
+
 </p>
 
 <p>
-The selection should follow the operational problem and available evidence, not the popularity of a particular technology.
+
+Alternatively, mobile or walk-by reading approaches may be suitable where frequent remote reporting is not required.
+
 </p>
 
 <p>
-A transparent rule that reliably identifies a useful category of cases may provide more value than a sophisticated model whose alerts cannot be explained or acted upon.
+
+The limitations include the need to plan radio coverage, collector routes or gateway locations. Interference, building penetration, antenna placement and network capacity must also be evaluated.
+
 </p>
 
-<h2>Measuring Whether Leak Analytics Works</h2>
+<h3>3.4 RF Mesh Networks</h3>
 
 <p>
-The number of alerts generated is not a sufficient measure of success.
+
+RF mesh networking allows devices to communicate through neighbouring nodes, creating multiple potential communication paths towards a network collection point.
+
 </p>
 
 <p>
-Utilities should evaluate whether the analytics programme improves actual investigation and loss-management outcomes.
+
+Depending on the implementation, mesh networking can extend coverage beyond the direct radio range of an individual device.
+
+</p>
+
+<p>
+
+Potential advantages include:
+
 </p>
 
 <ul>
-<li><strong>Confirmed-leak rate:</strong> The proportion of investigated alerts that result in a confirmed leak, with the denominator and exclusions clearly defined.</li>
-<li><strong>Time to investigation:</strong> How quickly prioritised cases reach the appropriate operational team.</li>
-<li><strong>Time to repair:</strong> How long confirmed leaks take to resolve.</li>
-<li><strong>Estimated water recovered:</strong> The estimated reduction in losses attributable to interventions, with assumptions and uncertainty documented.</li>
-<li><strong>False-positive workload:</strong> The field effort spent investigating cases that do not result in the suspected finding.</li>
-<li><strong>Detection coverage:</strong> Whether the approach identifies relevant cases that would otherwise have remained undetected.</li>
-<li><strong>Cost per confirmed case:</strong> The analytical, operational and field costs required to identify and resolve a case.</li>
+
+<li>Multiple communication paths within a suitable network topology.</li>
+
+<li>The ability to extend coverage through neighbouring devices.</li>
+
+<li>Reduced dependence on direct communication between every meter and a central gateway.</li>
+
+<li>Potential suitability for dense deployment environments.</li>
+
 </ul>
 
 <p>
-Where possible, utilities should compare results against a credible baseline or control group. A reduction in water loss cannot automatically be attributed to analytics if other operational changes occurred at the same time.
+
+However, mesh networks introduce additional design and operational considerations.
+
 </p>
 
 <p>
-The aim is to establish whether better information leads to better decisions and measurable operational value.
-</p>
 
-<h2>A Practical Starting Point for Utilities</h2>
+Network formation, routing, node availability, traffic capacity and network maintenance must be managed. A device's communication performance may also depend on the availability and condition of neighbouring nodes.
 
-<p>
-A utility does not need to build a comprehensive AI platform before testing the value of leak analytics.
 </p>
 
 <p>
-A focused pilot can begin with one well-defined problem, such as persistent overnight consumption or unusual changes in minimum night flow.
+
+In water metering, the physical distribution of meters may not always provide a suitable density of nodes for reliable mesh communication. This needs to be assessed during network planning.
+
+</p>
+
+<h3>3.5 Other Communication Options</h3>
+
+<p>
+
+Other technologies may also be relevant depending on the application.
+
+</p>
+
+<ul>
+
+<li><strong>LTE-M:</strong> Provides another cellular IoT option, with characteristics that differ from NB-IoT in areas such as mobility support, bandwidth and power consumption.</li>
+
+<li><strong>Wi-Fi and Bluetooth:</strong> May be useful for local commissioning, configuration or short-range communication, but are not necessarily appropriate as the primary wide-area communication method for geographically distributed battery-powered meters.</li>
+
+<li><strong>Power Line Communication (PLC):</strong> Relevant to certain metering architectures where the electrical network can provide the communication medium. Its applicability depends on the infrastructure and metering application.</li>
+
+</ul>
+
+<p>
+
+The important point is that each technology must be evaluated in the context of the complete system rather than selected based on a single specification.
+
+</p>
+
+<h2>4. Battery Life Must Be Evaluated at System Level</h2>
+
+<p>
+
+Battery life is a major consideration in smart water metering because meters may be installed in locations where maintenance or battery replacement is difficult.
+
 </p>
 
 <p>
-Select a representative set of customers or network zones, establish data-quality requirements and define what constitutes a useful alert.
+
+Communication technology directly influences energy consumption, but it is not the only factor.
+
 </p>
 
 <p>
-Then measure how the alerts perform against field investigations and known operational outcomes.
+
+The energy required for a communication session depends on several variables:
+
+</p>
+
+<ul>
+
+<li>Radio transmission power.</li>
+
+<li>Network coverage and signal conditions.</li>
+
+<li>Network registration and connection time.</li>
+
+<li>Message size and reporting frequency.</li>
+
+<li>Retransmissions and unsuccessful communication attempts.</li>
+
+<li>Firmware implementation and peripheral management.</li>
+
+<li>Communication module start-up and shutdown behaviour.</li>
+
+</ul>
+
+<p>
+
+For example, a meter with good cellular coverage may complete a communication session relatively efficiently. Another meter using the same technology in a poor coverage location may require longer network access time or repeated attempts.
+
 </p>
 
 <p>
-If the approach improves prioritisation and the benefits justify the cost, the utility can expand the scope, integrate additional data sources and consider more advanced analytical methods.
-</p>
 
-<h2>Conclusion: The Value Is in Finding the Right Cases</h2>
+Similarly, a LoRaWAN device may achieve low energy consumption under a suitable network configuration, but its performance still depends on the radio parameters, message frequency, spreading factor and applicable regulatory constraints.
 
-<p>
-Threshold alarms remain useful for identifying clearly defined conditions. But hidden water losses often require a broader view of consumption patterns, persistence, changing baselines and network behaviour.
 </p>
 
 <p>
-Leak analytics can help utilities identify cases that deserve closer attention, prioritise investigations and make better use of field resources.
+
+Battery-life estimates should therefore use realistic operating profiles rather than relying solely on a communication module's published current consumption.
+
 </p>
 
 <p>
-Its effectiveness depends on reliable data, appropriate analytical methods, operational context and feedback from confirmed outcomes.
+
+Utilities should request evidence from representative field testing, including communication success rates, actual energy consumption and performance under challenging coverage conditions.
+
+</p>
+
+<h2>5. Coverage and Communication Reliability Are Different Measurements</h2>
+
+<p>
+
+A communication technology may provide broad geographical coverage without guaranteeing reliable data delivery at every meter.
+
 </p>
 
 <p>
-Most importantly, an anomaly is not proof of a leak, and a model cannot eliminate the need for sound engineering judgement.
+
+Coverage indicates whether a device can establish a communication link under particular conditions. Reliability concerns whether the complete communication process consistently delivers the expected information.
+
 </p>
 
 <p>
-The objective is not to generate more alerts. It is to find the right cases earlier, investigate them more effectively and reduce water losses through evidence-based action.
+
+For smart metering, a successful communication process may involve:
+
+</p>
+
+<ol>
+
+<li>The meter waking up and preparing its data.</li>
+
+<li>The communication module becoming operational.</li>
+
+<li>The device establishing or accessing the network.</li>
+
+<li>The data being transmitted.</li>
+
+<li>The receiving system acknowledging or processing the message.</li>
+
+<li>The information becoming available to the utility's applications.</li>
+
+</ol>
+
+<p>
+
+A failure at any stage can affect the final data availability.
+
 </p>
 
 <p>
-<strong>Better leak analytics is not about finding more anomalies. It is about finding the right cases, confirming them and turning evidence into action.</strong>
+
+Utilities should therefore evaluate more than signal strength. Useful performance indicators include:
+
+</p>
+
+<ul>
+
+<li>Successful reporting rate.</li>
+
+<li>Daily and monthly data availability.</li>
+
+<li>Communication session duration.</li>
+
+<li>Network registration success.</li>
+
+<li>Retransmission frequency.</li>
+
+<li>Frequency and duration of communication outages.</li>
+
+<li>Recovery behaviour after network interruptions.</li>
+
+</ul>
+
+<p>
+
+These indicators should be measured under representative field conditions. A strong radio signal does not automatically mean that the meter's data will consistently reach the utility's systems.
+
+</p>
+
+<h2>6. Direct Connectivity Versus Gateway-Based Architecture</h2>
+
+<p>
+
+Communication technology selection also determines the broader network architecture.
+
+</p>
+
+<p>
+
+Two common approaches are direct connectivity and gateway-based connectivity.
+
+</p>
+
+<h3>Direct Connectivity</h3>
+
+<p>
+
+Each meter communicates directly with a wide-area network, such as a cellular network.
+
+</p>
+
+<p>
+
+This can simplify the local communication architecture because each meter has its own network connection. However, the utility must consider the cost and management of connectivity subscriptions, device provisioning and operator dependency.
+
+</p>
+
+<h3>Gateway-Based Connectivity</h3>
+
+<p>
+
+Multiple meters communicate with one or more local gateways. The gateway then forwards the collected information to the utility's central systems using cellular, fibre, Ethernet or another backhaul connection.
+
+</p>
+
+<p>
+
+This can reduce the number of wide-area connections required and may provide greater control over the local communication network.
+
+</p>
+
+<p>
+
+However, gateway placement, backhaul availability, power supply, redundancy and maintenance become important design considerations.
+
+</p>
+
+<p>
+
+The choice is not necessarily between one technology and another. A hybrid architecture may use different communication methods at different levels of the network.
+
+</p>
+
+<p>
+
+For example, meters may use local sub-GHz RF to communicate with gateways, while the gateways use cellular connectivity to reach the utility's head-end system.
+
+</p>
+
+<p>
+
+Such an architecture can be useful where individual meter locations are difficult to serve directly through cellular connectivity, or where the utility wants to manage local collection infrastructure.
+
+</p>
+
+<h2>7. Interoperability and Long-Term Technology Support</h2>
+
+<p>
+
+Smart metering systems are long-term infrastructure investments. The selected communication technology should therefore be assessed beyond the initial deployment.
+
+</p>
+
+<p>
+
+Utilities should consider several areas:
+
+</p>
+
+<h3>Standards and Interoperability</h3>
+
+<p>
+
+Does the solution use established standards? Can devices from different manufacturers operate within the intended architecture? Are communication interfaces and data models sufficiently documented?
+
+</p>
+
+<h3>Device Ecosystem</h3>
+
+<p>
+
+Are multiple device manufacturers and module suppliers available? Can the utility avoid unnecessary dependence on one product or supplier?
+
+</p>
+
+<h3>Network Ownership</h3>
+
+<p>
+
+Who operates and maintains the network? Does the utility depend on a telecommunications operator, a technology vendor or its own infrastructure?
+
+</p>
+
+<h3>Security</h3>
+
+<p>
+
+How are devices authenticated? How is communication protected? How are credentials, keys and firmware updates managed throughout the device lifecycle?
+
+</p>
+
+<h3>Technology Lifecycle</h3>
+
+<p>
+
+What is the expected support period for the communication network, modules and associated services? What migration options are available if a technology or service is discontinued?
+
+</p>
+
+<h3>Total Cost of Ownership</h3>
+
+<p>
+
+What are the costs of devices, connectivity, gateways, installation, maintenance, network operations, system integration and future replacement?
+
+</p>
+
+<p>
+
+These questions are particularly important when a utility expects smart meters to remain operational for ten years or longer.
+
+</p>
+
+<p>
+
+The communication technology should not become a long-term constraint on the utility's ability to maintain or expand its metering infrastructure.
+
+</p>
+
+<h2>8. A Practical Framework for Technology Selection</h2>
+
+<p>
+
+Rather than selecting a technology based on headline specifications, utilities can use a structured evaluation process.
+
+</p>
+
+<h3>Step 1: Define the Operational Requirements</h3>
+
+<p>
+
+Establish reporting frequency, data volume, event requirements, remote management needs, battery-life expectations and availability targets.
+
+</p>
+
+<h3>Step 2: Classify Deployment Environments</h3>
+
+<p>
+
+Identify residential, high-rise, commercial, industrial, rural and remote installations. Determine the proportion of meters expected in each environment.
+
+</p>
+
+<h3>Step 3: Shortlist Suitable Technologies</h3>
+
+<p>
+
+Compare cellular LPWAN, LoRaWAN, Wireless M-Bus, sub-GHz RF, RF mesh and other relevant options against the application requirements.
+
+</p>
+
+<h3>Step 4: Evaluate the Complete Architecture</h3>
+
+<p>
+
+Consider direct connectivity, gateway-based collection, backhaul requirements, network ownership and integration with the head-end system.
+
+</p>
+
+<h3>Step 5: Conduct Representative Field Trials</h3>
+
+<p>
+
+Test actual meters and communication modules in different installation conditions. Include difficult locations rather than selecting only favourable test sites.
+
+</p>
+
+<h3>Step 6: Measure Performance and Energy Consumption</h3>
+
+<p>
+
+Collect data on reporting success, communication duration, signal conditions, recovery behaviour and current consumption.
+
+</p>
+
+<h3>Step 7: Assess Lifecycle Cost and Support</h3>
+
+<p>
+
+Consider device cost, infrastructure, connectivity, maintenance, cybersecurity, interoperability and long-term technology availability.
+
+</p>
+
+<p>
+
+The evaluation should be based on measurable requirements and field evidence. A technology that performs well in one environment may not be the most suitable choice across an entire utility territory.
+
+</p>
+
+<h2>Conclusion: Select for the Deployment, Not the Technology Trend</h2>
+
+<p>
+
+Selecting a communication technology for smart metering is a system-level decision.
+
+</p>
+
+<p>
+
+NB-IoT, LoRaWAN, Wireless M-Bus, sub-GHz RF and mesh networking each offer different capabilities. Their suitability depends on the application, installation environment, network architecture, battery-life requirements and the utility's ability to operate and maintain the complete solution.
+
+</p>
+
+<p>
+
+For smart water metering in particular, the challenge is not simply to establish a radio connection. The objective is to deliver reliable meter data over many years, across a diverse range of installation conditions and with an acceptable lifecycle cost.
+
+</p>
+
+<p>
+
+The most effective selection process begins with operational requirements, evaluates the complete communication architecture and validates performance through representative field trials.
+
+</p>
+
+<p>
+
+Technology specifications and coverage maps are useful starting points, but they cannot replace deployment evidence.
+
+</p>
+
+<p>
+
+Ultimately, the right communication technology is not necessarily the newest, cheapest or most widely promoted option. It is the one that consistently meets the utility's requirements throughout the life of the metering system.
+
 </p>
 
 </section>
           
-
             <!-- =================================================
                  FULL ARTICLE ON MEDIUM
                  ================================================= -->
 
-<section class="medium-link">
-<h2>Read the Full Article on Medium</h2>
+<div class="medium-cta">
+
+<h2>Continue Reading on Medium</h2>
 
 <p>
-This article was originally published on Medium, where the full discussion explores threshold limitations, consumption baselines, continuous-flow analysis, network-level evidence, data quality, investigation workflows and leak analytics performance measures.
+Read the full article for a deeper discussion of communication technologies, network architecture and the considerations involved in selecting connectivity for smart metering deployments.
 </p>
 
-<p>
-<a href="https://medium.com/@smartinfra.insights/leak-analytics-beyond-threshold-alarms-using-data-to-find-hidden-water-losses-c26bc6a622aa"
-target="_blank"
-rel="noopener noreferrer">
-Read the Full Article on Medium →
-</a>
-</p>
-</section>
+<a href="https://medium.com/@smartinfra.insights/selecting-the-right-communication-technology-for-smart-metering-6bae7d7ccf40"
+target="_blank" rel="noopener noreferrer">Read the Full Article on Medium →</a>
+
+</div>
           
             <!-- =================================================
                  RELATED ARTICLES
                  ================================================= -->
 
-<section class="related-topics">
+<section class="related-articles">
+
 <h2>Related Smart Metering Topics</h2>
 
 <ul>
 
-<li>
-<a href="/publications/digital-twins-for-water-utilities.html">
-Digital Twins for Water Utilities: From Visualization to Operational Intelligence
-</a>
-</li>
+<li><a href="/publications/nb-iot-vs-lorawan-vs-lte-m.html">NB-IoT vs LoRaWAN vs LTE-M: Choosing the Right IoT Connectivity for Smart Utilities</a></li>
 
-<li>
-<a href="/publications/predictive-maintenance-using-ami-data.html">
-Predictive Maintenance Using AMI Data: Moving from Reactive to Proactive Operations
-</a>
-</li>
+<li><a href="/publications/what-is-nb-iot.html">What Is NB-IoT? A Practical Guide for IoT and Smart Metering Deployments</a></li>
 
-<li>
-<a href="/publications/how-utilities-actually-use-smart-meter-data-beyond-billing.html">
-How Utilities Actually Use Smart Meter Data (Beyond Billing)
-</a>
-</li>
+<li><a href="/publications/lorawan-explained.html">LoRaWAN Explained: Architecture, Use Cases, and Limitations in Real Deployments</a></li>
 
-<li>
-<a href="/publications/from-smart-meters-to-smart-decisions.html">
-From Smart Meters to Smart Decisions: How AMI Data Becomes Intelligence for Utilities and Smart Cities
-</a>
-</li>
+<li><a href="/publications/nb-iot-vs-lorawan-in-real-deployments.html">NB-IoT vs LoRaWAN in Real Deployments: What Actually Happens in the Field</a></li>
 
-<li>
-<a href="/publications/ai-in-utility-operations-beyond-the-hype.html">
-AI in Utility Operations: Beyond the Hype
-</a>
-</li>
+<li><a href="/publications/smart-metering-architecture.html">Smart Metering System Architecture: End-to-End Design for Utilities</a></li>
 
-<li>
-<a href="/publications/edge-computing-in-smart-metering.html">
-Edge Computing in Smart Metering: Why Processing Data at the Edge Matters
-</a>
-</li>
+<li><a href="/publications/private-lte-for-utilities-when-does-it-make-sense.html">Private LTE for Utilities: When Does It Make Sense?</a></li>
 
-<li>
-<a href="/publications/data-to-roi.html">
-From Data to ROI: Measuring the Business Value of AMI
-</a>
-</li>
+<li><a href="/publications/why-smart-meter-communication-fails-in-high-rise-buildings.html">Why Smart Meter Communication Fails in High-Rise Buildings</a></li>
 
-<li>
-<a href="/publications/smart-water-vs-smart-electricity-metering-why-one-size-doesnt-fit-all.html">
-Smart Water vs. Smart Electricity Metering: Why One Size Doesn't Fit All
-</a>
-</li>
+<li><a href="/publications/interoperability-in-multi-vendor-ami-systems.html">Interoperability in Multi-Vendor AMI Systems</a></li>
+
+<li><a href="/publications/firmware-management-in-ami.html">Firmware Management in AMI: The Hidden Operational Challenge</a></li>
 
 </ul>
+
 </section>
 
         </article>
