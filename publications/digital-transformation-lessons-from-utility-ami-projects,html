@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Selecting the Right Communication Technology for Smart Metering | Vincent Wong</title>
+
+<meta name="description" content="Explore how utilities can select smart metering communication technologies based on application requirements, coverage, battery life, reliability, network architecture and lifecycle cost.">
+
+<meta name="author" content="Vincent Wong Yew Hon">
+
+<link rel="canonical" href="https://vincentwong-smartmetering.github.io/publications/selecting-the-right-communication-technology-for-smart-metering.html">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Selecting the Right Communication Technology for Smart Metering">
+<meta property="og:description" content="A practical guide to evaluating NB-IoT, LoRaWAN, Wireless M-Bus, sub-GHz RF and RF mesh based on deployment environments, communication reliability, battery requirements and total cost of ownership.">
+<meta property="og:url" content="https://vincentwong-smartmetering.github.io/publications/selecting-the-right-communication-technology-for-smart-metering.html">
+<meta property="og:site_name" content="Vincent Wong Smart Metering">
+<meta property="og:image" content="https://vincentwong-smartmetering.github.io/publications/images/selecting-the-right-communication-technology-for-smart-metering.jpg">
+<meta property="og:image:alt" content="Selecting the Right Communication Technology for Smart Metering">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Vincent Wong Yew Hon">
+<meta property="article:published_time" content="2026-11-12">
+<meta property="article:modified_time" content="2026-11-12">
+<meta property="article:section" content="Smart Metering Communication & Connectivity">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Selecting the Right Communication Technology for Smart Metering">
+<meta name="twitter:description" content="How utilities can evaluate NB-IoT, LoRaWAN, Wireless M-Bus and other connectivity options based on real deployment and operational requirements.">
+<meta name="twitter:image" content="https://vincentwong-smartmetering.github.io/publications/images/selecting-the-right-communication-technology-for-smart-metering.jpg">
+<meta name="twitter:image:alt" content="Selecting the Right Communication Technology for Smart Metering">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Selecting the Right Communication Technology for Smart Metering",
+  "description": "A practical guide to evaluating NB-IoT, LoRaWAN, Wireless M-Bus, sub-GHz RF and RF mesh based on deployment environments, communication reliability, battery requirements and total cost of ownership.",
+  "url": "https://vincentwong-smartmetering.github.io/publications/selecting-the-right-communication-technology-for-smart-metering.html",
+  "datePublished": "2026-11-12",
+  "dateModified": "2026-11-12",
+  "author": {
+    "@type": "Person",
+    "name": "Vincent Wong Yew Hon"
+  },
+  "image": "https://vincentwong-smartmetering.github.io/publications/images/selecting-the-right-communication-technology-for-smart-metering.jpg",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://vincentwong-smartmetering.github.io/publications/selecting-the-right-communication-technology-for-smart-metering.html"
+  }
+}
+</script>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<style>
+
+/* Fixes the main hero image scaling on mobile devices */
+.article-hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.article-category {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #0066cc; 
+    margin-bottom: 8px;
+}
+
+.article-meta {
+    font-size: 0.95rem;         /* Slightly smaller than body text */
+    color: #64748b;             /* Subdued gray to sit quietly in the background */
+    margin-top: 0;
+    margin-bottom: 28px;        /* Creates clean space before the hero image starts */
+}
+
+.article-subtitle {
+    font-size: 1.25rem;         /* Visually larger than body text */
+    font-weight: 400;           /* Lighter weight to contrast with the bold H1 */
+    color: #4a5568;             /* Soft charcoal slate color (easier on eyes) */
+    line-height: 1.5;           /* Relaxed spacing for high readability */
+    margin-top: 0;              
+    margin-bottom: 24px;        /* Pushes metadata neatly down */
+}
+
+.article-header h1 {
+    font-size: 2.2rem;          /* Pronounced, high-contrast size */
+    font-weight: 800;           /* Clean, bold appearance */
+    color: #002244;             /* Premium, deep corporate blue */
+    line-height: 1.25;          /* Gives text breathing room when it wraps */
+    margin-top: 8px;            /* Tight gap beneath the category kicker */
+    margin-bottom: 12px;        /* Controlled space above the subtitle */
+    letter-spacing: -0.02em;    /* Slightly tighter tracking for a modern feel */
+}
+
+</style>
+</head>
+
+<body>
+
+<h1 id="top">Publications</h1>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/whitepapers/">Whitepapers</a>
+    <a href="/publications/">Publications</a>
+    <a href="/patents/">Patents</a>
+    <a href="/speaking/">Speaking</a>
+    <a href="/recognition/">Recognition</a>
+</nav>
+
+<hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 25px;">
+    
+
+<main class="container">
+
+        <article>
+
+<!-- =================================================
+
+ARTICLE HEADER
+
+================================================= -->
+
+<header class="article-header">
+
+<p class="article-category">Smart Metering Communication & Connectivity</p>
+
+<h1>Selecting the Right Communication Technology for Smart Metering</h1>
+
+<p class="article-subtitle">
+
+How utilities can evaluate NB-IoT, LoRaWAN, Wireless M-Bus, sub-GHz RF and other connectivity options based on application requirements, deployment environments, communication reliability and long-term operating costs.
+
+</p>
+
+<div class="article-hero">
+
+<img src="/publications/images/selecting-the-right-communication-technology-for-smart-metering.jpg"
+
+alt="Selecting the Right Communication Technology for Smart Metering"
+
+loading="eager">
+
+</div>
+
+<p class="article-meta">
+
+By <strong>Vincent Wong Yew Hon</strong> · 12 November 2026
+
+</p>
+
+</header>
+          
+<!-- =================================================
+
+ARTICLE INTRODUCTION
+
+================================================= -->
+
+<section class="article-content">
+
+<h2>Introduction</h2>
+
+<p>
+
+Choosing a communication technology is one of the most important decisions in a smart metering project.
+
+</p>
+
+<p>
+
+It influences how meter data is collected, how frequently devices communicate, how much energy they consume, how infrastructure is deployed and how reliably information reaches the utility's systems.
+
+</p>
+
+<p>
+
+Yet technology selection is sometimes approached too narrowly. A project may favour a particular wireless standard because it is widely adopted, supported by a major telecommunications operator or attractive in terms of initial device cost.
+
+</p>
+
+<p>
+
+These considerations are relevant, but they do not necessarily determine whether the technology is suitable for the actual deployment.
+
+</p>
+
+<p>
+
+A communication solution that performs well in an open residential environment may encounter difficulties in high-rise buildings, underground meter chambers or locations with weak network coverage. Similarly, a technology that offers low device cost may require additional gateways, network infrastructure or operational resources.
+
+</p>
+
+<p>
+
+There is no universally best communication technology for smart metering. The right choice depends on the application, deployment environment, data requirements, infrastructure availability and the utility's long-term operating strategy.
+
+</p>
+
+<p>
+
+This article examines the key considerations when evaluating communication technologies for smart metering, with particular attention to the practical requirements of smart water meter deployments.
+
+</p>
+
+<h2>Key Takeaways</h2>
+
+<ul>
+
+<li>Communication technology should be selected according to application requirements rather than technology trends.</li>
+
+<li>Installation environments, building structures and meter locations influence actual communication performance.</li>
+
+<li>NB-IoT, LoRaWAN, Wireless M-Bus, sub-GHz RF and RF mesh have different infrastructure and operational requirements.</li>
+
+<li>Battery life must be evaluated using realistic communication profiles and actual field conditions.</li>
+
+<li>Coverage does not automatically guarantee reliable data delivery.</li>
+
+<li>Direct and gateway-based architectures have different cost, maintenance and network ownership implications.</li>
+
+<li>Interoperability, cybersecurity, supplier availability and long-term technology support matter throughout the meter lifecycle.</li>
+
+<li>Representative field trials are essential before committing to large-scale deployment.</li>
+
+</ul>
+
+<h2>1. Start with the Application, Not the Technology</h2>
+
+<p>
+
+Before comparing communication standards, utilities should establish what they expect the smart metering system to achieve.
+
+</p>
+
+<p>
+
+A residential water meter used primarily for monthly billing has different communication requirements from a meter intended for frequent consumption monitoring, leak detection or operational analytics.
+
+</p>
+
+<p>
+
+Important questions include:
+
+</p>
+
+<ul>
+
+<li>How frequently must meter readings be collected?</li>
+
+<li>Is daily reporting sufficient, or is more frequent communication required?</li>
+
+<li>Does the application require event-driven reporting?</li>
+
+<li>How quickly must abnormal consumption or leakage be detected?</li>
+
+<li>Is remote configuration or firmware updating required?</li>
+
+<li>Must the meter communicate directly with the utility network, or can it use an intermediate gateway?</li>
+
+<li>How long is the device expected to operate without battery replacement?</li>
+
+<li>What level of communication availability is required?</li>
+
+</ul>
+
+<p>
+
+These requirements influence the choice of communication technology.
+
+</p>
+
+<p>
+
+For example, a meter that transmits one reading per day may have very different energy requirements from one that reports every 15 minutes. A device expected to support remote firmware updates also needs to account for larger data transfers and potentially longer communication sessions.
+
+</p>
+
+<p>
+
+It is therefore important to define the operational requirements before selecting the communication technology. A more effective approach is to establish the application requirements first and evaluate technologies against them.
+
+</p>
+
+<h2>2. Understand the Deployment Environment</h2>
+
+<p>
+
+The physical environment has a significant influence on communication performance.
+
+</p>
+
+<p>
+
+Unlike mobile phones, smart meters are usually installed in fixed locations. Their communication conditions are determined by the surrounding building structure, installation position, meter chamber, antenna orientation and available network infrastructure.
+
+</p>
+
+<p>
+
+For smart water metering, common deployment environments include:
+
+</p>
+
+<h3>Individual Residential Properties</h3>
+
+<p>
+
+Meters may be installed in outdoor meter boxes, boundary walls or roadside chambers. The communication path may be relatively open, but underground or enclosed installations can introduce signal attenuation.
+
+</p>
+
+<h3>High-Rise Residential Buildings</h3>
+
+<p>
+
+Meters may be located in service risers, meter rooms, basements or individual apartment units. Reinforced concrete, metal enclosures and building layout can affect radio propagation.
+
+</p>
+
+<h3>Commercial and Industrial Properties</h3>
+
+<p>
+
+Large buildings, plant rooms and underground facilities can create challenging radio conditions. Meter locations may also be distributed across multiple floors or separate structures.
+
+</p>
+
+<h3>Remote and Rural Locations</h3>
+
+<p>
+
+Network coverage, gateway accessibility, maintenance logistics and power availability may become more important than the nominal communication performance of the technology.
+
+</p>
+
+<p>
+
+A technology should therefore be evaluated against representative installation conditions rather than relying exclusively on laboratory measurements or outdoor coverage maps.
+
+</p>
+
+<p>
+
+Field surveys and pilot deployments are particularly useful for identifying coverage gaps and understanding actual communication behaviour.
+
+</p>
+
+<h2>3. Comparing the Main Communication Options</h2>
+
+<p>
+
+Several communication technologies are used or considered for smart metering. Each has different characteristics, infrastructure requirements and operational implications.
+
+</p>
+
+<h3>3.1 NB-IoT</h3>
+
+<p>
+
+Narrowband Internet of Things (NB-IoT) is a cellular low-power wide-area technology designed for applications that transmit relatively small amounts of data and require extended device operating life.
+
+</p>
+
+<p>
+
+It operates within licensed cellular spectrum and uses mobile network infrastructure.
+
+</p>
+
+<p>
+
+Potential advantages include:
+
+</p>
+
+<ul>
+
+<li>Wide-area connectivity through cellular operator networks.</li>
+
+<li>Deep coverage capabilities supported by network design and deployment.</li>
+
+<li>No requirement for the utility to establish its own radio gateway network where suitable operator coverage is available.</li>
+
+<li>Standardised cellular technology and established operator ecosystems.</li>
+
+<li>Support for small-data IoT applications.</li>
+
+</ul>
+
+<p>
+
+NB-IoT can be particularly attractive for geographically distributed water meters where cellular coverage is available and utilities prefer not to operate a dedicated radio access network.
+
+</p>
+
+<p>
+
+However, performance depends on actual operator coverage, network configuration and device implementation. Network registration, coverage conditions, retransmissions and communication session duration can influence battery consumption.
+
+</p>
+
+<p>
+
+Device provisioning, SIM or eSIM arrangements, operator commercial terms and long-term network support must also be considered.
+
+</p>
+
+<h3>3.2 LoRaWAN</h3>
+
+<p>
+
+LoRaWAN is a low-power wide-area networking protocol designed for long-range communication between end devices and gateways.
+
+</p>
+
+<p>
+
+It operates in unlicensed frequency bands, with regional radio regulations determining the applicable frequencies and operating conditions.
+
+</p>
+
+<p>
+
+Potential advantages include:
+
+</p>
+
+<ul>
+
+<li>Low-power communication suitable for battery-operated devices.</li>
+
+<li>The ability to deploy privately managed gateway infrastructure.</li>
+
+<li>Flexibility in network ownership and deployment architecture.</li>
+
+<li>Support for geographically distributed sensor and metering applications.</li>
+
+<li>An established ecosystem of network servers, gateways and device solutions.</li>
+
+</ul>
+
+<p>
+
+However, utilities need to consider gateway coverage, backhaul connectivity, network server operations and maintenance responsibilities.
+
+</p>
+
+<p>
+
+The available radio capacity and regulatory restrictions must also be considered when determining the number of devices, message frequency and network design.
+
+</p>
+
+<p>
+
+LoRaWAN is therefore not simply a low-cost alternative to cellular connectivity. Its total deployment cost includes the infrastructure and operational responsibilities required to maintain the network.
+
+</p>
+
+<h3>3.3 Wireless M-Bus and Sub-GHz RF</h3>
+
+<p>
+
+Wireless M-Bus is a communication standard developed for meter reading applications. It is commonly associated with short-range and neighbourhood-level wireless metering architectures.
+
+</p>
+
+<p>
+
+Sub-GHz RF solutions may also be used in proprietary or other standardised communication arrangements, depending on the product and system design.
+
+</p>
+
+<p>
+
+Potential advantages include:
+
+</p>
+
+<ul>
+
+<li>Communication approaches specifically suited to metering applications.</li>
+
+<li>Local radio collection without requiring every meter to have a direct cellular connection.</li>
+
+<li>Potentially low device power consumption.</li>
+
+<li>Flexible deployment using mobile collectors, fixed gateways or concentrator-based architectures.</li>
+
+<li>Suitability for certain residential and building-level installations.</li>
+
+</ul>
+
+<p>
+
+A fixed-network arrangement may use gateways or concentrators to collect readings from multiple meters before forwarding the data to the head-end system.
+
+</p>
+
+<p>
+
+Alternatively, mobile or walk-by reading approaches may be suitable where frequent remote reporting is not required.
+
+</p>
+
+<p>
+
+The limitations include the need to plan radio coverage, collector routes or gateway locations. Interference, building penetration, antenna placement and network capacity must also be evaluated.
+
+</p>
+
+<h3>3.4 RF Mesh Networks</h3>
+
+<p>
+
+RF mesh networking allows devices to communicate through neighbouring nodes, creating multiple potential communication paths towards a network collection point.
+
+</p>
+
+<p>
+
+Depending on the implementation, mesh networking can extend coverage beyond the direct radio range of an individual device.
+
+</p>
+
+<p>
+
+Potential advantages include:
+
+</p>
+
+<ul>
+
+<li>Multiple communication paths within a suitable network topology.</li>
+
+<li>The ability to extend coverage through neighbouring devices.</li>
+
+<li>Reduced dependence on direct communication between every meter and a central gateway.</li>
+
+<li>Potential suitability for dense deployment environments.</li>
+
+</ul>
+
+<p>
+
+However, mesh networks introduce additional design and operational considerations.
+
+</p>
+
+<p>
+
+Network formation, routing, node availability, traffic capacity and network maintenance must be managed. A device's communication performance may also depend on the availability and condition of neighbouring nodes.
+
+</p>
+
+<p>
+
+In water metering, the physical distribution of meters may not always provide a suitable density of nodes for reliable mesh communication. This needs to be assessed during network planning.
+
+</p>
+
+<h3>3.5 Other Communication Options</h3>
+
+<p>
+
+Other technologies may also be relevant depending on the application.
+
+</p>
+
+<ul>
+
+<li><strong>LTE-M:</strong> Provides another cellular IoT option, with characteristics that differ from NB-IoT in areas such as mobility support, bandwidth and power consumption.</li>
+
+<li><strong>Wi-Fi and Bluetooth:</strong> May be useful for local commissioning, configuration or short-range communication, but are not necessarily appropriate as the primary wide-area communication method for geographically distributed battery-powered meters.</li>
+
+<li><strong>Power Line Communication (PLC):</strong> Relevant to certain metering architectures where the electrical network can provide the communication medium. Its applicability depends on the infrastructure and metering application.</li>
+
+</ul>
+
+<p>
+
+The important point is that each technology must be evaluated in the context of the complete system rather than selected based on a single specification.
+
+</p>
+
+<h2>4. Battery Life Must Be Evaluated at System Level</h2>
+
+<p>
+
+Battery life is a major consideration in smart water metering because meters may be installed in locations where maintenance or battery replacement is difficult.
+
+</p>
+
+<p>
+
+Communication technology directly influences energy consumption, but it is not the only factor.
+
+</p>
+
+<p>
+
+The energy required for a communication session depends on several variables:
+
+</p>
+
+<ul>
+
+<li>Radio transmission power.</li>
+
+<li>Network coverage and signal conditions.</li>
+
+<li>Network registration and connection time.</li>
+
+<li>Message size and reporting frequency.</li>
+
+<li>Retransmissions and unsuccessful communication attempts.</li>
+
+<li>Firmware implementation and peripheral management.</li>
+
+<li>Communication module start-up and shutdown behaviour.</li>
+
+</ul>
+
+<p>
+
+For example, a meter with good cellular coverage may complete a communication session relatively efficiently. Another meter using the same technology in a poor coverage location may require longer network access time or repeated attempts.
+
+</p>
+
+<p>
+
+Similarly, a LoRaWAN device may achieve low energy consumption under a suitable network configuration, but its performance still depends on the radio parameters, message frequency, spreading factor and applicable regulatory constraints.
+
+</p>
+
+<p>
+
+Battery-life estimates should therefore use realistic operating profiles rather than relying solely on a communication module's published current consumption.
+
+</p>
+
+<p>
+
+Utilities should request evidence from representative field testing, including communication success rates, actual energy consumption and performance under challenging coverage conditions.
+
+</p>
+
+<h2>5. Coverage and Communication Reliability Are Different Measurements</h2>
+
+<p>
+
+A communication technology may provide broad geographical coverage without guaranteeing reliable data delivery at every meter.
+
+</p>
+
+<p>
+
+Coverage indicates whether a device can establish a communication link under particular conditions. Reliability concerns whether the complete communication process consistently delivers the expected information.
+
+</p>
+
+<p>
+
+For smart metering, a successful communication process may involve:
+
+</p>
+
+<ol>
+
+<li>The meter waking up and preparing its data.</li>
+
+<li>The communication module becoming operational.</li>
+
+<li>The device establishing or accessing the network.</li>
+
+<li>The data being transmitted.</li>
+
+<li>The receiving system acknowledging or processing the message.</li>
+
+<li>The information becoming available to the utility's applications.</li>
+
+</ol>
+
+<p>
+
+A failure at any stage can affect the final data availability.
+
+</p>
+
+<p>
+
+Utilities should therefore evaluate more than signal strength. Useful performance indicators include:
+
+</p>
+
+<ul>
+
+<li>Successful reporting rate.</li>
+
+<li>Daily and monthly data availability.</li>
+
+<li>Communication session duration.</li>
+
+<li>Network registration success.</li>
+
+<li>Retransmission frequency.</li>
+
+<li>Frequency and duration of communication outages.</li>
+
+<li>Recovery behaviour after network interruptions.</li>
+
+</ul>
+
+<p>
+
+These indicators should be measured under representative field conditions. A strong radio signal does not automatically mean that the meter's data will consistently reach the utility's systems.
+
+</p>
+
+<h2>6. Direct Connectivity Versus Gateway-Based Architecture</h2>
+
+<p>
+
+Communication technology selection also determines the broader network architecture.
+
+</p>
+
+<p>
+
+Two common approaches are direct connectivity and gateway-based connectivity.
+
+</p>
+
+<h3>Direct Connectivity</h3>
+
+<p>
+
+Each meter communicates directly with a wide-area network, such as a cellular network.
+
+</p>
+
+<p>
+
+This can simplify the local communication architecture because each meter has its own network connection. However, the utility must consider the cost and management of connectivity subscriptions, device provisioning and operator dependency.
+
+</p>
+
+<h3>Gateway-Based Connectivity</h3>
+
+<p>
+
+Multiple meters communicate with one or more local gateways. The gateway then forwards the collected information to the utility's central systems using cellular, fibre, Ethernet or another backhaul connection.
+
+</p>
+
+<p>
+
+This can reduce the number of wide-area connections required and may provide greater control over the local communication network.
+
+</p>
+
+<p>
+
+However, gateway placement, backhaul availability, power supply, redundancy and maintenance become important design considerations.
+
+</p>
+
+<p>
+
+The choice is not necessarily between one technology and another. A hybrid architecture may use different communication methods at different levels of the network.
+
+</p>
+
+<p>
+
+For example, meters may use local sub-GHz RF to communicate with gateways, while the gateways use cellular connectivity to reach the utility's head-end system.
+
+</p>
+
+<p>
+
+Such an architecture can be useful where individual meter locations are difficult to serve directly through cellular connectivity, or where the utility wants to manage local collection infrastructure.
+
+</p>
+
+<h2>7. Interoperability and Long-Term Technology Support</h2>
+
+<p>
+
+Smart metering systems are long-term infrastructure investments. The selected communication technology should therefore be assessed beyond the initial deployment.
+
+</p>
+
+<p>
+
+Utilities should consider several areas:
+
+</p>
+
+<h3>Standards and Interoperability</h3>
+
+<p>
+
+Does the solution use established standards? Can devices from different manufacturers operate within the intended architecture? Are communication interfaces and data models sufficiently documented?
+
+</p>
+
+<h3>Device Ecosystem</h3>
+
+<p>
+
+Are multiple device manufacturers and module suppliers available? Can the utility avoid unnecessary dependence on one product or supplier?
+
+</p>
+
+<h3>Network Ownership</h3>
+
+<p>
+
+Who operates and maintains the network? Does the utility depend on a telecommunications operator, a technology vendor or its own infrastructure?
+
+</p>
+
+<h3>Security</h3>
+
+<p>
+
+How are devices authenticated? How is communication protected? How are credentials, keys and firmware updates managed throughout the device lifecycle?
+
+</p>
+
+<h3>Technology Lifecycle</h3>
+
+<p>
+
+What is the expected support period for the communication network, modules and associated services? What migration options are available if a technology or service is discontinued?
+
+</p>
+
+<h3>Total Cost of Ownership</h3>
+
+<p>
+
+What are the costs of devices, connectivity, gateways, installation, maintenance, network operations, system integration and future replacement?
+
+</p>
+
+<p>
+
+These questions are particularly important when a utility expects smart meters to remain operational for ten years or longer.
+
+</p>
+
+<p>
+
+The communication technology should not become a long-term constraint on the utility's ability to maintain or expand its metering infrastructure.
+
+</p>
+
+<h2>8. A Practical Framework for Technology Selection</h2>
+
+<p>
+
+Rather than selecting a technology based on headline specifications, utilities can use a structured evaluation process.
+
+</p>
+
+<h3>Step 1: Define the Operational Requirements</h3>
+
+<p>
+
+Establish reporting frequency, data volume, event requirements, remote management needs, battery-life expectations and availability targets.
+
+</p>
+
+<h3>Step 2: Classify Deployment Environments</h3>
+
+<p>
+
+Identify residential, high-rise, commercial, industrial, rural and remote installations. Determine the proportion of meters expected in each environment.
+
+</p>
+
+<h3>Step 3: Shortlist Suitable Technologies</h3>
+
+<p>
+
+Compare cellular LPWAN, LoRaWAN, Wireless M-Bus, sub-GHz RF, RF mesh and other relevant options against the application requirements.
+
+</p>
+
+<h3>Step 4: Evaluate the Complete Architecture</h3>
+
+<p>
+
+Consider direct connectivity, gateway-based collection, backhaul requirements, network ownership and integration with the head-end system.
+
+</p>
+
+<h3>Step 5: Conduct Representative Field Trials</h3>
+
+<p>
+
+Test actual meters and communication modules in different installation conditions. Include difficult locations rather than selecting only favourable test sites.
+
+</p>
+
+<h3>Step 6: Measure Performance and Energy Consumption</h3>
+
+<p>
+
+Collect data on reporting success, communication duration, signal conditions, recovery behaviour and current consumption.
+
+</p>
+
+<h3>Step 7: Assess Lifecycle Cost and Support</h3>
+
+<p>
+
+Consider device cost, infrastructure, connectivity, maintenance, cybersecurity, interoperability and long-term technology availability.
+
+</p>
+
+<p>
+
+The evaluation should be based on measurable requirements and field evidence. A technology that performs well in one environment may not be the most suitable choice across an entire utility territory.
+
+</p>
+
+<h2>Conclusion: Select for the Deployment, Not the Technology Trend</h2>
+
+<p>
+
+Selecting a communication technology for smart metering is a system-level decision.
+
+</p>
+
+<p>
+
+NB-IoT, LoRaWAN, Wireless M-Bus, sub-GHz RF and mesh networking each offer different capabilities. Their suitability depends on the application, installation environment, network architecture, battery-life requirements and the utility's ability to operate and maintain the complete solution.
+
+</p>
+
+<p>
+
+For smart water metering in particular, the challenge is not simply to establish a radio connection. The objective is to deliver reliable meter data over many years, across a diverse range of installation conditions and with an acceptable lifecycle cost.
+
+</p>
+
+<p>
+
+The most effective selection process begins with operational requirements, evaluates the complete communication architecture and validates performance through representative field trials.
+
+</p>
+
+<p>
+
+Technology specifications and coverage maps are useful starting points, but they cannot replace deployment evidence.
+
+</p>
+
+<p>
+
+Ultimately, the right communication technology is not necessarily the newest, cheapest or most widely promoted option. It is the one that consistently meets the utility's requirements throughout the life of the metering system.
+
+</p>
+
+</section>
+          
+            <!-- =================================================
+                 FULL ARTICLE ON MEDIUM
+                 ================================================= -->
+
+<div class="medium-cta">
+
+<h2>Continue Reading on Medium</h2>
+
+<p>
+Read the full article for a deeper discussion of communication technologies, network architecture and the considerations involved in selecting connectivity for smart metering deployments.
+</p>
+
+<a href="https://medium.com/@smartinfra.insights/selecting-the-right-communication-technology-for-smart-metering-6bae7d7ccf40"
+target="_blank" rel="noopener noreferrer">Read the Full Article on Medium →</a>
+
+</div>
+          
+            <!-- =================================================
+                 RELATED ARTICLES
+                 ================================================= -->
+
+<section class="related-articles">
+
+<h2>Related Smart Metering Topics</h2>
+
+<ul>
+
+<li><a href="/publications/nb-iot-vs-lorawan-vs-lte-m.html">NB-IoT vs LoRaWAN vs LTE-M: Choosing the Right IoT Connectivity for Smart Utilities</a></li>
+
+<li><a href="/publications/what-is-nb-iot.html">What Is NB-IoT? A Practical Guide for IoT and Smart Metering Deployments</a></li>
+
+<li><a href="/publications/lorawan-explained.html">LoRaWAN Explained: Architecture, Use Cases, and Limitations in Real Deployments</a></li>
+
+<li><a href="/publications/nb-iot-vs-lorawan-in-real-deployments.html">NB-IoT vs LoRaWAN in Real Deployments: What Actually Happens in the Field</a></li>
+
+<li><a href="/publications/smart-metering-architecture.html">Smart Metering System Architecture: End-to-End Design for Utilities</a></li>
+
+<li><a href="/publications/private-lte-for-utilities-when-does-it-make-sense.html">Private LTE for Utilities: When Does It Make Sense?</a></li>
+
+<li><a href="/publications/why-smart-meter-communication-fails-in-high-rise-buildings.html">Why Smart Meter Communication Fails in High-Rise Buildings</a></li>
+
+<li><a href="/publications/interoperability-in-multi-vendor-ami-systems.html">Interoperability in Multi-Vendor AMI Systems</a></li>
+
+<li><a href="/publications/firmware-management-in-ami.html">Firmware Management in AMI: The Hidden Operational Challenge</a></li>
+
+</ul>
+
+</section>
+
+        </article>
+
+    </main>
+
+  
+
+<footer>
+
+<p>© 2026 Vincent Wong. All rights reserved.</p>
+
+<p style="font-style: italic; text-align: justify; color: #555;">
+The personal engineering insights shared here represent aspirational industry best practices and do not reflect the active bidding strategies or commercial policies of any current or past employer. Read the full <a href="/about/#disclaimer" style="text-decoration: underline; color: #0066cc; font-weight: bold;">Strategic Disclaimer</a>.
+</p>
+
+<p>
+Smart Metering | AMI | Smart Water | Utility IoT | NB-IoT
+</p>
+<p>
+<a href="/">Home</a> |
+<a href="/about/">About</a> |
+<a href="/whitepapers/">Whitepapers</a> |
+<a href="/publications/">Publications</a> |
+<a href="/patents/">Patents</a> |
+<a href="/speaking/">Speaking</a> |
+<a href="/recognition/">Recognition</a>  
+</p>
+
+</footer>
+
+</body>
+</html>
