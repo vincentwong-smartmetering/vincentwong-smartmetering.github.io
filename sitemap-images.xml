@@ -126,6 +126,15 @@
     <image:image>
       <image:loc>https://vincentwong-smartmetering.github.io/publications/images/leak-analysis-beyond-threshold-alarms.jpg</image:loc>
     </image:image>
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/battery-technology-for-smart-meters.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/selecting-the-right-communication-technology-for-smart-metering.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/digital-transformation-lessons-from-utility-ami-projects.jpg</image:loc>
+    </image:image>      
   </url>
   <url>
     <loc>https://vincentwong-smartmetering.github.io/publications/amr-vs-ami.html</loc>
@@ -299,6 +308,24 @@
     <loc>https://vincentwong-smartmetering.github.io/publications/leak-analysis-beyond-threshold-alarms.html</loc>
     <image:image>
       <image:loc>https://vincentwong-smartmetering.github.io/publications/images/leak-analysis-beyond-threshold-alarms.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vincentwong-smartmetering.github.io/publications/battery-technology-for-smart-meters.html</loc>
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/battery-technology-for-smart-meters.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vincentwong-smartmetering.github.io/publications/selecting-the-right-communication-technology-for-smart-metering.html</loc>
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/selecting-the-right-communication-technology-for-smart-metering.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vincentwong-smartmetering.github.io/publications/digital-transformation-lessons-from-utility-ami-projects.html</loc>
+    <image:image>
+      <image:loc>https://vincentwong-smartmetering.github.io/publications/images/digital-transformation-lessons-from-utility-ami-projects.jpg</image:loc>
     </image:image>
   </url>
   <url>
